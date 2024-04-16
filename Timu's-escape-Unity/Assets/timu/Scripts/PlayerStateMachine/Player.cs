@@ -2,53 +2,59 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent (typeof (PlayerController) )]
+[RequireComponent(typeof(PlayerController))]
+[RequireComponent(typeof(Rigidbody))]
 public class Player : MonoBehaviour
 {
+    public float gravity = -5f;
+    public float moveSpeed = 5f;
+    public float jumpForce = 5f;
 
-    public float gravity = -9.8f;
-    Vector3 velocity;
-    CharacterController characterController;
-
-    public PlayerStateMachine StateMachine { get; private set; }
-
+    private Rigidbody rb;
+    private PlayerStateMachine StateMachine;
 
     public PlayerIdleState IdleState;
     public PlayerMoveState MoveState;
     public PlayerJumpState JumpState;
+    public PlayerChargingJumpState ChargeJumpState;
+    public PlayerFallingState FallingState;
+    public PlayerExitPlatform ExitPlatformState;
+    public PlayerController PlayerController { get; private set; }
 
-    private void Awake() {
-        
-        characterController = GetComponent<CharacterController>();
+    private void Awake()
+    {
+        PlayerController = GetComponent<PlayerController>();
+        rb = GetComponent<Rigidbody>();
         StateMachine = new PlayerStateMachine();
+
 
         IdleState = new PlayerIdleState(this, StateMachine);
         MoveState = new PlayerMoveState(this, StateMachine);
-        JumpState = new PlayerJumpState(this, StateMachine, characterController);
-
-
+        JumpState = new PlayerJumpState(this, StateMachine, rb);
+        FallingState = new PlayerFallingState(this, StateMachine);
+        ChargeJumpState = new PlayerChargingJumpState(this, StateMachine);
+        ExitPlatformState = new PlayerExitPlatform(this, StateMachine);
+        
     }
 
-    private void Start() {
+    private void Start()
+    {
         StateMachine.Initialize(IdleState);
     }
 
-    private void Update() {
+    private void Update()
+    {
         StateMachine.CurrentState.Update();
-        Gravity();
     }
 
-    private void FixedUpdate() {
-        
+    private void FixedUpdate()
+    {
         StateMachine.CurrentState.FixedUpdate();
     }
 
-    public void Gravity() {
-        
-
-        velocity.y += gravity * Time.deltaTime;
-
-        characterController.Move(velocity * Time.deltaTime);
+    public void ApplyGravity()
+    {
+        Vector3 gravityVector = new Vector3(0f, gravity, 0f);
+        rb.AddForce(gravityVector, ForceMode.Acceleration);
     }
-
 }

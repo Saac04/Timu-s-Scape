@@ -1,29 +1,46 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.Mathematics;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public Rigidbody rb;
+    public float moveSpeed = 5f;
+    public float horizontalInput;
+    public LayerMask groundLayer;
 
-    public CharacterController characterController;
-
-    public float moveSpeed = 5f;       
-    public float horizontalInput {get; private set; }
- 
     void Start()
     {
-        characterController = GetComponent<CharacterController>();
-        
+        rb = GetComponent<Rigidbody>();
     }
 
     void Update()
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
 
-        Vector3 moveDirection = new Vector3(horizontalInput, 0f, 0f).normalized;
-
-        characterController.Move(moveDirection * moveSpeed * Time.deltaTime);
-
     }
+
+    public bool IsOnGround()
+{
+    int numRays = 5;
+    
+    float raycastWidth = transform.localScale.x;
+
+    float raySpacing = raycastWidth / (numRays - 1);
+
+    Vector3 raycastOrigin = transform.position - Vector3.right * (raycastWidth / 2f);
+
+    for (int i = 0; i < numRays; i++)
+    {
+        RaycastHit hit;
+
+        if (Physics.Raycast(raycastOrigin + Vector3.right * (i * raySpacing), Vector3.down, out hit, 1.1f, groundLayer))
+        {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+
+
 }
