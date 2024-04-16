@@ -2,38 +2,50 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class PlayerJumpState : PlayerState
 {
-    private float jumpSpeed = 2f; // Reducimos la velocidad de salto
-    private float verticalVelocity;
-    private CharacterController characterController; // Referencia al CharacterController
+    private float jumpForce = 10f; // Fuerza de salto
+    private Rigidbody rb; // Referencia al Rigidbody
+    private PlayerController playerController; // Referencia al PlayerController
+    private bool hasAppliedJumpForce = false; // Variable para rastrear si se ha aplicado la fuerza de salto
 
-    public PlayerJumpState(Player player, PlayerStateMachine stateMachine, CharacterController controller) : base(player, stateMachine)
+    public PlayerJumpState(Player player, PlayerStateMachine stateMachine, Rigidbody controller) : base(player, stateMachine)
     {
-        characterController = controller; // Asignar la referencia recibida al characterController local
+        rb = controller; // Asignar la referencia recibida al Rigidbody local
+        playerController = player.GetComponent<PlayerController>(); // Obtener referencia al PlayerController
     }
 
     public override void Enter()
     {
-        base.Enter();
-        verticalVelocity = jumpSpeed;
-        Debug.Log ("Modo Jump");
+        base.Enter();    
+        hasAppliedJumpForce = false;    
+        Debug.Log("Modo Jump");
+        ApplyJumpForce();
     }
 
     public override void Update()
     {
         base.Update();
 
-        verticalVelocity += player.gravity * Time.deltaTime;
 
-        characterController.Move(Vector3.up * verticalVelocity);
-
-        if (characterController.isGrounded)
+        if (IsFalling() && playerController.IsOnGround())
         {
-            player.StateMachine.ChangeState(player.IdleState);
+            playerStateMachine.ChangeState(player.IdleState);
         }
-        
     }
+
+    private void ApplyJumpForce()
+    {
+        if (!hasAppliedJumpForce)
+        {
+            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            hasAppliedJumpForce = true;
+        }
+    }
+
+    private bool IsFalling()
+{
+    return hasAppliedJumpForce && rb.velocity.y < 0;
+}
 
 }

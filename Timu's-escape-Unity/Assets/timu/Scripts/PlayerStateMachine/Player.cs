@@ -2,53 +2,55 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent (typeof (PlayerController) )]
+[RequireComponent(typeof(PlayerController))]
+[RequireComponent(typeof(Rigidbody))]
 public class Player : MonoBehaviour
 {
+    public float gravity = -5f;
+    public float moveSpeed = 5f; // Velocidad de movimiento
 
-    public float gravity = -9.8f;
-    Vector3 velocity;
-    CharacterController characterController;
-
-    public PlayerStateMachine StateMachine { get; private set; }
-
+    private Rigidbody rb;
+    private PlayerStateMachine StateMachine;
 
     public PlayerIdleState IdleState;
     public PlayerMoveState MoveState;
     public PlayerJumpState JumpState;
+    public PlayerChargingJumpState ChargeJumpState;
 
-    private void Awake() {
-        
-        characterController = GetComponent<CharacterController>();
+    public PlayerFallingState FallingState;
+
+    
+
+    public PlayerController PlayerController { get; private set; }
+
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody>();
         StateMachine = new PlayerStateMachine();
 
         IdleState = new PlayerIdleState(this, StateMachine);
         MoveState = new PlayerMoveState(this, StateMachine);
-        JumpState = new PlayerJumpState(this, StateMachine, characterController);
-
-
+        JumpState = new PlayerJumpState(this, StateMachine, rb);
     }
 
-    private void Start() {
+    private void Start()
+    {
         StateMachine.Initialize(IdleState);
     }
 
-    private void Update() {
+    private void Update()
+    {
         StateMachine.CurrentState.Update();
-        Gravity();
     }
 
-    private void FixedUpdate() {
-        
+    private void FixedUpdate()
+    {
         StateMachine.CurrentState.FixedUpdate();
     }
 
-    public void Gravity() {
-        
-
-        velocity.y += gravity * Time.deltaTime;
-
-        characterController.Move(velocity * Time.deltaTime);
+    public void ApplyGravity()
+    {
+        Vector3 gravityVector = new Vector3(0f, gravity, 0f);
+        rb.AddForce(gravityVector, ForceMode.Acceleration);
     }
-
 }

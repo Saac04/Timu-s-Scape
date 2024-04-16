@@ -1,29 +1,45 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.Mathematics;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public Rigidbody rb;
+    public float moveSpeed = 5f;
+    public float horizontalInput;
 
-    public CharacterController characterController;
+    // Definir la capa que consideramos como suelo
+    public LayerMask groundLayer;
 
-    public float moveSpeed = 5f;       
-    public float horizontalInput {get; private set; }
- 
     void Start()
     {
-        characterController = GetComponent<CharacterController>();
-        
+        rb = GetComponent<Rigidbody>();
     }
 
     void Update()
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
 
-        Vector3 moveDirection = new Vector3(horizontalInput, 0f, 0f).normalized;
+    }
 
-        characterController.Move(moveDirection * moveSpeed * Time.deltaTime);
+    // Función para verificar la capa en la que está el jugador
+    public int CheckGround()
+    {
+        // Lanzar un rayo hacia abajo desde el centro del jugador
+        RaycastHit hit;
 
+        Vector3 raycastOrigin = transform.position + Vector3.up * 0.1f;
+
+        if (Physics.Raycast(raycastOrigin, Vector3.down, out hit, 0.1f))
+        {
+            Debug.Log (hit.collider.gameObject.layer);
+            return hit.collider.gameObject.layer;
+        }
+
+        return -1; // Si no hay contacto con la capa especificada, devolverá -1
+    }
+
+    // Función para verificar si el jugador está en la capa de suelo
+    public bool IsOnGround()
+    {
+        return CheckGround() == 8; // Comprueba si la capa actual es la capa de suelo (layer 8)
     }
 }
