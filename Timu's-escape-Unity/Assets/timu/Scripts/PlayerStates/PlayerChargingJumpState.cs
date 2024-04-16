@@ -7,6 +7,8 @@ public class PlayerChargingJumpState : PlayerState
     private float maxJumpForce = 10f; // Máximo valor de carga del salto
     private float chargeRate; // Tasa de carga
 
+    public float directionHorizontal;
+
     public PlayerChargingJumpState(Player player, PlayerStateMachine stateMachine) : base(player, stateMachine)
     {
          // Calcular la tasa de carga para alcanzar el máximo en 2 segundos
@@ -29,6 +31,7 @@ public class PlayerChargingJumpState : PlayerState
 
         if (Input.GetKeyUp(KeyCode.Space))
         {
+            directionHorizontal = player.PlayerController.horizontalInput;
             playerStateMachine.ChangeState(player.JumpState);
         }
     }
