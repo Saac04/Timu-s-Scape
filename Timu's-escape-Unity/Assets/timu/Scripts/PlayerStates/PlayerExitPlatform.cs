@@ -4,21 +4,33 @@ using UnityEngine;
 
 public class PlayerExitPlatform : PlayerState
 {
-    public PlayerExitPlatform(Player player, PlayerStateMachine stateMachine) : base(player, stateMachine)
-    {
-    }
+    private float direcctionHorizontal;
+    private float maxFallSpeed = -15f;
 
-    public override void Enter() {
+    public PlayerExitPlatform(Player player, PlayerStateMachine stateMachine) : base(player, stateMachine) { }
+
+    public override void Enter()
+    {
         base.Enter();
         Debug.Log("Modo salida");
+        direcctionHorizontal = player.PlayerController.horizontalInput;
     }
 
     public override void Update()
     {
         base.Update();
-        
-        Vector3 lastHorizontalVelocity = player.MoveState.GetLastHorizontalVelocity();
-        player.PlayerController.rb.velocity = new Vector3(lastHorizontalVelocity.x, player.PlayerController.rb.velocity.y, 0f);
-        
+
+        Rigidbody rb = player.PlayerController.rb;
+
+        rb.velocity += Vector3.up * Physics.gravity.y * Time.deltaTime;
+
+        rb.velocity = new Vector3(rb.velocity.x, Mathf.Max(rb.velocity.y, maxFallSpeed), 0f);
+
+        rb.velocity = new Vector3(player.moveSpeed * direcctionHorizontal, rb.velocity.y, 0f);
+
+        if (player.PlayerController.IsOnGround())
+        {
+            playerStateMachine.ChangeState(player.IdleState);
+        }
     }
 }

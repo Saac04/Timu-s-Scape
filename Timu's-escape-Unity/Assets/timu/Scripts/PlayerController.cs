@@ -5,6 +5,7 @@ public class PlayerController : MonoBehaviour
     public Rigidbody rb;
     public float moveSpeed = 5f;
     public float horizontalInput;
+    public LayerMask groundLayer;
 
     void Start()
     {
@@ -17,26 +18,29 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    // Función para verificar la capa en la que está el jugador
-    public int CheckGround()
+    public bool IsOnGround()
+{
+    int numRays = 5;
+    
+    float raycastWidth = transform.localScale.x;
+
+    float raySpacing = raycastWidth / (numRays - 1);
+
+    Vector3 raycastOrigin = transform.position - Vector3.right * (raycastWidth / 2f);
+
+    for (int i = 0; i < numRays; i++)
     {
-        // Lanzar un rayo hacia abajo desde el centro del jugador
         RaycastHit hit;
 
-        Vector3 raycastOrigin = transform.position + Vector3.up * 0.1f;
-
-        if (Physics.Raycast(raycastOrigin, Vector3.down, out hit, 0.1f))
+        if (Physics.Raycast(raycastOrigin + Vector3.right * (i * raySpacing), Vector3.down, out hit, 1.1f, groundLayer))
         {
-            Debug.Log (hit.collider.gameObject.layer);
-            return hit.collider.gameObject.layer;
+            return true;
         }
-
-        return -1; // Si no hay contacto con la capa especificada, devolverá -1
     }
 
-    // Función para verificar si el jugador está en la capa de suelo
-    public bool IsOnGround()
-    {
-        return CheckGround() == 8; // Comprueba si la capa actual es la capa de suelo (layer 8)
-    }
+    return false;
+}
+
+
+
 }

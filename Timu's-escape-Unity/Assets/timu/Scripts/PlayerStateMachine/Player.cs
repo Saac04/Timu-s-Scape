@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
     public PlayerJumpState JumpState;
     public PlayerChargingJumpState ChargeJumpState;
     public PlayerFallingState FallingState;
-    public PlayerExitPlatform ExitPlatform;
+    public PlayerExitPlatform ExitPlatformState;
     public PlayerController PlayerController { get; private set; }
 
     private void Awake()
@@ -33,7 +33,7 @@ public class Player : MonoBehaviour
         JumpState = new PlayerJumpState(this, StateMachine, rb);
         FallingState = new PlayerFallingState(this, StateMachine);
         ChargeJumpState = new PlayerChargingJumpState(this, StateMachine);
-        ExitPlatform = new PlayerExitPlatform(this, StateMachine);
+        ExitPlatformState = new PlayerExitPlatform(this, StateMachine);
         
     }
 

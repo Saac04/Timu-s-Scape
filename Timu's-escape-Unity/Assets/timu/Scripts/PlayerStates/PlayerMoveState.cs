@@ -24,7 +24,6 @@ public class PlayerMoveState : PlayerState
 
 
         player.PlayerController.rb.MovePosition(player.PlayerController.rb.position + movimiento);
-        lastHorizontalVelocity = player.PlayerController.rb.velocity;
 
 
         if (player.PlayerController.horizontalInput == 0f)
@@ -32,15 +31,11 @@ public class PlayerMoveState : PlayerState
             playerStateMachine.ChangeState(player.IdleState);
         }
         if (!player.PlayerController.IsOnGround()) {
-            playerStateMachine.ChangeState(player.ExitPlatform);
+            playerStateMachine.ChangeState(player.ExitPlatformState);
         }
         if (Input.GetKeyDown(KeyCode.Space)) {
             playerStateMachine.ChangeState(player.ChargeJumpState);
         }
     }
 
-    public Vector3 GetLastHorizontalVelocity()
-    {
-        return lastHorizontalVelocity;
-    }
 }

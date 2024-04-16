@@ -17,6 +17,7 @@ public class PlayerFallingState : PlayerState
     public override void Update() {
         base.Update();
 
+
         if (player.PlayerController.IsOnGround()) {
             playerStateMachine.ChangeState(player.IdleState);
         }
