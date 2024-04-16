@@ -4,13 +4,8 @@ using UnityEngine;
 
 public class PlayerFallingState : PlayerState
 {
-    private Rigidbody rb;
-    private PlayerController playerController;
     public PlayerFallingState(Player player, PlayerStateMachine stateMachine) : base(player, stateMachine)
     {
-        rb = player.GetComponent<Rigidbody>();
-        playerController = player.GetComponent<PlayerController>();
-
     }
 
     public override void Enter()
@@ -19,4 +14,12 @@ public class PlayerFallingState : PlayerState
         Debug.Log("Modo Caida");
     }
 
+    public override void Update() {
+        base.Update();
+
+        if (player.PlayerController.IsOnGround()) {
+            playerStateMachine.ChangeState(player.IdleState);
+        }
+
+    }
 }

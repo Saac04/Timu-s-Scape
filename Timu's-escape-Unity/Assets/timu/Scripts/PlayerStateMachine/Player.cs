@@ -7,7 +7,8 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public float gravity = -5f;
-    public float moveSpeed = 5f; // Velocidad de movimiento
+    public float moveSpeed = 5f;
+    public float jumpForce = 5f;
 
     private Rigidbody rb;
     private PlayerStateMachine StateMachine;
@@ -16,21 +17,24 @@ public class Player : MonoBehaviour
     public PlayerMoveState MoveState;
     public PlayerJumpState JumpState;
     public PlayerChargingJumpState ChargeJumpState;
-
     public PlayerFallingState FallingState;
-
-    
-
+    public PlayerExitPlatform ExitPlatform;
     public PlayerController PlayerController { get; private set; }
 
     private void Awake()
     {
+        PlayerController = GetComponent<PlayerController>();
         rb = GetComponent<Rigidbody>();
         StateMachine = new PlayerStateMachine();
+
 
         IdleState = new PlayerIdleState(this, StateMachine);
         MoveState = new PlayerMoveState(this, StateMachine);
         JumpState = new PlayerJumpState(this, StateMachine, rb);
+        FallingState = new PlayerFallingState(this, StateMachine);
+        ChargeJumpState = new PlayerChargingJumpState(this, StateMachine);
+        ExitPlatform = new PlayerExitPlatform(this, StateMachine);
+        
     }
 
     private void Start()

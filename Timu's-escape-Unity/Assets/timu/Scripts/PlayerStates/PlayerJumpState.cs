@@ -4,21 +4,20 @@ using UnityEngine;
 
 public class PlayerJumpState : PlayerState
 {
-    private float jumpForce = 10f; // Fuerza de salto
-    private Rigidbody rb; // Referencia al Rigidbody
-    private PlayerController playerController; // Referencia al PlayerController
-    private bool hasAppliedJumpForce = false; // Variable para rastrear si se ha aplicado la fuerza de salto
+    
+    private float minJumpForce = 1f;
+    private float height;
+    private bool hasAppliedJumpForce = false; 
 
     public PlayerJumpState(Player player, PlayerStateMachine stateMachine, Rigidbody controller) : base(player, stateMachine)
     {
-        rb = controller; // Asignar la referencia recibida al Rigidbody local
-        playerController = player.GetComponent<PlayerController>(); // Obtener referencia al PlayerController
     }
 
     public override void Enter()
     {
         base.Enter();    
         hasAppliedJumpForce = false;    
+        height = player.transform.position.y + minJumpForce;
         Debug.Log("Modo Jump");
         ApplyJumpForce();
     }
@@ -26,26 +25,18 @@ public class PlayerJumpState : PlayerState
     public override void Update()
     {
         base.Update();
+        if (player.transform.position.y >= height)
+        playerStateMachine.ChangeState(player.FallingState);
 
-
-        if (IsFalling() && playerController.IsOnGround())
-        {
-            playerStateMachine.ChangeState(player.IdleState);
-        }
     }
 
     private void ApplyJumpForce()
     {
         if (!hasAppliedJumpForce)
         {
-            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            player.PlayerController.rb.AddForce(Vector3.up * player.jumpForce, ForceMode.Impulse);
             hasAppliedJumpForce = true;
         }
     }
-
-    private bool IsFalling()
-{
-    return hasAppliedJumpForce && rb.velocity.y < 0;
-}
 
 }

@@ -6,9 +6,6 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed = 5f;
     public float horizontalInput;
 
-    // Definir la capa que consideramos como suelo
-    public LayerMask groundLayer;
-
     void Start()
     {
         rb = GetComponent<Rigidbody>();

@@ -4,13 +4,10 @@ using UnityEngine;
 
 public class PlayerMoveState : PlayerState
 {
-    private Rigidbody rb;
-    private PlayerController playerController;
+    private Vector3 lastHorizontalVelocity;
 
     public PlayerMoveState(Player player, PlayerStateMachine stateMachine) : base(player, stateMachine)
     {
-        playerController = player.GetComponent<PlayerController>();
-        rb = player.GetComponent<Rigidbody>();
     }
 
     public override void Enter()
@@ -22,17 +19,28 @@ public class PlayerMoveState : PlayerState
     public override void Update()
     {
         base.Update();
-        player.ApplyGravity();
+
+        Vector3 movimiento = new Vector3(player.PlayerController.horizontalInput, 0f, 0f) * player.PlayerController.moveSpeed * Time.deltaTime;
 
 
-        Vector3 movimiento = new Vector3(playerController.horizontalInput, 0f, 0f) * playerController.moveSpeed * Time.deltaTime;
+        player.PlayerController.rb.MovePosition(player.PlayerController.rb.position + movimiento);
+        lastHorizontalVelocity = player.PlayerController.rb.velocity;
 
-        rb.MovePosition(rb.position + movimiento);
 
-        // Si no hay entrada horizontal, transicionar al estado de reposo
-        if (playerController.horizontalInput == 0f)
+        if (player.PlayerController.horizontalInput == 0f)
         {
             playerStateMachine.ChangeState(player.IdleState);
         }
+        if (!player.PlayerController.IsOnGround()) {
+            playerStateMachine.ChangeState(player.ExitPlatform);
+        }
+        if (Input.GetKeyDown(KeyCode.Space)) {
+            playerStateMachine.ChangeState(player.ChargeJumpState);
+        }
+    }
+
+    public Vector3 GetLastHorizontalVelocity()
+    {
+        return lastHorizontalVelocity;
     }
 }

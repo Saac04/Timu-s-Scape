@@ -4,28 +4,24 @@ using UnityEngine;
 
 public class PlayerIdleState : PlayerState
 {
-    private Rigidbody rb;
-    private PlayerController playerController;
 
 
     public PlayerIdleState(Player player, PlayerStateMachine stateMachine) : base(player, stateMachine)
     {
-        rb = player.GetComponent<Rigidbody>();
-        playerController = player.GetComponent<PlayerController>();
-
     }
 
     public override void Enter()
     {
         base.Enter();
         Debug.Log("Modo Idle");
+        player.jumpForce = 5f;
     }
 
     public override void Update()
     {
         base.Update();
 
-        if (playerController.horizontalInput != 0f)
+        if (player.PlayerController.horizontalInput != 0f)
         {
             playerStateMachine.ChangeState(player.MoveState);
         }
