@@ -1,9 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerFallingState : PlayerState
 {
+    private float stateChangeTimer = 0f;
+    private float stateChangeDelay = 0.5f; 
+
     public PlayerFallingState(Player player, PlayerStateMachine stateMachine) : base(player, stateMachine)
     {
     }
@@ -12,15 +13,25 @@ public class PlayerFallingState : PlayerState
     {
         base.Enter();
         Debug.Log("Modo Caida");
+
+        stateChangeTimer = 0f;
     }
 
-    public override void Update() {
+    public override void Update()
+    {
         base.Update();
 
+        stateChangeTimer += Time.deltaTime;
 
         if (player.PlayerController.IsOnGround()) {
-            playerStateMachine.ChangeState(player.IdleState);
-        }
 
-    }
+            player.PlayerController.rb.velocity = Vector3.zero;
+
+            if (stateChangeTimer >= stateChangeDelay )
+            {
+                Debug.Log("Pausa");
+                playerStateMachine.ChangeState(player.IdleState);
+            }
+        }
+      }
 }

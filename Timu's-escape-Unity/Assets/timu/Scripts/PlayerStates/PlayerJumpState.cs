@@ -34,7 +34,7 @@ public class PlayerJumpState : PlayerState
     {
         if (!hasAppliedJumpForce)
         {
-            player.PlayerController.rb.AddForce(Vector3.up * player.jumpForce, ForceMode.Impulse);
+            player.PlayerController.rb.AddForce((Vector3.up * player.jumpForce) + (Vector3.right * player.moveSpeed * player.ChargeJumpState.directionHorizontal), ForceMode.Impulse);
             hasAppliedJumpForce = true;
         }
     }

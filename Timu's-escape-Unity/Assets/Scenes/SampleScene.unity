@@ -676,7 +676,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9001501235176869790, guid: b4685f3ab96ea9a4a97e04515f53cb82, type: 3}
       propertyPath: m_Name
-      value: Wash
+      value: Lava
+      objectReference: {fileID: 0}
+    - target: {fileID: 9001501235176869790, guid: b4685f3ab96ea9a4a97e04515f53cb82, type: 3}
+      propertyPath: m_TagString
+      value: Lava
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
