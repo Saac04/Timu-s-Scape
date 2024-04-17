@@ -510,7 +510,7 @@ GameObject:
   - component: {fileID: 654390330}
   - component: {fileID: 654390329}
   m_Layer: 0
-  m_Name: Jugar
+  m_Name: ButtonPlay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -643,7 +643,7 @@ GameObject:
   - component: {fileID: 768412758}
   - component: {fileID: 768412757}
   m_Layer: 0
-  m_Name: Salir
+  m_Name: ButtonExit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1014,7 +1014,7 @@ GameObject:
   - component: {fileID: 1734986667}
   - component: {fileID: 1734986666}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: TextGameTitle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1059,7 +1059,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: TIMU'S SCAPE
+  m_text: TIMU'S ESCAPE
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1e6ae4588c1bee54791d0bc93d9f92c8, type: 2}
   m_sharedMaterial: {fileID: 7362055151723509476, guid: 1e6ae4588c1bee54791d0bc93d9f92c8, type: 2}
