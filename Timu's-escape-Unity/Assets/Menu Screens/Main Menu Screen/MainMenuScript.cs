@@ -13,7 +13,7 @@ public class NewBehaviourScript : MonoBehaviour
         //Ambas hacen lo mismo
     }
 
-    public void Salir()
+    public void QuitGame()
     {
         Application.Quit();
         Debug.Log("El jugador salio del juego");
