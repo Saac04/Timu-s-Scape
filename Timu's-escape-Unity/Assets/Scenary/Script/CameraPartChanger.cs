@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class CameraPartChanger : MonoBehaviour
 {
-    public GameObject CameraObj;
+    Camera CameraObj;
 
     public Transform positionUp;
     public Transform positionDown;
+
+    void Start()
+    {
+        CameraObj = Camera.main;
+    }
 
     public void ChangeCameraPos(int whereTo)
     {
