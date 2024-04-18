@@ -16,6 +16,7 @@ public class CameraPartChanger : MonoBehaviour
 
     public void ChangeCameraPos(int whereTo)
     {
+        // whereTo indica si la camara debe ir hacia arriba (1) o hacia abajo (0)
         if (whereTo == 1)
         {
             CameraObj.transform.position = positionUp.position;
