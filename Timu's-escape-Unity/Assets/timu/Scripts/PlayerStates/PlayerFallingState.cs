@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayerFallingState : PlayerState
 {
     private float stateChangeTimer = 0f;
-    private float stateChangeDelay = 0.5f; 
+    private float stateChangeDelay = 0.5f;
 
     public PlayerFallingState(Player player, PlayerStateMachine stateMachine) : base(player, stateMachine)
     {
@@ -21,9 +21,9 @@ public class PlayerFallingState : PlayerState
     {
         base.Update();
 
-        stateChangeTimer += Time.deltaTime;
-
         if (player.PlayerController.IsOnGround()) {
+
+            stateChangeTimer += Time.deltaTime;
 
             player.PlayerController.rb.velocity = Vector3.zero;
 

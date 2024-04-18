@@ -7,9 +7,9 @@ public class PlayerJumpState : PlayerState
     
     private float minJumpForce = 1f;
     private float height;
-    private bool hasAppliedJumpForce = false; 
+    private bool hasAppliedJumpForce = false;
 
-    public PlayerJumpState(Player player, PlayerStateMachine stateMachine, Rigidbody controller) : base(player, stateMachine)
+    public PlayerJumpState(Player player, PlayerStateMachine stateMachine) : base(player, stateMachine)
     {
     }
 
@@ -34,7 +34,7 @@ public class PlayerJumpState : PlayerState
     {
         if (!hasAppliedJumpForce)
         {
-            player.PlayerController.rb.AddForce((Vector3.up * player.jumpForce) + (Vector3.right * player.moveSpeed * player.ChargeJumpState.directionHorizontal), ForceMode.Impulse);
+            player.PlayerController.rb.AddForce((Vector3.up * player.playerData.jumpForce) + (Vector3.right * player.playerData.moveSpeed * player.playerData.direcctionHorizontal), ForceMode.Impulse);
             hasAppliedJumpForce = true;
         }
     }
