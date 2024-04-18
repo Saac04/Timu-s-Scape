@@ -6,13 +6,9 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class Player : MonoBehaviour
 {
-    public float gravity = -5f;
-    public float moveSpeed = 5f;
-    public float jumpForce = 5f;
 
-    private Rigidbody rb;
+    public PlayerData playerData;
     private PlayerStateMachine StateMachine;
-
     public PlayerIdleState IdleState;
     public PlayerMoveState MoveState;
     public PlayerJumpState JumpState;
@@ -22,15 +18,14 @@ public class Player : MonoBehaviour
     public PlayerController PlayerController { get; private set; }
 
     private void Awake()
-    {
-        PlayerController = GetComponent<PlayerController>();
-        rb = GetComponent<Rigidbody>();
+    {    
         StateMachine = new PlayerStateMachine();
+        PlayerController = GetComponent<PlayerController>();
 
 
         IdleState = new PlayerIdleState(this, StateMachine);
         MoveState = new PlayerMoveState(this, StateMachine);
-        JumpState = new PlayerJumpState(this, StateMachine, rb);
+        JumpState = new PlayerJumpState(this, StateMachine);
         FallingState = new PlayerFallingState(this, StateMachine);
         ChargeJumpState = new PlayerChargingJumpState(this, StateMachine);
         ExitPlatformState = new PlayerExitPlatform(this, StateMachine);
@@ -50,11 +45,5 @@ public class Player : MonoBehaviour
     private void FixedUpdate()
     {
         StateMachine.CurrentState.FixedUpdate();
-    }
-
-    public void ApplyGravity()
-    {
-        Vector3 gravityVector = new Vector3(0f, gravity, 0f);
-        rb.AddForce(gravityVector, ForceMode.Acceleration);
     }
 }

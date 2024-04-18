@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public Rigidbody rb;
-    public float moveSpeed = 5f;
+    
     public float horizontalInput;
     public LayerMask groundLayer;
 
@@ -19,27 +19,27 @@ public class PlayerController : MonoBehaviour
     }
 
     public bool IsOnGround()
-{
-    int numRays = 5;
-    
-    float raycastWidth = transform.localScale.x;
-
-    float raySpacing = raycastWidth / (numRays - 1);
-
-    Vector3 raycastOrigin = transform.position - Vector3.right * (raycastWidth / 2f);
-
-    for (int i = 0; i < numRays; i++)
     {
-        RaycastHit hit;
+        int numRays = 5;
+        
+        float raycastWidth = transform.localScale.x;
 
-        if (Physics.Raycast(raycastOrigin + Vector3.right * (i * raySpacing), Vector3.down, out hit, 1.1f, groundLayer))
+        float raySpacing = raycastWidth / (numRays - 1);
+
+        Vector3 raycastOrigin = transform.position - Vector3.right * (raycastWidth / 2f);
+
+        for (int i = 0; i < numRays; i++)
         {
-            return true;
-        }
-    }
+            RaycastHit hit;
 
-    return false;
-}
+            if (Physics.Raycast(raycastOrigin + Vector3.right * (i * raySpacing), Vector3.down, out hit, 1.1f, groundLayer))
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
 
 
 
