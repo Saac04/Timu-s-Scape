@@ -11,7 +11,6 @@ public class PlayerMoveState : PlayerState
     public override void Enter()
     {
         base.Enter();
-        Debug.Log("Modo Move");
     }
 
     public override void Update()

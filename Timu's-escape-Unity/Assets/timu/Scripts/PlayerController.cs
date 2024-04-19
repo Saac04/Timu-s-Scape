@@ -5,6 +5,7 @@ public class PlayerController : MonoBehaviour
     public Rigidbody rb;
     
     public float horizontalInput;
+    public float verticalInput;
     public LayerMask groundLayer;
 
     void Start()
@@ -15,6 +16,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
+        verticalInput = Input.GetAxisRaw("Jump");
 
     }
 

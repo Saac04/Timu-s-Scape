@@ -13,7 +13,6 @@ public class PlayerExitPlatform : PlayerState
     public override void Enter()
     {
         base.Enter();
-        Debug.Log("Modo salida");
         player.playerData.direcctionHorizontal = player.PlayerController.horizontalInput;
     }
 
@@ -21,6 +20,8 @@ public class PlayerExitPlatform : PlayerState
     {
         
         base.Update();
+        
+        player.playerData.lastVelocity = player.PlayerController.rb.velocity;
 
         player.PlayerController.rb.velocity += Vector3.up * Physics.gravity.y * Time.deltaTime;
 
@@ -31,6 +32,11 @@ public class PlayerExitPlatform : PlayerState
         if (player.PlayerController.IsOnGround())
         {
             playerStateMachine.ChangeState(player.IdleState);
+        }
+    }
+    public void OnCollisionEnter(Collision other) {
+        if (other.gameObject.CompareTag("Obstacle")) {
+            playerStateMachine.ChangeState(player.BouncingState);
         }
     }
 }
