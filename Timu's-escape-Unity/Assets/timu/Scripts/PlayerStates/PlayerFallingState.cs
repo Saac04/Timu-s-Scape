@@ -22,6 +22,8 @@ public class PlayerFallingState : PlayerState
         base.Update();
 
         if (player.PlayerController.IsOnGround()) {
+            
+            player.playerData.jumpForce = 0;
 
             stateChangeTimer += Time.deltaTime;
 

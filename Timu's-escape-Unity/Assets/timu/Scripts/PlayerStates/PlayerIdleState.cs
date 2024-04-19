@@ -14,6 +14,7 @@ public class PlayerIdleState : PlayerState
     {
         base.Enter();
         Debug.Log("Modo Idle");
+        player.playerData.jumpForce = 0;
     }
 
     public override void Update()

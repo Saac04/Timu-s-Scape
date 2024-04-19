@@ -22,6 +22,8 @@ public class Player : MonoBehaviour
         StateMachine = new PlayerStateMachine();
         PlayerController = GetComponent<PlayerController>();
 
+        Physics.gravity = new Vector3(0, playerData.customGravity, 0);
+
 
         IdleState = new PlayerIdleState(this, StateMachine);
         MoveState = new PlayerMoveState(this, StateMachine);
