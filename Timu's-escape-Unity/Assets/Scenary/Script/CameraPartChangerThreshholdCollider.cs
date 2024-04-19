@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraPartChangerThreshholdCollider : MonoBehaviour
 {
-    public int changeTo;
+    public int changeTo; //0 significa abajo, 1 significa arriba
     public GameObject cameraPartController;
     public CameraPartChanger cameraScript;
     void Start()
