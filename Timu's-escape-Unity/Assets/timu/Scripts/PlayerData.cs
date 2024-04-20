@@ -16,7 +16,6 @@ public class PlayerData
     public float deaths;
     public float recolectedGems;
     public float totalJumps;
-    public Vector3 lastVelocity;
-    
+    public bool IsDead = false;    
 }
  
