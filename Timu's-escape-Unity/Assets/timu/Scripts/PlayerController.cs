@@ -9,9 +9,6 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        //Cuando el personaje se comienza a mover se ejecuta el timeR
-        timeR.instanciar.iniciarTiempo();
-
         rb = GetComponent<Rigidbody>();
     }
 

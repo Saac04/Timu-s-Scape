@@ -18,10 +18,8 @@ public class Player : MonoBehaviour
     public PlayerExitPlatform ExitPlatformState;
     public PlayerController PlayerController { get; private set; }
 
-
     private void Awake()
-    {
-        
+    {    
         StateMachine = new PlayerStateMachine();
         PlayerController = GetComponent<PlayerController>();
 
