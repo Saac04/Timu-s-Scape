@@ -9,7 +9,6 @@ public class Lava : MonoBehaviour
     private Vector3 originalPosition;
     private float originalSpeed;
     public Player player;
-
     void Start()
     {
         originalPosition = transform.position;
@@ -63,7 +62,6 @@ public class Lava : MonoBehaviour
             {
                 foundCheckpoint.RespawnPlayer(player.playerData.checkPointPosition);
                 Debug.Log("Player is dead");
-                player.playerData.deaths++;
             }
             else
             {
@@ -74,18 +72,6 @@ public class Lava : MonoBehaviour
         {
             Debug.LogWarning("No checkpoints found.");
         }
-
-
-
-
-
-
-
-
-
-
-
-
 
     }
 }
