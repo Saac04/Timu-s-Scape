@@ -2,44 +2,78 @@ using UnityEngine;
 
 public class PlatformController : MonoBehaviour
 {
-    private bool collisionHandled = false;
+    public float raycastDistance = 0.1f;
+    private bool playerDetected = false;
+    public int numRays = 5;
 
-    private void OnCollisionEnter(Collision collision)
+    private void Update()
     {
-        if (!collisionHandled && collision.gameObject.CompareTag("Player"))
+        float platformWidth = transform.localScale.x;
+        float raySpacing = platformWidth / (numRays - 1);
+        Vector3 raycastOriginRight = transform.position - Vector3.right * (platformWidth / 2f);
+        Vector3 raycastOriginLeft = transform.position + Vector3.right * (platformWidth / 2f);
+        bool playerInSight = false;
+
+        for (int i = 0; i < numRays; i++)
         {
-            Rigidbody playerRb = collision.gameObject.GetComponent<Rigidbody>();
-            if (playerRb != null)
+            
+            RaycastHit hit;
+            Vector3 rayDirection = transform.right;
+            Vector3 rayOrigin = raycastOriginRight + Vector3.right * (i * raySpacing);
+            Debug.DrawRay(rayOrigin, rayDirection*10f, Color.red);
+
+            if (Physics.Raycast(rayOrigin, rayDirection, out hit, raycastDistance))
             {
-                ContactPoint contact = collision.contacts[0];
-                Vector3 normal = contact.normal;
-
-                // Debug para imprimir la normal de la colisión
-                Debug.Log("Normal de la colisión: " + normal);
-
-                if (normal != Vector3.down)
+                if (hit.collider.CompareTag("Player"))
                 {
-                    // Si la normal de la colisión no apunta hacia abajo, considerar que es una pared
-                    Debug.Log("Rebote");
-                    Vector3 newVelocity = Vector3.Reflect(playerRb.velocity, normal);
-                    playerRb.velocity = newVelocity;
-                }
-                else
-                {
-                    // Si la colisión es con el suelo, imprime un mensaje de depuración
-                    Debug.Log("Suelo");
-                }
+                    playerInSight = true;
 
-                collisionHandled = true;
+                    if (!playerDetected)
+                    {
+                        ApplyRebound(hit.collider.attachedRigidbody, Vector3.left);
+                        playerDetected = true;
+                    }
+                }
             }
+        }
+
+        for (int i = 0; i < numRays; i++)
+        {
+            RaycastHit hit;
+            Vector3 rayDirection = -transform.right;
+            Vector3 rayOrigin = raycastOriginLeft + Vector3.left * (i * raySpacing);
+            Debug.DrawRay(rayOrigin, rayDirection, Color.blue);
+
+            if (Physics.Raycast(rayOrigin, rayDirection, out hit, raycastDistance))
+            {
+                if (hit.collider.CompareTag("Player"))
+                {
+                    playerInSight = true;
+
+                    if (!playerDetected)
+                    {
+                        ApplyRebound(hit.collider.attachedRigidbody, Vector3.right);
+                        playerDetected = true;
+                    }
+                }
+            }
+        }
+
+        if (!playerInSight)
+        {
+            playerDetected = false;
         }
     }
 
-    private void OnCollisionExit(Collision collision)
+    private void ApplyRebound(Rigidbody playerRb, Vector3 direction)
     {
-        if (collisionHandled && collision.gameObject.CompareTag("Player"))
+        if (playerRb != null)
         {
-            collisionHandled = false;
+            Vector3 reflectedVelocity = Vector3.Reflect(playerRb.velocity, direction);
+            reflectedVelocity.y = playerRb.velocity.y;
+            playerRb.velocity = reflectedVelocity;
+            Debug.Log("Velocidad original: " + playerRb.velocity);
+            Debug.Log("Nueva velocidad después del rebote: " + reflectedVelocity);
         }
     }
 }

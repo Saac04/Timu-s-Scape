@@ -242,7 +242,7 @@ GameObject:
   - component: {fileID: 574764716}
   - component: {fileID: 574764715}
   - component: {fileID: 574764714}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -347,6 +347,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ced68bbcf84c4a9419837b5f846d2e03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  raycastDistance: 0.1
+  numRays: 5
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -660,7 +662,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7722099679295403336, guid: 621bba57f92564c4d932ee4c9b119b4c, type: 3}
       propertyPath: groundLayer.m_Bits
-      value: 256
+      value: 768
       objectReference: {fileID: 0}
     - target: {fileID: 9046532310202745893, guid: 621bba57f92564c4d932ee4c9b119b4c, type: 3}
       propertyPath: m_Constraints
