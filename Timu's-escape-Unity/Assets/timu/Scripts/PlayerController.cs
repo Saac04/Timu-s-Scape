@@ -3,8 +3,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public Rigidbody rb;
-    
     public float horizontalInput;
+    public float verticalInput;
     public LayerMask groundLayer;
 
     void Start()
@@ -15,23 +15,21 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
-
+        verticalInput = Input.GetAxisRaw("Jump");
     }
 
     public bool IsOnGround()
     {
         int numRays = 5;
-        
         float raycastWidth = transform.localScale.x;
-
         float raySpacing = raycastWidth / (numRays - 1);
-
-        Vector3 raycastOrigin = transform.position - Vector3.right * (raycastWidth / 2f);
+        
+        // Ajustar la posición inicial de los rayos hacia el interior del objeto
+        Vector3 raycastOrigin = transform.position - Vector3.right * (raycastWidth / 2f) + Vector3.right * (raySpacing / 2f);
 
         for (int i = 0; i < numRays; i++)
         {
             RaycastHit hit;
-
             if (Physics.Raycast(raycastOrigin + Vector3.right * (i * raySpacing), Vector3.down, out hit, 1.1f, groundLayer))
             {
                 return true;
@@ -40,7 +38,4 @@ public class PlayerController : MonoBehaviour
 
         return false;
     }
-
-
-
 }

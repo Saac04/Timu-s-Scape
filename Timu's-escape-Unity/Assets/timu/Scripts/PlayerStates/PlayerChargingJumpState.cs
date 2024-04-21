@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerChargingJumpState : PlayerState
 {
-    private float chargeRate;
+    private float timeElapsed;
 
     public PlayerChargingJumpState(Player player, PlayerStateMachine stateMachine) : base(player, stateMachine)
     {
@@ -13,24 +13,28 @@ public class PlayerChargingJumpState : PlayerState
     public override void Enter()
     {
         base.Enter();
-        Debug.Log("Modo Charging Jump");
-        chargeRate = player.playerData.maxJumpForce / 2f;
+        timeElapsed = 0f;
     }
 
     public override void Update()
     {
         base.Update();
 
-        player.playerData.jumpForce += chargeRate * Time.deltaTime;
+        timeElapsed += Time.deltaTime;
 
-        player.playerData.jumpForce = Mathf.Clamp(player.playerData.jumpForce, 0f, player.playerData.maxJumpForce);
+        float timePercentage = Mathf.Clamp01(timeElapsed / player.playerData.maxJumpTimer);
 
-        if (Input.GetKeyUp(KeyCode.Space))
+        float interpolatedJumpForce = Mathf.Lerp(player.playerData.minJumpForce, player.playerData.maxJumpForce, timePercentage);
+
+        player.playerData.jumpForce = interpolatedJumpForce;
+
+        if (player.PlayerController.verticalInput == 0f)
         {
             player.playerData.totalJumps++;
-            player.playerData.direcctionHorizontal = player.PlayerController.horizontalInput;
-            playerStateMachine.ChangeState(player.JumpState);
 
+            player.playerData.direcctionHorizontal = player.PlayerController.horizontalInput;
+
+            playerStateMachine.ChangeState(player.JumpState);
         }
     }
 }

@@ -13,7 +13,6 @@ public class PlayerIdleState : PlayerState
     public override void Enter()
     {
         base.Enter();
-        Debug.Log("Modo Idle");
     }
 
     public override void Update()
@@ -24,7 +23,7 @@ public class PlayerIdleState : PlayerState
         {
             playerStateMachine.ChangeState(player.MoveState);
         }
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (player.PlayerController.verticalInput != 0f)
         {
             playerStateMachine.ChangeState(player.ChargeJumpState);
         }

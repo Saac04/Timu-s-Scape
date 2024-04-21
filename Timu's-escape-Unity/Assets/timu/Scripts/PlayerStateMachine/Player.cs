@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditorInternal;
 using UnityEngine;
 
 [RequireComponent(typeof(PlayerController))]
@@ -21,6 +22,8 @@ public class Player : MonoBehaviour
     {    
         StateMachine = new PlayerStateMachine();
         PlayerController = GetComponent<PlayerController>();
+
+        Physics.gravity = new Vector3(0, playerData.customGravity, 0);
 
 
         IdleState = new PlayerIdleState(this, StateMachine);

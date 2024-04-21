@@ -155,9 +155,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9629c987abc7b754a90a762be2867a67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravity: -9.8
-  moveSpeed: 5
-  jumpForce: 5
+  playerData:
+    customGravity: -16
+    moveSpeed: 4
+    minJumpForce: 5
+    maxJumpForce: 22
+    maxJumpTimer: 2
+    jumpSpeedHorizontal: 8
+    jumpForce: 0
+    direcctionHorizontal: 0
+    deaths: 0
+    recolectedGems: 0
+    totalJumps: 0.02
 --- !u!114 &7722099679295403336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,7 +180,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
-  moveSpeed: 5
   horizontalInput: 0
   groundLayer:
     serializedVersion: 2
