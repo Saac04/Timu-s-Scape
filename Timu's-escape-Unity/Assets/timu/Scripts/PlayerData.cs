@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
 
 [System.Serializable]
@@ -16,6 +18,6 @@ public class PlayerData
     public float deaths;
     public float recolectedGems;
     public float totalJumps;
-    public bool IsDead = false;    
+    public Vector3 checkPointPosition;
 }
  
