@@ -33,8 +33,7 @@ public class Player : MonoBehaviour
         JumpState = new PlayerJumpState(this, StateMachine);
         FallingState = new PlayerFallingState(this, StateMachine);
         ChargeJumpState = new PlayerChargingJumpState(this, StateMachine);
-        ExitPlatformState = new PlayerExitPlatform(this, StateMachine);
-        
+        ExitPlatformState = new PlayerExitPlatform(this, StateMachine);        
     }
 
     private void Start()

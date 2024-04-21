@@ -9,7 +9,8 @@ public class CheckPoint : MonoBehaviour
     public Vector3 actualSpawnPoint;
     public Vector3 lastSpawnPoint;
     public Player player;
-    //public PlayerIdleState idleState;
+    
+    
 
 
     public void RespawnPlayer(Vector3 respawnPosition)
@@ -27,7 +28,7 @@ public class CheckPoint : MonoBehaviour
             if (respawnPosition != Vector3.zero &&  true)
             {
                 playerObject.transform.position = respawnPosition;
-                //idleState.Enter();
+                player.PlayerController.rb.velocity = Vector3.zero;
             }
             else
             {
