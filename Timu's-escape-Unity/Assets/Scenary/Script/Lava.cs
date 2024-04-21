@@ -8,11 +8,13 @@ public class Lava : MonoBehaviour
     public float changeSpeed = 0.1f;
     private Vector3 originalPosition;
     private float originalSpeed;
-
+    public Player player;
     void Start()
     {
         originalPosition = transform.position;
         originalSpeed = ascensionSpeed;
+
+        
     }
 
     void Update()
@@ -41,13 +43,35 @@ public class Lava : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        GameObject[] checkpointObjects = GameObject.FindGameObjectsWithTag("CheckPoint");
+
+        if (checkpointObjects.Length > 0)
         {
-            PlayerData playerData = other.GetComponent<PlayerData>();
-            if (playerData != null)
+            CheckPoint foundCheckpoint = null;
+
+            foreach (GameObject checkpointObject in checkpointObjects)
             {
-                playerData.IsDead = true;
+                CheckPoint checkPoint = checkpointObject.GetComponent<CheckPoint>();
+                
+                if (checkPoint.gameObject.transform.position == player.playerData.checkPointPosition)
+                {
+                    foundCheckpoint = checkPoint;
+                }
+            }
+            if (foundCheckpoint != null)
+            {
+                foundCheckpoint.RespawnPlayer(player.playerData.checkPointPosition);
+                Debug.Log("Player is dead");
+            }
+            else
+            {
+                Debug.LogWarning("No checkpoints found.");
             }
         }
+        else
+        {
+            Debug.LogWarning("No checkpoints found.");
+        }
+
     }
 }
