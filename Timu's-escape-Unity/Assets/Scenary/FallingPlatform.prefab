@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 8446687754570601221}
   - component: {fileID: 5720746634626867741}
   - component: {fileID: 7278606673785344149}
+  - component: {fileID: 4067751425324571211}
   m_Layer: 8
   m_Name: FallingPlatform
-  m_TagString: Floor
+  m_TagString: PlataformaCaida
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -68,6 +69,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4067751425324571211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1666515793368167178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 354fdf2f1a01b7d4f99bddbef9be8bce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  originalPosition: []
 --- !u!1 &3188900949808275848
 GameObject:
   m_ObjectHideFlags: 0

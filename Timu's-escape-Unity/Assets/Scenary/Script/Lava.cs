@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -73,5 +74,12 @@ public class Lava : MonoBehaviour
             Debug.LogWarning("No checkpoints found.");
         }
 
+    }
+
+    public void resetLava()
+    {
+        transform.position = originalPosition;
+        ascensionSpeed = originalSpeed;
+        Debug.Log("Posición y velocidad originales restauradas.");
     }
 }
