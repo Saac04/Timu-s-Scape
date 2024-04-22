@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8446687754570601221}
   - component: {fileID: 5720746634626867741}
   - component: {fileID: 7278606673785344149}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FallingPlatform
   m_TagString: Floor
   m_Icon: {fileID: 0}
@@ -80,7 +80,7 @@ GameObject:
   - component: {fileID: 8376683998006670085}
   - component: {fileID: 4790427192290046631}
   - component: {fileID: 4367604909223731286}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Parte Superior
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -186,7 +186,7 @@ GameObject:
   - component: {fileID: 6050874538102766723}
   - component: {fileID: 175031610179507483}
   - component: {fileID: 6283176027841397906}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cuerpo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
