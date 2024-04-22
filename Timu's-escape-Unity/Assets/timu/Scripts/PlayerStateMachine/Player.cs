@@ -34,7 +34,9 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
+        timeR.instanciar.iniciarTiempo();
         StateMachine.Initialize(IdleState);
+        
     }
 
     private void Update()

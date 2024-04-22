@@ -120,6 +120,7 @@ GameObject:
   - component: {fileID: 7722099679295403336}
   - component: {fileID: 9046532310202745893}
   - component: {fileID: 895690562043040135}
+  - component: {fileID: 2334702633897658403}
   m_Layer: 0
   m_Name: Character
   m_TagString: Player
@@ -167,7 +168,6 @@ MonoBehaviour:
     deaths: 0
     recolectedGems: 0
     totalJumps: 0.02
-    isDead: 0
     checkPointPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &7722099679295403336
 MonoBehaviour:
@@ -235,3 +235,16 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 2, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2334702633897658403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4951776973455382286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8499005991095c44e8bd9eb630cd6983, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Crono: {fileID: 0}
