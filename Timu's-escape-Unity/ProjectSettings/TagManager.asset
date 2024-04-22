@@ -8,6 +8,8 @@ TagManager:
   - Obstacle
   - Lava
   - CheckPoint
+  - Wash
+  - PlataformaCaida
   layers:
   - Default
   - TransparentFX

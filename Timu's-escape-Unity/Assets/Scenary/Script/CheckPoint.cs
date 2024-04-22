@@ -9,8 +9,9 @@ public class CheckPoint : MonoBehaviour
     public Vector3 actualSpawnPoint;
     public Vector3 lastSpawnPoint;
     public Player player;
-    
-    
+    public Lava lava;
+    public PlatafromaCaidaManager plataformaCaidaManager;
+
 
 
     public void RespawnPlayer(Vector3 respawnPosition)
@@ -29,6 +30,11 @@ public class CheckPoint : MonoBehaviour
             {
                 playerObject.transform.position = respawnPosition;
                 player.PlayerController.rb.velocity = Vector3.zero;
+                lava.resetLava();
+                plataformaCaidaManager.plataformaCaida.istouched = false;
+                Debug.Log(plataformaCaidaManager.plataformaCaida.istouched);
+                plataformaCaidaManager.resetPlataformaCaida();
+
             }
             else
             {
@@ -39,6 +45,7 @@ public class CheckPoint : MonoBehaviour
         
     }
 
+    
     private void OnTriggerEnter(Collider other)
     {
         actualSpawnPoint = gameObject.transform.position;

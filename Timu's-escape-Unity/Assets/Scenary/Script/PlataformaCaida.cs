@@ -6,13 +6,9 @@ public class PlataformaCaida : MonoBehaviour
 {
     private float esperaParaCaer = 6f;
     private float esperaParaDestruir = 0.5f;
-    private bool istouched = false;
+    public bool istouched = false;
     private float fallingspeed = 4f;
-
-    void Start()
-    {
-     
-    }
+    private Vector3[] originalPosition;
     private void OnCollisionEnter(Collision collision)
     {
         Debug.Log("Momento contacto");
@@ -26,17 +22,23 @@ public class PlataformaCaida : MonoBehaviour
     {
         yield return new WaitForSeconds(esperaParaCaer);
         istouched = true;
-        Destroy(this.gameObject, esperaParaDestruir);
+        //Destroy(this.gameObject, esperaParaDestruir);
 
     }
     void Update()
     {
         if (istouched)
         {
-            Debug.Log("Ahora?");
-            Vector3 newPosition = transform.position + Vector3.down * fallingspeed  * Time.deltaTime;
-            transform.position = newPosition;
+            caidaAcion();
         }
     }
+
+    public void caidaAcion()
+    {
+        Vector3 newPosition = transform.position + Vector3.down * fallingspeed * Time.deltaTime;
+        transform.position = newPosition;
+    }
+
+
 
 }
