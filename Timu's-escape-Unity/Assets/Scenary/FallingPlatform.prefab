@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6487a06d17726d049914c876334e7a6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  istouched: 0
 --- !u!65 &7278606673785344149
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -81,6 +82,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 354fdf2f1a01b7d4f99bddbef9be8bce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  plataformaCaida: {fileID: 0}
   originalPosition: []
 --- !u!1 &3188900949808275848
 GameObject:
@@ -250,7 +252,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6476f538f22eeb041bbfc127a75b7e11, type: 2}
+  - {fileID: 2100000, guid: 8a0cb83467b7f8c4b877fa06e7bd6c21, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

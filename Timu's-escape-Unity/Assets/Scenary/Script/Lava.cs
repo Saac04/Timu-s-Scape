@@ -31,12 +31,6 @@ public class Lava : MonoBehaviour
             ascensionSpeed = Mathf.Max(0f, ascensionSpeed);
             Debug.Log("Velocidad disminuida: " + ascensionSpeed);
         }
-        else if (Input.GetKeyDown(KeyCode.R))
-        {
-            transform.position = originalPosition;
-            ascensionSpeed = originalSpeed;
-            Debug.Log("Posición y velocidad originales restauradas.");
-        }
 
         Vector3 newPosition = transform.position + Vector3.up * ascensionSpeed * Time.deltaTime;
         transform.position = newPosition;

@@ -61,4 +61,12 @@ public class CheckPoint : MonoBehaviour
             }
         }
     }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            RespawnPlayer(player.playerData.checkPointPosition);
+        }
+    }
 }
