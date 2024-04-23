@@ -6,11 +6,11 @@ using UnityEngine.SceneManagement;
 public class MenuPausa : MonoBehaviour
 {
 
-    [SerializeField] private GameObject botonPausa;
+    //[SerializeField] private GameObject botonPausa;
 
     [SerializeField] private GameObject menuPausa;
 
-    [SerializeField] private GameObject timer;
+    //[SerializeField] private GameObject timer;
 
     private bool juegoPausado= false;
 
@@ -35,7 +35,7 @@ public class MenuPausa : MonoBehaviour
         Time.timeScale = 0f;
         //botonPausa.SetActive(false);
         menuPausa.SetActive(true);
-        timer.SetActive(true);
+        //timer.SetActive(true);
     }
 
     public void Reanudar()
@@ -44,7 +44,7 @@ public class MenuPausa : MonoBehaviour
         Time.timeScale = 1f;
         //botonPausa.SetActive(true);
         menuPausa.SetActive(false);
-        timer.SetActive(false);
+        //timer.SetActive(false);
     }
 
 
