@@ -5,15 +5,16 @@ using System.Collections;
 public class MineralLight : MonoBehaviour
 {
     private bool LightOnCheck = false;
-    public float maxIntensity = 2f;
-    public float minIntensity = 0f;
-    public float intensityChangeRate = 0.1f;
+    public float maxIntensity = 10f;
+    public float minIntensity = 1f;
+    public float intensityChangeRate = 0.3f;
     public float lightOnTime = 5f;
     private Light mineralLight;
 
     void Start()
     {
         mineralLight = GetComponent<Light>();
+        mineralLight.intensity = minIntensity;
     }
 
     private void OnTriggerEnter(Collider other)

@@ -16,6 +16,10 @@ public class Player : MonoBehaviour
     public PlayerExitPlatform ExitPlatformState;
     public PlayerController PlayerController { get; private set; }
 
+    private Light playerLight;
+    public float intensity = 0.5f;
+
+
     private void Awake()
     {    
         StateMachine = new PlayerStateMachine();
@@ -36,12 +40,16 @@ public class Player : MonoBehaviour
     {
         timeR.instanciar.iniciarTiempo();
         StateMachine.Initialize(IdleState);
-        
+        playerLight = GetComponent<Light>();
+        playerLight.intensity = intensity;
+
+
     }
 
     private void Update()
     {
         StateMachine.CurrentState.Update();
+        playerLight.intensity = intensity;
     }
 
     private void FixedUpdate()

@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class LevelChangerScript : MonoBehaviour
 {
     public Animator animatorController;
+    public CameraPartChanger changeCamera;
 
     void Start()
     {
@@ -26,5 +27,7 @@ public class LevelChangerScript : MonoBehaviour
     void ChangeToNextScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        changeCamera.GetComponent<CameraPartChanger>();
+        changeCamera.ChangeCameraPos(0);
     }
 }
