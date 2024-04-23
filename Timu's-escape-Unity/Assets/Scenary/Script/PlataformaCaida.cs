@@ -29,14 +29,9 @@ public class PlataformaCaida : MonoBehaviour
     {
         if (istouched)
         {
-            caidaAcion();
+            Vector3 newPosition = transform.position + Vector3.down * fallingspeed * Time.deltaTime;
+            transform.position = newPosition;
         }
-    }
-
-    public void caidaAcion()
-    {
-        Vector3 newPosition = transform.position + Vector3.down * fallingspeed * Time.deltaTime;
-        transform.position = newPosition;
     }
 
 

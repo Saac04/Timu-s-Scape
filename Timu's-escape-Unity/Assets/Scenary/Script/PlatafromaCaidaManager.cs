@@ -28,12 +28,18 @@ public class PlatafromaCaidaManager : MonoBehaviour
     {
         GameObject[] plataformas = GameObject.FindGameObjectsWithTag("PlataformaCaida");
 
+        //plataformaCaida.changeIsTouched(false);
 
         if (plataformas.Length > 0)
         {
             for (global::System.Int32 i = 0; i < plataformas.Length; i++)
             {
-                plataformas[i].transform.position = originalPosition[i];
+                PlataformaCaida plataforma = plataformas[i].GetComponent<PlataformaCaida>();
+                if (plataforma != null)
+                {
+                    plataforma.istouched = false;
+                    plataformas[i].transform.position = originalPosition[i];
+                }
             }
         }
         else
