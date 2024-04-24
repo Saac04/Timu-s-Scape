@@ -411,11 +411,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e90b4c50b4702b3499a8652769cbca14, type: 3}
---- !u!1 &223803778 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2528444828756209038, guid: d196c8899b93d8d468c6c87b68db3ddf, type: 3}
-  m_PrefabInstance: {fileID: 1233318984}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &352933906
 GameObject:
   m_ObjectHideFlags: 0
@@ -782,17 +777,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d9f5b0d3986a7b43afdddbb6f95c349, type: 3}
---- !u!114 &485891135 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8037446778231841642, guid: d196c8899b93d8d468c6c87b68db3ddf, type: 3}
-  m_PrefabInstance: {fileID: 1233318984}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e293ad51f817d54e96ffd9e447da90f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &491303928
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1561,7 +1545,7 @@ PrefabInstance:
     - target: {fileID: 2334702633897658403, guid: 621bba57f92564c4d932ee4c9b119b4c, type: 3}
       propertyPath: Crono
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 956186738}
     - target: {fileID: 4951776973455382286, guid: 621bba57f92564c4d932ee4c9b119b4c, type: 3}
       propertyPath: m_Name
       value: Character
@@ -1641,7 +1625,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4951776973455382286, guid: 621bba57f92564c4d932ee4c9b119b4c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 942862191}
   m_SourcePrefab: {fileID: 100100000, guid: 621bba57f92564c4d932ee4c9b119b4c, type: 3}
 --- !u!114 &923101114 stripped
 MonoBehaviour:
@@ -1728,6 +1715,79 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4951776973455382286, guid: 621bba57f92564c4d932ee4c9b119b4c, type: 3}
   m_PrefabInstance: {fileID: 923101113}
   m_PrefabAsset: {fileID: 0}
+--- !u!108 &942862191
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 942862184}
+  m_Enabled: 0
+  serializedVersion: 10
+  m_Type: 2
+  m_Shape: 0
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 0
+  m_Range: 0
+  m_SpotAngle: 30
+  m_InnerSpotAngle: 21.80208
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+--- !u!114 &956186738 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 485187379592097211, guid: d196c8899b93d8d468c6c87b68db3ddf, type: 3}
+  m_PrefabInstance: {fileID: 1233318984}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1028407353
 GameObject:
   m_ObjectHideFlags: 0
@@ -2015,14 +2075,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 222316530606552994, guid: d196c8899b93d8d468c6c87b68db3ddf, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 485891135}
-    - target: {fileID: 222316530606552994, guid: d196c8899b93d8d468c6c87b68db3ddf, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Reanudar
-      objectReference: {fileID: 0}
     - target: {fileID: 1563070258530162206, guid: d196c8899b93d8d468c6c87b68db3ddf, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -2103,29 +2155,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2528444828756209038, guid: d196c8899b93d8d468c6c87b68db3ddf, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3399319947385017533, guid: d196c8899b93d8d468c6c87b68db3ddf, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -55.8
-      objectReference: {fileID: 0}
     - target: {fileID: 4989262445426669994, guid: d196c8899b93d8d468c6c87b68db3ddf, type: 3}
       propertyPath: m_Name
       value: Canvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 8037446778231841642, guid: d196c8899b93d8d468c6c87b68db3ddf, type: 3}
-      propertyPath: menuPausa
-      value: 
-      objectReference: {fileID: 223803778}
-    - target: {fileID: 9088654783521900132, guid: d196c8899b93d8d468c6c87b68db3ddf, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -7.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9088654783521900132, guid: d196c8899b93d8d468c6c87b68db3ddf, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -23.7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3524,6 +3556,7 @@ SceneRoots:
   - {fileID: 606767811}
   - {fileID: 1028407358}
   - {fileID: 1823497701}
+  - {fileID: 1233318984}
   - {fileID: 923101113}
   - {fileID: 1640796531}
   - {fileID: 2067952955}
@@ -3557,7 +3590,6 @@ SceneRoots:
   - {fileID: 2006104067}
   - {fileID: 1409826384}
   - {fileID: 86869056}
-  - {fileID: 1233318984}
   - {fileID: 5267994137018571298}
   - {fileID: 2127195731}
   - {fileID: 895261771}

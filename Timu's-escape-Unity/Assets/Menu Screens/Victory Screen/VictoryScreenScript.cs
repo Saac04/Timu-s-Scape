@@ -5,8 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class VictoryScreenScript : MonoBehaviour
 {
-    public void ChangeScene(string sceneName)
+    public void ChangeScene(int sceneOrder)
     {
-        SceneManager.LoadScene(sceneName);
+        Debug.Log("Hola " + sceneOrder);
+        SceneManager.LoadScene(sceneOrder);
     }
 }
