@@ -47,7 +47,7 @@ public class Player : MonoBehaviour
     }
 
     private void Update()
-    {
+    {   
         StateMachine.CurrentState.Update();
         playerLight.intensity = intensity;
     }

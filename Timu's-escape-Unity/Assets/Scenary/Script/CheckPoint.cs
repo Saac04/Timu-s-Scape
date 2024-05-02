@@ -31,9 +31,10 @@ public class CheckPoint : MonoBehaviour
                 playerObject.transform.position = respawnPosition;
                 player.PlayerController.rb.velocity = Vector3.zero;
                 lava.resetLava();
-                //plataformaCaidaManager.plataformaCaida.istouched = false;
-                //Debug.Log(plataformaCaidaManager.plataformaCaida.istouched);
+
+                Debug.Log("Plataforma Caida Reiniciada llamada");
                 plataformaCaidaManager.resetPlataformaCaida();
+
 
             }
             else
@@ -67,6 +68,7 @@ public class CheckPoint : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R))
         {
             RespawnPlayer(player.playerData.checkPointPosition);
+            Debug.Log("R presioanda");
         }
     }
 }

@@ -858,6 +858,26 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 5720746634626867741, guid: 9d9f5b0d3986a7b43afdddbb6f95c349, type: 3}
+      propertyPath: fallWait
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5720746634626867741, guid: 9d9f5b0d3986a7b43afdddbb6f95c349, type: 3}
+      propertyPath: destroyWait
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5720746634626867741, guid: 9d9f5b0d3986a7b43afdddbb6f95c349, type: 3}
+      propertyPath: fallDistance
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5720746634626867741, guid: 9d9f5b0d3986a7b43afdddbb6f95c349, type: 3}
+      propertyPath: fallingspeed
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5720746634626867741, guid: 9d9f5b0d3986a7b43afdddbb6f95c349, type: 3}
+      propertyPath: reappearWait
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7835018598202669228, guid: 9d9f5b0d3986a7b43afdddbb6f95c349, type: 3}
       propertyPath: m_Layer
       value: 8
@@ -1576,11 +1596,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7207647509422686433, guid: 621bba57f92564c4d932ee4c9b119b4c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.55
+      value: 5.2
       objectReference: {fileID: 0}
     - target: {fileID: 7207647509422686433, guid: 621bba57f92564c4d932ee4c9b119b4c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.8
+      value: 27.2
       objectReference: {fileID: 0}
     - target: {fileID: 7207647509422686433, guid: 621bba57f92564c4d932ee4c9b119b4c, type: 3}
       propertyPath: m_LocalPosition.z
