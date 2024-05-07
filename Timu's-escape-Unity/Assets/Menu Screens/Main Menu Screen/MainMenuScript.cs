@@ -13,9 +13,9 @@ public class NewBehaviourScript : MonoBehaviour
         //Ambas hacen lo mismo
     }
 
-    public void QuitGame()
+    public void Cerrar()
     {
+        Debug.Log("Cerrando juego");
         Application.Quit();
-        Debug.Log("El jugador salio del juego");
     }
 }

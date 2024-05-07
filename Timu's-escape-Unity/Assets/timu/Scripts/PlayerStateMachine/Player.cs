@@ -1,4 +1,3 @@
-
 using UnityEngine;
 
 [RequireComponent(typeof(PlayerController))]
@@ -18,10 +17,21 @@ public class Player : MonoBehaviour
 
     private Light playerLight;
     public float intensity = 0.5f;
+    private bool isDead = false;
 
+
+    // Variable para rastrear si el jugador está saltando
+    private bool isJumping = false;
+
+    public delegate void JumpAction();
+    public static event JumpAction OnJump;
+
+    // Evento para notificar la muerte
+    public delegate void DeathAction();
+    public static event DeathAction OnDeath;
 
     private void Awake()
-    {    
+    {
         StateMachine = new PlayerStateMachine();
         PlayerController = GetComponent<PlayerController>();
 
@@ -33,7 +43,7 @@ public class Player : MonoBehaviour
         JumpState = new PlayerJumpState(this, StateMachine);
         FallingState = new PlayerFallingState(this, StateMachine);
         ChargeJumpState = new PlayerChargingJumpState(this, StateMachine);
-        ExitPlatformState = new PlayerExitPlatform(this, StateMachine);        
+        ExitPlatformState = new PlayerExitPlatform(this, StateMachine);
     }
 
     private void Start()
@@ -50,10 +60,40 @@ public class Player : MonoBehaviour
     {
         StateMachine.CurrentState.Update();
         playerLight.intensity = intensity;
+
+        // Detecta si el jugador salta y cambia isJumping a true
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            isJumping = true;
+        }
     }
 
     private void FixedUpdate()
     {
         StateMachine.CurrentState.FixedUpdate();
+
+        // Detecta el salto y notifica a los suscriptores
+        if (isJumping)
+        {
+            isJumping = false;
+            OnJump?.Invoke();
+        }
+
+
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (!isDead && other.CompareTag("Lava"))
+        {
+            Die();
+        }
+    }
+
+    private void Die()
+    {
+        isDead = true;
+        // Invoca el evento de muerte
+        OnDeath?.Invoke();
     }
 }
