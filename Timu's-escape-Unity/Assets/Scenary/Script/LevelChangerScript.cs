@@ -15,10 +15,8 @@ public class LevelChangerScript : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Colision");
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Me he activado");
             animatorController.Play("AminationFadeOutWhite");
             Invoke("ChangeToNextScene", 1f);
         }
