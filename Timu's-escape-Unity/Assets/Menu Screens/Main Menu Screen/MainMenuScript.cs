@@ -18,4 +18,10 @@ public class NewBehaviourScript : MonoBehaviour
         Debug.Log("Cerrando juego");
         Application.Quit();
     }
+
+    private void Start() {
+        PlayerPrefs.SetInt("jumpCount", 0);
+        PlayerPrefs.SetInt("deathCount", 0);
+        PlayerPrefs.SetString("timerCount", "");
+    }
 }

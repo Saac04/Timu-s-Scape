@@ -3,17 +3,28 @@ using UnityEngine.UI;
 
 public class JumpCounter : MonoBehaviour
 {
-    private int jumpCount = 0;
+    private int jumpCount;
     public Text jumpCountText;
 
     private void Awake()
     {
-        jumpCountText.text = "Jumps: " + jumpCount.ToString();
+        LoadJumpData();
+    }
+
+    void OnDestroy()
+    {
+        SaveJumpData();
+    }
+
+    void Start()
+    {
+        jumpCountText.text = "Saltos: " + jumpCount.ToString();
     }
 
     private void OnEnable()
     {
         Player.OnJump += IncrementJumpCount;
+        
     }
 
     private void OnDisable()
@@ -25,5 +36,15 @@ public class JumpCounter : MonoBehaviour
     {
         jumpCount++;
         jumpCountText.text = "Saltos: " + jumpCount.ToString();
+    }
+
+    private void LoadJumpData()
+    {
+        jumpCount = PlayerPrefs.GetInt("jumpCount", 0);
+    }
+
+    private void SaveJumpData()
+    {
+        PlayerPrefs.SetInt("jumpCount", jumpCount);
     }
 }

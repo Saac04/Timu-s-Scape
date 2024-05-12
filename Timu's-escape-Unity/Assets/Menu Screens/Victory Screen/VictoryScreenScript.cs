@@ -24,4 +24,14 @@ public class VictoryScreenScript : MonoBehaviour
         SceneManager.LoadScene("MainMenuScene");
     }
 
+    void Start()
+    {
+        //ShowStats()
+
+        PlayerPrefs.SetInt("jumpCount", 0);
+        PlayerPrefs.SetInt("deathCount", 0);
+        PlayerPrefs.SetString("timerCount", "");
+        
+    }
+
 }

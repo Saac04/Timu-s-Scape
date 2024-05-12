@@ -20,7 +20,7 @@ public class Player : MonoBehaviour
     private bool isDead = false;
 
 
-    // Variable para rastrear si el jugador está saltando
+    // Variable para rastrear si el jugador estï¿½ saltando
     private bool isJumping = false;
 
     public delegate void JumpAction();
@@ -62,7 +62,7 @@ public class Player : MonoBehaviour
         playerLight.intensity = intensity;
 
         // Detecta si el jugador salta y cambia isJumping a true
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && Time.timeScale!=0f)
         {
             isJumping = true;
         }
