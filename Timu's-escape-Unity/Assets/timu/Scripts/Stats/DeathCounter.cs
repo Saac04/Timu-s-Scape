@@ -3,12 +3,22 @@ using UnityEngine.UI;
 
 public class DeathCounter : MonoBehaviour
 {
-    private int deathCount = 0;
+    private int deathCount;
     public Text deathCountText;
 
     private void Awake()
     {
-        UpdateDeathCountText();
+        LoadDeathData();
+    }
+
+    void OnDestroy()
+    {
+        SaveDeathData();
+    }
+
+    void Start()
+    {
+        deathCountText.text = "Saltos: " + deathCount.ToString();
     }
 
     private void OnEnable()
@@ -27,11 +37,16 @@ public class DeathCounter : MonoBehaviour
     {
         // Incrementa el contador de muertes y actualiza el texto
         deathCount++;
-        UpdateDeathCountText();
+        deathCountText.text = "Muertes: " + deathCount.ToString();
     }
 
-    private void UpdateDeathCountText()
+    private void LoadDeathData()
     {
-        deathCountText.text = "Muertes: " + deathCount.ToString();
+        deathCount = PlayerPrefs.GetInt("deathCount", 0);
+    }
+
+    private void SaveDeathData()
+    {
+        PlayerPrefs.SetInt("deathCount", deathCount);
     }
 }

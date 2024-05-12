@@ -1581,6 +1581,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 856041969595800795, guid: 621bba57f92564c4d932ee4c9b119b4c, type: 3}
+      propertyPath: jumpCountText
+      value: 
+      objectReference: {fileID: 1582823417}
     - target: {fileID: 1339300127475616279, guid: 621bba57f92564c4d932ee4c9b119b4c, type: 3}
       propertyPath: jumpCountText
       value: 
@@ -1593,6 +1597,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character
       objectReference: {fileID: 0}
+    - target: {fileID: 5457766386796109896, guid: 621bba57f92564c4d932ee4c9b119b4c, type: 3}
+      propertyPath: deathCountText
+      value: 
+      objectReference: {fileID: 228169750}
     - target: {fileID: 6051068030878534293, guid: 621bba57f92564c4d932ee4c9b119b4c, type: 3}
       propertyPath: playerData.totalJumps
       value: 0
@@ -1673,12 +1681,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4951776973455382286, guid: 621bba57f92564c4d932ee4c9b119b4c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 942862191}
-    - targetCorrespondingSourceObject: {fileID: 4951776973455382286, guid: 621bba57f92564c4d932ee4c9b119b4c, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 942862198}
-    - targetCorrespondingSourceObject: {fileID: 4951776973455382286, guid: 621bba57f92564c4d932ee4c9b119b4c, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 942862199}
   m_SourcePrefab: {fileID: 100100000, guid: 621bba57f92564c4d932ee4c9b119b4c, type: 3}
 --- !u!114 &923101114 stripped
 MonoBehaviour:
@@ -1827,32 +1829,6 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &942862198
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 942862184}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1864f68f85f7e39409e983242e5805ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jumpCountText: {fileID: 1582823417}
---- !u!114 &942862199
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 942862184}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0086e0ec0bffd6446a209071bd43f0cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  deathCountText: {fileID: 228169750}
 --- !u!1 &1028407353
 GameObject:
   m_ObjectHideFlags: 0
