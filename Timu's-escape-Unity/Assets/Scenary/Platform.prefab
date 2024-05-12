@@ -48,7 +48,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   raycastDistance: 0.3
-  numRays: 5
+  horizontalRayCount: 6
+  verticalRayCount: 6
 --- !u!33 &6778324304425914222
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -77,7 +78,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6476f538f22eeb041bbfc127a75b7e11, type: 2}
+  - {fileID: 2100000, guid: ea027d075b5800540aa715d43ea0b1df, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
