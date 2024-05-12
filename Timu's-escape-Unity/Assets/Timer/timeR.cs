@@ -11,6 +11,7 @@ public class timeR : MonoBehaviour
     private TimeSpan tiempoCrono;
     private bool timerBool;
     private float tiempoTrans;
+    private float finalTime;
 
 
     private void Awake()
@@ -21,16 +22,26 @@ public class timeR : MonoBehaviour
 
     private void Start()
     {
-        Crono.text = "tiempo:00:00:00";
+        finalTime = PlayerPrefs.GetFloat("timerCount", 0);
+        tiempoCrono = TimeSpan.FromSeconds((double) finalTime);
+        string tiempoCronoStr = "Tiempo: " + tiempoCrono.ToString("mm':'ss':'ff");
+        Crono.text = tiempoCronoStr;
         timerBool = false;
     }
 
     public void iniciarTiempo()
     {
         timerBool = true;
-        tiempoTrans = 0F;
+        tiempoTrans = finalTime;
 
         StartCoroutine(ActUpdate());
+    }
+
+    void OnDestroy()
+    {
+        FinTiempo();
+        finalTime = (float) tiempoCrono.TotalSeconds;
+        PlayerPrefs.SetFloat("timerCount", finalTime);
     }
 
     public void FinTiempo()
@@ -43,6 +54,7 @@ public class timeR : MonoBehaviour
         while (timerBool)
         {
             tiempoTrans += Time.deltaTime;
+            Debug.Log(tiempoTrans);
             tiempoCrono = TimeSpan.FromSeconds(tiempoTrans);
             string tiempoCronoStr = "Tiempo: " + tiempoCrono.ToString("mm':'ss':'ff");
             Crono.text = tiempoCronoStr;

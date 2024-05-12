@@ -14,7 +14,6 @@ public class PlatafromaCaidaManager : MonoBehaviour
         {
             Transform index = plataforma.GetComponent<Transform>();
             originalPosition.Add(index.position);
-            Debug.Log(originalPosition);
         }
     }
 
