@@ -4,19 +4,17 @@ using UnityEngine;
 
 public class Collectible : MonoBehaviour
 {
+    private int collectibleCount;
+    public CollectibleCount collectibleCounter;
 
-    public PlayerData playerData;
-    private void OnTriggerEnter(Collider other){
-        if (other.CompareTag("Player")){
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            collectibleCounter.collectibleCount++;
+
             Destroy(gameObject);
-            
-            
-            playerData.recolectedGems++;
-            Debug.Log(playerData.recolectedGems);
-
         }
-
     }
-}
 
-//object pulling
+}

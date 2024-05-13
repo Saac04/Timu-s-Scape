@@ -54,7 +54,6 @@ public class timeR : MonoBehaviour
         while (timerBool)
         {
             tiempoTrans += Time.deltaTime;
-            Debug.Log(tiempoTrans);
             tiempoCrono = TimeSpan.FromSeconds(tiempoTrans);
             string tiempoCronoStr = "Tiempo: " + tiempoCrono.ToString("mm':'ss':'ff");
             Crono.text = tiempoCronoStr;

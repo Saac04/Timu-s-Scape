@@ -20,7 +20,7 @@ public class Lava : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W))
+        /*if (Input.GetKeyDown(KeyCode.W))
         {
             ascensionSpeed += changeSpeed;
             Debug.Log("Velocidad aumentada: " + ascensionSpeed);
@@ -30,7 +30,7 @@ public class Lava : MonoBehaviour
             ascensionSpeed -= changeSpeed;
             ascensionSpeed = Mathf.Max(0f, ascensionSpeed);
             Debug.Log("Velocidad disminuida: " + ascensionSpeed);
-        }
+        }*/
 
         Vector3 newPosition = transform.position + Vector3.up * ascensionSpeed * Time.deltaTime;
         transform.position = newPosition;
@@ -56,7 +56,6 @@ public class Lava : MonoBehaviour
             if (foundCheckpoint != null)
             {
                 foundCheckpoint.RespawnPlayer(player.playerData.checkPointPosition);
-                Debug.Log("Player is dead");
             }
             else
             {
@@ -74,6 +73,5 @@ public class Lava : MonoBehaviour
     {
         transform.position = originalPosition;
         ascensionSpeed = originalSpeed;
-        Debug.Log("Posición y velocidad originales restauradas.");
     }
 }
