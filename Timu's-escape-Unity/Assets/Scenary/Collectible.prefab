@@ -182,19 +182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abb9d633805dfc6458434d1fc2114a29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerData:
-    customGravity: -16
-    moveSpeed: 4
-    minJumpForce: 5
-    maxJumpForce: 22
-    maxJumpTimer: 2
-    jumpSpeedHorizontal: 8
-    jumpForce: 0
-    direcctionHorizontal: 0
-    deaths: 0
-    recolectedGems: 0
-    totalJumps: 0
-    checkPointPosition: {x: 0, y: 0, z: 0}
+  collectibleCounter: {fileID: 0}
 --- !u!1001 &5145435284973281850
 PrefabInstance:
   m_ObjectHideFlags: 0

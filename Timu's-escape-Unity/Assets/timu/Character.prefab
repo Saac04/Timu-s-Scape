@@ -124,6 +124,7 @@ GameObject:
   - component: {fileID: 2334702633897658403}
   - component: {fileID: 856041969595800795}
   - component: {fileID: 5457766386796109896}
+  - component: {fileID: 6382870982232462527}
   m_Layer: 0
   m_Name: Character
   m_TagString: Player
@@ -168,7 +169,6 @@ MonoBehaviour:
     jumpSpeedHorizontal: 8
     jumpForce: 0
     direcctionHorizontal: 0
-    deaths: 0
     recolectedGems: 0
     totalJumps: 0.02
     checkPointPosition: {x: 0, y: 0, z: 0}
@@ -278,6 +278,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathCountText: {fileID: 0}
+--- !u!114 &6382870982232462527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4951776973455382286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a13e47896d03154d9dd61ab468a2ed8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collectibleCount: 0
 --- !u!1001 &2050936648741075341
 PrefabInstance:
   m_ObjectHideFlags: 0

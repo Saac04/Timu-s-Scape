@@ -23,5 +23,6 @@ public class NewBehaviourScript : MonoBehaviour
         PlayerPrefs.SetInt("jumpCount", 0);
         PlayerPrefs.SetInt("deathCount", 0);
         PlayerPrefs.SetFloat("timerCount", 0f);
+        PlayerPrefs.SetInt("collectibleCount", 0);
     }
 }

@@ -1074,6 +1074,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4868865574654440672, guid: 895e30189309acd4184ff66c81dffcb0, type: 3}
+      propertyPath: collectibleCounter
+      value: 
+      objectReference: {fileID: 923101115}
     - target: {fileID: 5808932998390124045, guid: 895e30189309acd4184ff66c81dffcb0, type: 3}
       propertyPath: m_Name
       value: Collectible (2)
@@ -1626,6 +1630,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4868865574654440672, guid: 895e30189309acd4184ff66c81dffcb0, type: 3}
+      propertyPath: collectibleCounter
+      value: 
+      objectReference: {fileID: 923101115}
     - target: {fileID: 5808932998390124045, guid: 895e30189309acd4184ff66c81dffcb0, type: 3}
       propertyPath: m_Name
       value: Collectible (1)
@@ -1764,6 +1772,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9629c987abc7b754a90a762be2867a67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &923101115 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6382870982232462527, guid: 621bba57f92564c4d932ee4c9b119b4c, type: 3}
+  m_PrefabInstance: {fileID: 923101113}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 942862184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a13e47896d03154d9dd61ab468a2ed8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &923208537
@@ -3515,6 +3534,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4868865574654440672, guid: 895e30189309acd4184ff66c81dffcb0, type: 3}
+      propertyPath: collectibleCounter
+      value: 
+      objectReference: {fileID: 923101115}
     - target: {fileID: 5808932998390124045, guid: 895e30189309acd4184ff66c81dffcb0, type: 3}
       propertyPath: m_Name
       value: Collectible

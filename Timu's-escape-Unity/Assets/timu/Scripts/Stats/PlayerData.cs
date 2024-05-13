@@ -15,8 +15,6 @@ public class PlayerData
     public float jumpSpeedHorizontal = 8f;
     public float jumpForce;
     public float direcctionHorizontal;
-    public float deaths;
-    public float recolectedGems;
     public float totalJumps;
     public Vector3 checkPointPosition;
 }

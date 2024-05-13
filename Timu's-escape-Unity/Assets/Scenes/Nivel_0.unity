@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1337,44 +1337,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4951776973455382286, guid: 621bba57f92564c4d932ee4c9b119b4c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1835363718}
-    - targetCorrespondingSourceObject: {fileID: 4951776973455382286, guid: 621bba57f92564c4d932ee4c9b119b4c, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1835363717}
-    - targetCorrespondingSourceObject: {fileID: 4951776973455382286, guid: 621bba57f92564c4d932ee4c9b119b4c, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1835363716}
   m_SourcePrefab: {fileID: 100100000, guid: 621bba57f92564c4d932ee4c9b119b4c, type: 3}
 --- !u!1 &1835363715 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4951776973455382286, guid: 621bba57f92564c4d932ee4c9b119b4c, type: 3}
   m_PrefabInstance: {fileID: 1835363714}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1835363716
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1835363715}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0086e0ec0bffd6446a209071bd43f0cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  deathCountText: {fileID: 0}
---- !u!114 &1835363717
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1835363715}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1864f68f85f7e39409e983242e5805ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jumpCountText: {fileID: 0}
 --- !u!108 &1835363718
 Light:
   m_ObjectHideFlags: 0
