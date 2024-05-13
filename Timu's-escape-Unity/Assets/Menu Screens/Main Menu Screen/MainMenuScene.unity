@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -965,8 +965,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: TIMU'S ESCAPE
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 1e6ae4588c1bee54791d0bc93d9f92c8, type: 2}
-  m_sharedMaterial: {fileID: 7362055151723509476, guid: 1e6ae4588c1bee54791d0bc93d9f92c8, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e46c915bcc3d29b4385a2f68afd84544, type: 2}
+  m_sharedMaterial: {fileID: 4951969992612149941, guid: e46c915bcc3d29b4385a2f68afd84544, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -990,8 +990,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 95
-  m_fontSizeBase: 95
+  m_fontSize: 80
+  m_fontSizeBase: 80
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

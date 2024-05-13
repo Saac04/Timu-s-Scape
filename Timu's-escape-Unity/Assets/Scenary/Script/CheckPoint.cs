@@ -23,8 +23,6 @@ public class CheckPoint : MonoBehaviour
             // Get the saved checkpoint position from PlayerData
             playerObject = GameObject.FindGameObjectWithTag("Player");
 
-            Debug.Log(respawnPosition);
-
             // Check if the respawn position is valid
             if (respawnPosition != Vector3.zero &&  true)
             {
@@ -57,7 +55,6 @@ public class CheckPoint : MonoBehaviour
             if(actualSpawnPoint != lastSpawnPoint)
             {
                 player.playerData.checkPointPosition = actualSpawnPoint;
-                Debug.Log($"Checkpoint saved in {actualSpawnPoint}");
             }
         }
     }

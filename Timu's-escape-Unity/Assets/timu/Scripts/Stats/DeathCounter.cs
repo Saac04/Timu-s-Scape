@@ -18,7 +18,7 @@ public class DeathCounter : MonoBehaviour
 
     void Start()
     {
-        deathCountText.text = "Saltos: " + deathCount.ToString();
+        deathCountText.text = "Muertes: " + deathCount.ToString();
     }
 
     private void OnEnable()
@@ -43,6 +43,7 @@ public class DeathCounter : MonoBehaviour
     private void LoadDeathData()
     {
         deathCount = PlayerPrefs.GetInt("deathCount", 0);
+        deathCountText.text = "Muertes: " + deathCount.ToString();
     }
 
     private void SaveDeathData()
