@@ -10,17 +10,12 @@ public class PlatafromaCaidaManager : MonoBehaviour
     {
         GameObject[] plataformas = GameObject.FindGameObjectsWithTag("PlataformaCaida");
 
-        foreach ( GameObject plataforma in plataformas )
+        foreach (GameObject plataforma in plataformas)
         {
             Transform index = plataforma.GetComponent<Transform>();
             originalPosition.Add(index.position);
+            Debug.Log(originalPosition);
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void resetPlataformaCaida()
@@ -36,8 +31,9 @@ public class PlatafromaCaidaManager : MonoBehaviour
                 PlataformaCaida plataforma = plataformas[i].GetComponent<PlataformaCaida>();
                 if (plataforma != null)
                 {
-                    plataforma.istouched = false;
+                    //plataforma.istouched = false;
                     plataformas[i].transform.position = originalPosition[i];
+                    plataformaCaida.Reappear();
                 }
             }
         }
