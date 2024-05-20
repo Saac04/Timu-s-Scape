@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4142632953861319056}
   - component: {fileID: 8987223683998552205}
   - component: {fileID: -3314349813087682252}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Lava
   m_TagString: Wash
   m_Icon: {fileID: 0}
@@ -31,8 +31,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8974658259499359073}
   m_Father: {fileID: 0}
@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11354150cf3dcba4a9f2af120cf6da8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ascensionSpeed: 1
+  ascensionSpeed: 0.7
   changeSpeed: 0.1
   player: {fileID: 0}
 --- !u!33 &4110252334605075756
@@ -117,7 +117,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -135,7 +135,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 0.89433956, g: 0.11109713, b: 0, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.5
   m_Range: 100
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -174,7 +174,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -193,6 +193,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4707047697181504502}
     m_Modifications:
+    - target: {fileID: -9121697308897041483, guid: ac4225d69bc194c468dc9b0401cc3786, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ac4225d69bc194c468dc9b0401cc3786, type: 3}
       propertyPath: m_LocalScale.y
       value: 1
@@ -241,9 +245,61 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7031505049967834892, guid: ac4225d69bc194c468dc9b0401cc3786, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -5734015392420254475, guid: ac4225d69bc194c468dc9b0401cc3786, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -4744827177539810442, guid: ac4225d69bc194c468dc9b0401cc3786, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -2673224332997246497, guid: ac4225d69bc194c468dc9b0401cc3786, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -2386932532715621200, guid: ac4225d69bc194c468dc9b0401cc3786, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ac4225d69bc194c468dc9b0401cc3786, type: 3}
       propertyPath: m_Name
       value: Lava
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ac4225d69bc194c468dc9b0401cc3786, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ac4225d69bc194c468dc9b0401cc3786, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 987354989662078759, guid: ac4225d69bc194c468dc9b0401cc3786, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2656080370705642911, guid: ac4225d69bc194c468dc9b0401cc3786, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2950711522807943594, guid: ac4225d69bc194c468dc9b0401cc3786, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3982737177858970517, guid: ac4225d69bc194c468dc9b0401cc3786, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4514200820076054894, guid: ac4225d69bc194c468dc9b0401cc3786, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7861899537158438861, guid: ac4225d69bc194c468dc9b0401cc3786, type: 3}
+      propertyPath: m_Layer
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8942196845031321969, guid: ac4225d69bc194c468dc9b0401cc3786, type: 3}
       propertyPath: m_DirtyAABB
