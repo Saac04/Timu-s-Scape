@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class WallController : MonoBehaviour
 {
-    public float bounceForce = 3f;
+    public float bounceForce = 8f;
 
     private void OnCollisionEnter(Collision collision)
     {
