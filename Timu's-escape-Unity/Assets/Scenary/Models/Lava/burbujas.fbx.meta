@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ed41fa00191d94247b2c8378d4727a3d
+guid: 90c0c479bf298b24d89998b939e5cc39
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,13 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Material #50
-    second: {fileID: 2100000, guid: 952d0de6a53ff0f4db45eb9f2f75a309, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material #51
-    second: {fileID: 2100000, guid: 5719846c32744124db643c6517e81c35, type: 2}
+      name: Material.001
+    second: {fileID: 2100000, guid: 6d22dc2813216cd46a863688642b0e26, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -43,9 +38,9 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Collectible_Idle
-      takeName: Box001|Box001Action
-      internalID: -5771767794990732351
+      name: Burbujeo
+      takeName: Take 001
+      internalID: 1827226128182048838
       firstFrame: 0
       lastFrame: 100
       wrapMode: 0
