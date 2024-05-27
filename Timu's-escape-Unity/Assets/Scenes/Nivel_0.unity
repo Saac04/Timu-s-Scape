@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44949442, g: 0.49649101, b: 0.55914664, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311354, g: 0.38073775, b: 0.358732, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -410,7 +410,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  m_Color: {r: 0.97735846, g: 0.7081569, b: 0.42598072, a: 1}
   m_Intensity: 0.7
   m_Range: 10
   m_SpotAngle: 30
@@ -469,13 +469,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 340619898}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.102244325, y: -0.3399895, z: -0.037213884, w: 0.9341137}
+  m_LocalRotation: {x: 0, y: -0.26303118, z: 0, w: 0.9647873}
   m_LocalPosition: {x: 4.840338, y: -0.3297329, z: 17.212492}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 481753645}
-  m_LocalEulerAnglesHint: {x: -12.493, y: -40, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -30.5, z: 0}
 --- !u!1 &354657633
 GameObject:
   m_ObjectHideFlags: 0
@@ -1702,14 +1702,14 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  m_Color: {r: 0.93207544, g: 0.7564279, b: 0.5539693, a: 1}
   m_Intensity: 0.5
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -1761,13 +1761,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1587510066}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.17364816, y: -0, z: -0, w: 0.9848078}
+  m_LocalRotation: {x: 0.3488174, y: 0, z: 0, w: 0.9371907}
   m_LocalPosition: {x: 4.840338, y: -0.3297329, z: 17.212492}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 481753645}
-  m_LocalEulerAnglesHint: {x: 20, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 40.83, y: 0, z: 0}
 --- !u!1 &1622677892
 GameObject:
   m_ObjectHideFlags: 0
@@ -1794,16 +1794,16 @@ Light:
   m_GameObject: {fileID: 1622677892}
   m_Enabled: 1
   serializedVersion: 10
-  m_Type: 1
+  m_Type: 2
   m_Shape: 0
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  m_Color: {r: 0.98490566, g: 0.7258566, b: 0.39210388, a: 1}
   m_Intensity: 0.7
-  m_Range: 10
+  m_Range: 100
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -1855,13 +1855,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1622677892}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.102244325, y: 0.3399895, z: 0.037213884, w: 0.9341137}
-  m_LocalPosition: {x: 4.840338, y: -0.3297329, z: 17.212492}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.840338, y: 7.97, z: 17.212492}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 481753645}
-  m_LocalEulerAnglesHint: {x: -12.493, y: 40, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1634323588
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2670,6 +2670,10 @@ PrefabInstance:
       value: Platform (6)
       objectReference: {fileID: 0}
     - target: {fileID: 1793099659504516803, guid: b316eb6c08f456e4a898cd783ddd27c6, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793099659504516803, guid: b316eb6c08f456e4a898cd783ddd27c6, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.21
       objectReference: {fileID: 0}
@@ -2679,7 +2683,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1793099659504516803, guid: b316eb6c08f456e4a898cd783ddd27c6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 2.7
       objectReference: {fileID: 0}
     - target: {fileID: 1793099659504516803, guid: b316eb6c08f456e4a898cd783ddd27c6, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2707,6 +2711,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1793099659504516803, guid: b316eb6c08f456e4a898cd783ddd27c6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7682436877421426886, guid: b316eb6c08f456e4a898cd783ddd27c6, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -2791,9 +2799,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1327070233}
     m_Modifications:
+    - target: {fileID: 484829668633433969, guid: 252ca5583216e0943b7fb9bce641c631, type: 3}
+      propertyPath: m_Size.z
+      value: 1.9125504
+      objectReference: {fileID: 0}
+    - target: {fileID: 484829668633433969, guid: 252ca5583216e0943b7fb9bce641c631, type: 3}
+      propertyPath: m_Center.z
+      value: -0.001333952
+      objectReference: {fileID: 0}
     - target: {fileID: 1087429518770160905, guid: 252ca5583216e0943b7fb9bce641c631, type: 3}
       propertyPath: m_Name
       value: Platform (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5139628666282846624, guid: 252ca5583216e0943b7fb9bce641c631, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 5139628666282846624, guid: 252ca5583216e0943b7fb9bce641c631, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2805,7 +2825,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5139628666282846624, guid: 252ca5583216e0943b7fb9bce641c631, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 2.7
       objectReference: {fileID: 0}
     - target: {fileID: 5139628666282846624, guid: 252ca5583216e0943b7fb9bce641c631, type: 3}
       propertyPath: m_LocalRotation.w
