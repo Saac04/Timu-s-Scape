@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class CheckPoint : MonoBehaviour
@@ -8,8 +9,14 @@ public class CheckPoint : MonoBehaviour
     public Vector3 lastSpawnPoint;
     public Player player;
     public Lava lava;
-    public Fade fade;
+    public Animator animator;
     public PlatafromaCaidaManager plataformaCaidaManager;
+
+    public float respawnDelay = 1.2f; // Duración de la espera en segundos
+
+    private bool isRespawning = false;
+    private float respawnTime;
+    private Vector3 respawnPosition;
 
     public void RespawnPlayer(Vector3 respawnPosition)
     {
@@ -21,7 +28,10 @@ public class CheckPoint : MonoBehaviour
             // Check if the respawn position is valid
             if (respawnPosition != Vector3.zero)
             {
-                StartCoroutine(RespawnAfterDelay(respawnPosition));
+                animator.SetTrigger("FadeInDeath");
+                this.respawnPosition = respawnPosition; // Guardar la posición de reaparición
+                isRespawning = true;
+                respawnTime = Time.time + respawnDelay; // Configurar el tiempo objetivo de reaparición
             }
             else
             {
@@ -31,15 +41,21 @@ public class CheckPoint : MonoBehaviour
         }
     }
 
-    private IEnumerator RespawnAfterDelay(Vector3 respawnPosition)
+    private void Update()
     {
-        fade.FadeIn();
-        yield return new WaitForSeconds(1);
-        playerObject.transform.position = respawnPosition;
-        player.PlayerController.rb.velocity = Vector3.zero;
-        lava.resetLava();
-        plataformaCaidaManager.resetPlataformaCaida();
-        fade.FadeOut();
+        if (isRespawning && Time.time >= respawnTime)
+        {
+            playerObject.transform.position = respawnPosition;
+            player.PlayerController.rb.velocity = Vector3.zero;
+            lava.resetLava();
+            plataformaCaidaManager.resetPlataformaCaida();
+            isRespawning = false;
+        }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            RespawnPlayer(player.playerData.checkPointPosition);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -53,14 +69,6 @@ public class CheckPoint : MonoBehaviour
             {
                 player.playerData.checkPointPosition = actualSpawnPoint;
             }
-        }
-    }
-
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            RespawnPlayer(player.playerData.checkPointPosition);
         }
     }
 }
