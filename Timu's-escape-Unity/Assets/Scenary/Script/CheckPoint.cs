@@ -48,7 +48,10 @@ public class CheckPoint : MonoBehaviour
             playerObject.transform.position = respawnPosition;
             player.PlayerController.rb.velocity = Vector3.zero;
             lava.resetLava();
-            plataformaCaidaManager.resetPlataformaCaida();
+            if (plataformaCaidaManager != null)
+            {
+                plataformaCaidaManager.resetPlataformaCaida();
+            }
             isRespawning = false;
         }
 

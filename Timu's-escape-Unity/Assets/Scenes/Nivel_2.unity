@@ -560,7 +560,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 34380fdcadaa0384c8329e955e6462aa, type: 2}
+  - {fileID: 2100000, guid: 0ea5863b5951d7140a6fe3c458c0241f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -600,7 +600,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 2, z: 2}
+  m_LocalScale: {x: 5.29, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1194,7 +1194,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7207647509422686433, guid: 621bba57f92564c4d932ee4c9b119b4c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 5.44
       objectReference: {fileID: 0}
     - target: {fileID: 7207647509422686433, guid: 621bba57f92564c4d932ee4c9b119b4c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4356,11 +4356,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 244325108311383100, guid: e118612ead46fde40a55b775b86cf3e5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.720339
+      value: 7.51
       objectReference: {fileID: 0}
     - target: {fileID: 244325108311383100, guid: e118612ead46fde40a55b775b86cf3e5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -15.329732
+      value: -15.24
       objectReference: {fileID: 0}
     - target: {fileID: 244325108311383100, guid: e118612ead46fde40a55b775b86cf3e5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4735,7 +4735,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6608735622725504778, guid: 8902ca0e1e838664db1482a09db89198, type: 3}
       propertyPath: m_Range
-      value: 25
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6608735622725504778, guid: 8902ca0e1e838664db1482a09db89198, type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 807
       objectReference: {fileID: 0}
     - target: {fileID: 6772919623777361496, guid: 8902ca0e1e838664db1482a09db89198, type: 3}
       propertyPath: m_Name
@@ -4743,7 +4747,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7552047268367778650, guid: 8902ca0e1e838664db1482a09db89198, type: 3}
       propertyPath: maxIntensity
-      value: 10
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7552047268367778650, guid: 8902ca0e1e838664db1482a09db89198, type: 3}
       propertyPath: minIntensity
@@ -5521,7 +5525,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6608735622725504778, guid: 8902ca0e1e838664db1482a09db89198, type: 3}
       propertyPath: m_Range
-      value: 25
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 6772919623777361496, guid: 8902ca0e1e838664db1482a09db89198, type: 3}
       propertyPath: m_Name
