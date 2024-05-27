@@ -6,6 +6,7 @@ public class DialogueTrigger : MonoBehaviour
 {
     public Dialogue dialogue;
     private DialogueManager manager;
+    public Animator animator;
 
     public void Start()
     {
@@ -40,6 +41,8 @@ public class DialogueTrigger : MonoBehaviour
         if (manager  != null )
         {
             manager.StartDialogue(dialogue);
+
+            animator.SetTrigger("Backflip");
         }
         
     }
@@ -62,6 +65,8 @@ public class DialogueTrigger : MonoBehaviour
             manager.EndDialogue();
         }
     }
+
+
 }
 
 

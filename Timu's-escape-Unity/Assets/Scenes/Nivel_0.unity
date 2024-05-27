@@ -973,34 +973,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5450156825364182061, guid: c2694b56507667342817cfb130cc0eca, type: 3}
       propertyPath: dialogue.sentences.Array.size
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5450156825364182061, guid: c2694b56507667342817cfb130cc0eca, type: 3}
       propertyPath: dialogue.sentences.Array.data[0]
-      value: 'Oye que haces! Grk grk grk. No ves que esto es propiedad privada?
+      value: 'Oye que haces! Me has roto el tejado!!! grk grk
 
-'
+        Vete por el
+        agujero que has hecho grk grk. '
       objectReference: {fileID: 0}
     - target: {fileID: 5450156825364182061, guid: c2694b56507667342817cfb130cc0eca, type: 3}
       propertyPath: dialogue.sentences.Array.data[1]
-      value: Como sea, vete de aqui ya! Esta es mi casa. Y por cierto la puerta no
-        funciona. Vete por el agujero que hiciste en mi techo.
+      value: Simplemente tienes que utilizar <A> y <D> para moverte y <BARRA ESPACIADORA>
+        para saltar. Es sencillo!!! grk grk
       objectReference: {fileID: 0}
     - target: {fileID: 5450156825364182061, guid: c2694b56507667342817cfb130cc0eca, type: 3}
       propertyPath: dialogue.sentences.Array.data[2]
-      value: 'Odio cuando crios babosos como tu no se saben mover, grk grk grk. A
-        ver te explico rapidamente cara de lapislazuli, Con la tecla <A> y la tecla
-        <D> te mueves de Izquierda a Derecha respectivamente, grk grk. '
+      value: Recuerda  mantener <BARRA ESPACIADORA> para llegar a sitios elevados
       objectReference: {fileID: 0}
     - target: {fileID: 5450156825364182061, guid: c2694b56507667342817cfb130cc0eca, type: 3}
       propertyPath: dialogue.sentences.Array.data[3]
-      value: 'Y con la <BARRA ESPACIADORA> saltas, tambien puedes "CARGAR" el salto
-        manteniedo la <BARRA ESPACIADORA>. Ah una cosa mas, mientras estas en el
-        aire no podras moverte grk grk, no es como si tuvieses alas. Grk grk grk '
+      value: AHORA VETE!!!! grk grk
       objectReference: {fileID: 0}
     - target: {fileID: 5450156825364182061, guid: c2694b56507667342817cfb130cc0eca, type: 3}
       propertyPath: dialogue.sentences.Array.data[4]
-      value: "Ah, si, por si no lo recuerdas Grk grk FUERA DE MI CASA!\r"
+      value: "\r"
       objectReference: {fileID: 0}
     - target: {fileID: 5579682195470875501, guid: c2694b56507667342817cfb130cc0eca, type: 3}
       propertyPath: m_Size.x
