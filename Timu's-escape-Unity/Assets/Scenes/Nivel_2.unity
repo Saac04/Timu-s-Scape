@@ -5404,6 +5404,10 @@ PrefabInstance:
       propertyPath: playerData.checkPointPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3533967375419958424, guid: b4685f3ab96ea9a4a97e04515f53cb82, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1bd6c9e09e0ec604691a1cda5f1b2368, type: 2}
     - target: {fileID: 4707047697181504502, guid: b4685f3ab96ea9a4a97e04515f53cb82, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
