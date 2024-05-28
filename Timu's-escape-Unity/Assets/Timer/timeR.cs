@@ -25,7 +25,10 @@ public class timeR : MonoBehaviour
         finalTime = PlayerPrefs.GetFloat("timerCount", 0);
         tiempoCrono = TimeSpan.FromSeconds((double) finalTime);
         string tiempoCronoStr = "Tiempo: " + tiempoCrono.ToString("mm':'ss':'ff");
-        Crono.text = tiempoCronoStr;
+        if(Crono != null)
+        {
+            Crono.text = tiempoCronoStr;
+        }
         timerBool = false;
     }
 
@@ -56,8 +59,11 @@ public class timeR : MonoBehaviour
             tiempoTrans += Time.deltaTime;
             tiempoCrono = TimeSpan.FromSeconds(tiempoTrans);
             string tiempoCronoStr = "Tiempo: " + tiempoCrono.ToString("mm':'ss':'ff");
-            Crono.text = tiempoCronoStr;
-
+            if(Crono != null)
+            {
+                Crono.text = tiempoCronoStr;
+            }
+            
             yield return null;
         }
     }

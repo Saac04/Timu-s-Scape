@@ -18,6 +18,7 @@ public class JumpCounter : MonoBehaviour
 
     void Start()
     {
+        if(jumpCountText == null){return;}
         jumpCountText.text = "Saltos: " + jumpCount.ToString();
     }
 
@@ -35,6 +36,7 @@ public class JumpCounter : MonoBehaviour
     private void IncrementJumpCount()
     {
         jumpCount++;
+        if (jumpCountText == null) { return; }
         jumpCountText.text = "Saltos: " + jumpCount.ToString();
     }
 

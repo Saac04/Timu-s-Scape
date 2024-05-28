@@ -15,11 +15,14 @@ public class DialogueTrigger : MonoBehaviour
     public void Start()
     {
         manager = FindAnyObjectByType<DialogueManager>();
+        if (lava == null){ Debug.Log("No hay lava asociada al dialogo");}
     }
 
 
     public void Update()
     {
+        if (lava == null) { return; }
+
         if (speaking)
         {
             lava.ascensionSpeed = 0f;
@@ -28,7 +31,7 @@ public class DialogueTrigger : MonoBehaviour
 
         else if (!speaking && lava.ascensionSpeed == 0f ) { 
 
-            lava.ascensionSpeed = 0.7f; 
+            lava.ascensionSpeed = 0.6f; 
 
         } else if ( !speaking && lava.ascensionSpeed == 0.7f) { return; }
     }
@@ -40,7 +43,6 @@ public class DialogueTrigger : MonoBehaviour
             TriggerDialogue();
         } else if (other.CompareTag("Lava"))
         {
-            Debug.Log("se toco la lava");
             TriggerDeathDialogue();
         }
     }
