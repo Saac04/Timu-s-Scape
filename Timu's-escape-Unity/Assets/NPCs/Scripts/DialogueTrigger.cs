@@ -32,11 +32,6 @@ public class DialogueTrigger : MonoBehaviour
 
         } else if ( !speaking && lava.ascensionSpeed == 0.7f) { return; }
     }
-
-    public void OnCollisionEnter(Collision collision)
-    {
-        Debug.Log(collision);
-    }
     public void OnTriggerEnter(Collider other)
     {
 

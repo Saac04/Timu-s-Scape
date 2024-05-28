@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311354, g: 0.38073775, b: 0.358732, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731131, g: 0.38073736, b: 0.35873178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -682,8 +682,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 208.31529}
-  m_SizeDelta: {x: 0, y: -416.63065}
+  m_AnchoredPosition: {x: 0, y: 406.65247}
+  m_SizeDelta: {x: 0, y: -813.3049}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &762989982
 MonoBehaviour:
@@ -768,14 +768,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 917445221}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.840338, y: 17.209732, z: -40.492493}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -964.84033, y: -522.7903, z: -40.492493}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 232782079}
   - {fileID: 236036000}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1904893966}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1150868768
 GameObject:
@@ -2396,6 +2396,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1887544207902852337, guid: cafcde6133617ef4782289efe8001156, type: 3}
       insertIndex: -1
       addedObject: {fileID: 762989981}
+    - targetCorrespondingSourceObject: {fileID: 1887544207902852337, guid: cafcde6133617ef4782289efe8001156, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 917445222}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cafcde6133617ef4782289efe8001156, type: 3}
 --- !u!1001 &1992030956
@@ -2941,6 +2944,5 @@ SceneRoots:
   - {fileID: 1327070233}
   - {fileID: 1411982872}
   - {fileID: 1650417564}
-  - {fileID: 917445222}
   - {fileID: 481753645}
   - {fileID: 1256036686499821713}
