@@ -234,12 +234,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5450156825364182061, guid: c2694b56507667342817cfb130cc0eca, type: 3}
+      propertyPath: lava
+      value: 
+      objectReference: {fileID: 1853591360}
+    - target: {fileID: 5450156825364182061, guid: c2694b56507667342817cfb130cc0eca, type: 3}
       propertyPath: dialogue.name
       value: MDMA
       objectReference: {fileID: 0}
     - target: {fileID: 5450156825364182061, guid: c2694b56507667342817cfb130cc0eca, type: 3}
       propertyPath: dialogue.deathSentence
-      value: 
+      value: "Broooooo, mira como brilla\u2026 \xA1AHHHHHHHHH!"
       objectReference: {fileID: 0}
     - target: {fileID: 5450156825364182061, guid: c2694b56507667342817cfb130cc0eca, type: 3}
       propertyPath: dialogue.sentences.Array.size
@@ -1324,6 +1328,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &310675562 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9001501235176869790, guid: b4685f3ab96ea9a4a97e04515f53cb82, type: 3}
+  m_PrefabInstance: {fileID: 1853591359}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &318390902
 GameObject:
   m_ObjectHideFlags: 0
@@ -5190,19 +5199,49 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9001501235176869790, guid: b4685f3ab96ea9a4a97e04515f53cb82, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1853591361}
   m_SourcePrefab: {fileID: 100100000, guid: b4685f3ab96ea9a4a97e04515f53cb82, type: 3}
 --- !u!114 &1853591360 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2960735788953290432, guid: b4685f3ab96ea9a4a97e04515f53cb82, type: 3}
   m_PrefabInstance: {fileID: 1853591359}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 310675562}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 11354150cf3dcba4a9f2af120cf6da8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!54 &1853591361
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 310675562}
+  serializedVersion: 4
+  m_Mass: 0.0000001
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &1856675831
 PrefabInstance:
   m_ObjectHideFlags: 0

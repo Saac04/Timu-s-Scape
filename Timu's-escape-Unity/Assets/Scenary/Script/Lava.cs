@@ -1,4 +1,5 @@
 using JetBrains.Annotations;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -38,34 +39,42 @@ public class Lava : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        GameObject[] checkpointObjects = GameObject.FindGameObjectsWithTag("CheckPoint");
-
-        if (checkpointObjects.Length > 0)
+        if (other.CompareTag("Player"))
         {
-            CheckPoint foundCheckpoint = null;
+            GameObject[] checkpointObjects = GameObject.FindGameObjectsWithTag("CheckPoint");
 
-            foreach (GameObject checkpointObject in checkpointObjects)
+            if (checkpointObjects.Length > 0)
             {
-                CheckPoint checkPoint = checkpointObject.GetComponent<CheckPoint>();
-                
-                if (checkPoint.gameObject.transform.position == player.playerData.checkPointPosition)
+                CheckPoint foundCheckpoint = null;
+
+                foreach (GameObject checkpointObject in checkpointObjects)
                 {
-                    foundCheckpoint = checkPoint;
+                    CheckPoint checkPoint = checkpointObject.GetComponent<CheckPoint>();
+
+                    Debug.Log(checkPoint.gameObject.transform.position);
+                    Debug.Log(player.playerData.checkPointPosition);
+
+                    if (checkPoint.gameObject.transform.position == player.playerData.checkPointPosition)
+                    {
+                        foundCheckpoint = checkPoint;
+                    }
                 }
-            }
-            if (foundCheckpoint != null)
-            {
-                foundCheckpoint.RespawnPlayer(player.playerData.checkPointPosition);
+                if (foundCheckpoint != null)
+                {
+                    foundCheckpoint.RespawnPlayer(player.playerData.checkPointPosition);
+                }
+                else
+                {
+                    Debug.LogWarning("No checkpoints found.");
+                }
             }
             else
             {
                 Debug.LogWarning("No checkpoints found.");
             }
         }
-        else
-        {
-            Debug.LogWarning("No checkpoints found.");
-        }
+
+        
 
     }
 

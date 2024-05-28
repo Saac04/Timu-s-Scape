@@ -12,24 +12,22 @@ public class CheckPoint : MonoBehaviour
     public Lava lava;
     public PlatafromaCaidaManager plataformaCaidaManager;
 
-
-
     public void RespawnPlayer(Vector3 respawnPosition)
     {
-
+        
 
         if (player.playerData != null)
         {
             // Get the saved checkpoint position from PlayerData
             playerObject = GameObject.FindGameObjectWithTag("Player");
 
+            Debug.Log(playerObject);
             // Check if the respawn position is valid
             if (respawnPosition != Vector3.zero &&  true)
             {
                 playerObject.transform.position = respawnPosition;
                 player.PlayerController.rb.velocity = Vector3.zero;
                 lava.resetLava();
-
                 plataformaCaidaManager.resetPlataformaCaida();
 
             }
@@ -45,13 +43,23 @@ public class CheckPoint : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-        actualSpawnPoint = gameObject.transform.position;
-        lastSpawnPoint = player.playerData.checkPointPosition;
+
 
         if (other.CompareTag("Player"))
         {
 
-            if(actualSpawnPoint != lastSpawnPoint)
+            Debug.Log("entramos");
+
+            Debug.Log(actualSpawnPoint + " posicion antes");
+            Debug.Log(lastSpawnPoint + " posicion antes");
+
+            actualSpawnPoint = gameObject.transform.position;
+            lastSpawnPoint = player.playerData.checkPointPosition;
+
+            Debug.Log(actualSpawnPoint + " posicion despues");
+            Debug.Log(lastSpawnPoint + " posicion despues");
+
+            if (actualSpawnPoint != lastSpawnPoint)
             {
                 player.playerData.checkPointPosition = actualSpawnPoint;
             }

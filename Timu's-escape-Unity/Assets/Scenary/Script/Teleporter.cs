@@ -10,7 +10,12 @@ public class Teleporter : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        player.transform.position = Target;
-        changeCamera.ChangeCameraPos(1);
+
+        if (other.CompareTag("Player")){
+            Debug.Log("existe");
+            player.transform.position = Target;
+            changeCamera.ChangeCameraPos(1);
+        }
+        
     }
 }
