@@ -44,14 +44,19 @@ public class DialogueManager : MonoBehaviour
     public void StartDeathDialogue( Dialogue dialogue)
     {
 
-        Debug.Log("APDPASDPASNDPA");
+        Debug.Log("iniciamos la muerte");
+
+
         animator.SetBool("idDead", true);
         isDeathStarted = true;
         nameText.text = dialogue.name;
-
         dialogueText.text = dialogue.deathSentence;
 
-        Invoke("EndDeathDialogue", 1f);
+        //EndDeathDialogue();
+
+        Invoke("EndDeathDialogue", 2.5f);
+
+
 
     }
 
@@ -75,6 +80,8 @@ public class DialogueManager : MonoBehaviour
     }
     public void EndDeathDialogue()
     {
+        Debug.Log("terminamos la muerte");
+
         animator.SetBool("idDead", false);
         isDeathStarted = false;
     }
