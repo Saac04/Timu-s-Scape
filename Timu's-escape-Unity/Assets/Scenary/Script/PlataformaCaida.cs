@@ -26,15 +26,12 @@ public class PlataformaCaida : MonoBehaviour
         for (int i = 0; i < transform.childCount; i++)
         {
             childrenObjects[i] = transform.GetChild(i).gameObject;
-            Debug.Log(childrenObjects[i]);
         }
     }
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Momento contacto");
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Ya tocado");
             StartCoroutine(fall());
         }
     }
@@ -81,7 +78,6 @@ public class PlataformaCaida : MonoBehaviour
         foreach (GameObject child in childrenObjects)
         {
             child.SetActive(false);
-            Debug.Log($"desactivo {child}");
         }
     }
 

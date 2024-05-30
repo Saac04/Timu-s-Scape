@@ -120,6 +120,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collectibleCounter: {fileID: 0}
+  animator: {fileID: 1907791998784094382}
+  AnimationTime: 1.2
 --- !u!1001 &5145435284973281850
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -15,24 +15,10 @@ public class Lava : MonoBehaviour
     {
         originalPosition = transform.position;
         originalSpeed = ascensionSpeed;
-
-        
     }
 
     void Update()
     {
-        /*if (Input.GetKeyDown(KeyCode.W))
-        {
-            ascensionSpeed += changeSpeed;
-            Debug.Log("Velocidad aumentada: " + ascensionSpeed);
-        }
-        else if (Input.GetKeyDown(KeyCode.S))
-        {
-            ascensionSpeed -= changeSpeed;
-            ascensionSpeed = Mathf.Max(0f, ascensionSpeed);
-            Debug.Log("Velocidad disminuida: " + ascensionSpeed);
-        }*/
-
         Vector3 newPosition = transform.position + Vector3.up * ascensionSpeed * Time.deltaTime;
         transform.position = newPosition;
     }
@@ -50,9 +36,6 @@ public class Lava : MonoBehaviour
                 foreach (GameObject checkpointObject in checkpointObjects)
                 {
                     CheckPoint checkPoint = checkpointObject.GetComponent<CheckPoint>();
-
-                    Debug.Log(checkPoint.gameObject.transform.position);
-                    Debug.Log(player.playerData.checkPointPosition);
 
                     if (checkPoint.gameObject.transform.position == player.playerData.checkPointPosition)
                     {

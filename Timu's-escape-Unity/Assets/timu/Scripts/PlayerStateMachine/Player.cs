@@ -53,6 +53,7 @@ public class Player : MonoBehaviour
         playerLight = GetComponent<Light>();
         playerLight.intensity = intensity;
 
+        Application.targetFrameRate = 60;
 
     }
 
