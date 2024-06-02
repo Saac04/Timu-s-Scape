@@ -6,6 +6,7 @@ public class CameraShake : MonoBehaviour
 {
     public float duration = 1.0f;
     public float magnitud = 1.0f;
+    public ParticleSystem ParticulasDerrumbe;
 
     void Start()
     {
@@ -22,6 +23,8 @@ public class CameraShake : MonoBehaviour
         Vector3 originalPosition = transform.localPosition;
 
         float elapsed = 0f;
+
+        ParticulasDerrumbe.Play();
 
         while (elapsed < duration)
         {
