@@ -16,9 +16,9 @@ public class PlayerFallingState : PlayerState
         stateChangeTimer = 0f;
     }
 
-    public override void Update()
+    public override void FixedUpdate()
     {
-        base.Update();
+        base.FixedUpdate();
         
 
         if (player.PlayerController.IsOnGround()) {

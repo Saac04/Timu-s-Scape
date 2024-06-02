@@ -21,9 +21,9 @@ public class PlayerJumpState : PlayerState
         ApplyJumpForce();
     }
 
-    public override void Update()
+    public override void FixedUpdate()
     {
-        base.Update();
+        base.FixedUpdate();
         
         // Comprueba si la altura actual es igual o mayor que la altura inicial más la fuerza mínima de salto
         if (player.transform.position.y > startHeight )
@@ -37,7 +37,7 @@ public class PlayerJumpState : PlayerState
     {
         if (!hasAppliedJumpForce)
         {
-            player.PlayerController.rb.AddForce((Vector3.up * player.playerData.jumpForce) + (Vector3.right * player.playerData.jumpSpeedHorizontal * player.playerData.direcctionHorizontal), ForceMode.Impulse);
+            player.PlayerController.rb.AddForce((Vector3.up * player.playerData.jumpForce*Time.deltaTime) + (Vector3.right * player.playerData.jumpSpeedHorizontal * player.playerData.direcctionHorizontal*Time.deltaTime), ForceMode.Impulse);
             hasAppliedJumpForce = true;
         }
     }

@@ -15,9 +15,9 @@ public class PlayerIdleState : PlayerState
         base.Enter();
     }
 
-    public override void Update()
+    public override void FixedUpdate()
     {
-        base.Update();
+        base.FixedUpdate();
 
         if (player.PlayerController.horizontalInput != 0f)
         {

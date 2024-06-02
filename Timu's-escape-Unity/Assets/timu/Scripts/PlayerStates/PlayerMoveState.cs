@@ -13,26 +13,32 @@ public class PlayerMoveState : PlayerState
         base.Enter();
     }
 
-    public override void Update()
+    public override void FixedUpdate()
     {
-        base.Update();
+        base.FixedUpdate();
 
-        Vector3 movimiento = new Vector3(player.PlayerController.horizontalInput, 0f, 0f) * player.playerData.moveSpeed * Time.deltaTime;
+        // Calcular el movimiento usando Time.fixedDeltaTime
+        Vector3 movimiento = new Vector3(player.PlayerController.horizontalInput, 0f, 0f) * player.playerData.moveSpeed * Time.fixedDeltaTime;
 
-
+        // Mover el Rigidbody a la nueva posición
         player.PlayerController.rb.MovePosition(player.PlayerController.rb.position + movimiento);
 
-
+        // Cambiar de estado si el input horizontal es cero
         if (player.PlayerController.horizontalInput == 0f)
         {
             playerStateMachine.ChangeState(player.IdleState);
         }
-        if (!player.PlayerController.IsOnGround()) {
+
+        // Cambiar de estado si el jugador no está en el suelo
+        if (!player.PlayerController.IsOnGround()) 
+        {
             playerStateMachine.ChangeState(player.ExitPlatformState);
         }
-        if (Input.GetKeyDown(KeyCode.Space)) {
+
+        // Cambiar de estado si se presiona la tecla de salto (espacio)
+        if (Input.GetKeyDown(KeyCode.Space)) 
+        {
             playerStateMachine.ChangeState(player.ChargeJumpState);
         }
     }
-
 }
