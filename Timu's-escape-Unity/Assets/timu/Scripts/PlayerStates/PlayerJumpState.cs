@@ -17,7 +17,7 @@ public class PlayerJumpState : PlayerState
     {
         base.Enter();
         hasAppliedJumpForce = false;
-        startHeight = player.transform.position.y; // Guarda la altura inicial del salto
+        startHeight = player.transform.position.y;
         ApplyJumpForce();
     }
 
@@ -25,11 +25,10 @@ public class PlayerJumpState : PlayerState
     {
         base.FixedUpdate();
         
-        // Comprueba si la altura actual es igual o mayor que la altura inicial más la fuerza mínima de salto
         if (player.transform.position.y > startHeight )
         {
 
-            playerStateMachine.ChangeState(player.FallingState); // Cambia al estado de caída
+            playerStateMachine.ChangeState(player.FallingState);
         }
     }
     
@@ -37,7 +36,7 @@ public class PlayerJumpState : PlayerState
     {
         if (!hasAppliedJumpForce)
         {
-            player.PlayerController.rb.AddForce((Vector3.up * player.playerData.jumpForce*Time.deltaTime) + (Vector3.right * player.playerData.jumpSpeedHorizontal * player.playerData.direcctionHorizontal*Time.deltaTime), ForceMode.Impulse);
+            player.PlayerController.rb.AddForce((Vector3.up * player.playerData.jumpForce) + (Vector3.right * player.playerData.jumpSpeedHorizontal * player.playerData.direcctionHorizontal), ForceMode.Impulse);
             hasAppliedJumpForce = true;
         }
     }

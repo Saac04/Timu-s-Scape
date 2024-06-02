@@ -12,7 +12,6 @@ public class PlayerFallingState : PlayerState
     public override void Enter()
     {
         base.Enter();
-
         stateChangeTimer = 0f;
     }
 
@@ -25,7 +24,7 @@ public class PlayerFallingState : PlayerState
             
             player.playerData.jumpForce = 0;
 
-            stateChangeTimer += Time.deltaTime;
+            stateChangeTimer += Time.fixedDeltaTime;
 
             player.PlayerController.rb.velocity = Vector3.zero;
 

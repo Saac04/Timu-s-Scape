@@ -7,7 +7,7 @@ public class PlatformController : MonoBehaviour
     public float raycastDistance = 0.3f;
     private bool playerDetected = false;
 
-    const float skinwidth = -0.05f;
+    const float skinwidth = 0f;
     public int horizontalRayCount = 6;
     public int verticalRayCount = 6;
 
@@ -21,17 +21,15 @@ public class PlatformController : MonoBehaviour
     {
         boxCollider = GetComponent<BoxCollider>();
         CalculateRaySpacing();
+        UpdateRaycastOrigins();
     }
 
     void FixedUpdate()
     {
-        UpdateRaycastOrigins();
-
         Vector3 raycastOriginRight = raycastOrigins.bottomRight;
         Vector3 raycastOriginLeft = raycastOrigins.bottomLeft;
         bool playerInSight = false;
 
-        // Rayos horizontales hacia la derecha
         for (int i = 0; i < horizontalRayCount; i++)
         {
             RaycastHit hit;
@@ -45,17 +43,18 @@ public class PlatformController : MonoBehaviour
                 if (hit.collider.CompareTag("Player"))
                 {
                     playerInSight = true;
+                    Rigidbody playerRb = hit.collider.attachedRigidbody;
+                    PlayerData playerData = hit.collider.GetComponent<Player>().playerData; // Obtener el PlayerData actualizado
 
-                    if (!playerDetected)
+                    if (!playerDetected && playerData.direcctionHorizontal != 1)
                     {
-                        ApplyRebound(hit.collider.attachedRigidbody, Vector3.left);
+                        ApplyRebound(playerRb, Vector3.left);
                         playerDetected = true;
                     }
                 }
             }
         }
 
-        // Rayos horizontales hacia la izquierda
         for (int i = 0; i < horizontalRayCount; i++)
         {
             RaycastHit hit;
@@ -69,39 +68,18 @@ public class PlatformController : MonoBehaviour
                 if (hit.collider.CompareTag("Player"))
                 {
                     playerInSight = true;
+                    Rigidbody playerRb = hit.collider.attachedRigidbody;
+                    PlayerData playerData = hit.collider.GetComponent<Player>().playerData; // Obtener el PlayerData actualizado
 
-                    if (!playerDetected)
+                    if (!playerDetected && playerData.direcctionHorizontal != -1)
                     {
-                        ApplyRebound(hit.collider.attachedRigidbody, Vector3.right);
+                        ApplyRebound(playerRb, Vector3.right);
                         playerDetected = true;
                     }
                 }
             }
         }
 
-        // Rayos verticales hacia abajo
-        for (int i = 0; i < verticalRayCount; i++)
-        {
-            RaycastHit hit;
-            Vector3 rayDirection = -transform.up;
-            Vector3 rayOrigin = raycastOrigins.bottomLeft + Vector3.right * (i * verticalRaySpacing);
-
-            Debug.DrawRay(rayOrigin, rayDirection * raycastDistance, Color.green);
-
-            if (Physics.Raycast(rayOrigin, rayDirection, out hit, raycastDistance))
-            {
-                if (hit.collider.CompareTag("Player"))
-                {
-                    playerInSight = true;
-
-                    if (!playerDetected)
-                    {
-                        ApplyRebound(hit.collider.attachedRigidbody, Vector3.up);
-                        playerDetected = true;
-                    }
-                }
-            }
-        }
 
         if (!playerInSight)
         {
@@ -115,6 +93,9 @@ public class PlatformController : MonoBehaviour
         {
             Vector3 reflectedVelocity = Vector3.Reflect(playerRb.velocity, direction);
             playerRb.velocity = new Vector3(reflectedVelocity.x, playerRb.velocity.y, reflectedVelocity.z);
+
+            PlayerData playerData = playerRb.GetComponent<Player>().playerData; // Obtener el PlayerData actualizado
+            playerData.direcctionHorizontal *= -1;
         }
     }
 
