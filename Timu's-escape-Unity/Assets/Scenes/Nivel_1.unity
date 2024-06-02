@@ -775,7 +775,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -1, y: -0.21999931}
+  m_AnchoredPosition: {x: -1, y: 0}
   m_SizeDelta: {x: 55, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &191037166
@@ -9058,6 +9058,7 @@ MonoBehaviour:
   duration: 1
   magnitud: 0.5
   ParticulasDerrumbe: {fileID: 1626476528}
+  FondoCanvas: {fileID: 186294929}
 --- !u!1 &1931700088
 GameObject:
   m_ObjectHideFlags: 0
