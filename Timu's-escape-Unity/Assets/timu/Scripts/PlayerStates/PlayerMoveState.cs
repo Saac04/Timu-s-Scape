@@ -17,22 +17,28 @@ public class PlayerMoveState : PlayerState
     {
         base.Update();
 
-        Vector3 movimiento = new Vector3(player.PlayerController.horizontalInput, 0f, 0f) * player.playerData.moveSpeed * Time.deltaTime;
-
-
-        player.PlayerController.rb.MovePosition(player.PlayerController.rb.position + movimiento);
-
-
         if (player.PlayerController.horizontalInput == 0f)
         {
             playerStateMachine.ChangeState(player.IdleState);
         }
-        if (!player.PlayerController.IsOnGround()) {
-            playerStateMachine.ChangeState(player.ExitPlatformState);
-        }
-        if (Input.GetKeyDown(KeyCode.Space)) {
+
+        if (Input.GetKeyDown(KeyCode.Space)) 
+        {
             playerStateMachine.ChangeState(player.ChargeJumpState);
         }
     }
 
+    public override void FixedUpdate()
+    {
+        base.FixedUpdate();
+
+        Vector3 movimiento = new Vector3(player.PlayerController.horizontalInput, 0f, 0f) * player.playerData.moveSpeed * Time.fixedDeltaTime;
+
+        player.PlayerController.rb.MovePosition(player.PlayerController.rb.position + movimiento);
+
+        if (!player.PlayerController.IsOnGround()) 
+        {
+            playerStateMachine.ChangeState(player.ExitPlatformState);
+        }
+    }
 }

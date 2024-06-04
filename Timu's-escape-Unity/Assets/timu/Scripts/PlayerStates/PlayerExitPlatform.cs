@@ -6,8 +6,8 @@ public class PlayerExitPlatform : PlayerState
 {
     private float maxFallSpeed = -15f;
 
-    public PlayerExitPlatform(Player player, PlayerStateMachine stateMachine) : base(player, stateMachine) {
-
+    public PlayerExitPlatform(Player player, PlayerStateMachine stateMachine) : base(player, stateMachine) 
+    {
     }
 
     public override void Enter()
@@ -16,12 +16,11 @@ public class PlayerExitPlatform : PlayerState
         player.playerData.direcctionHorizontal = player.PlayerController.horizontalInput;
     }
 
-    public override void Update()
+    public override void FixedUpdate()
     {
-        
-        base.Update();
-        
-        player.PlayerController.rb.velocity += Vector3.up * Physics.gravity.y * Time.deltaTime;
+        base.FixedUpdate();
+
+        player.PlayerController.rb.velocity += Vector3.up * Physics.gravity.y * Time.fixedDeltaTime;
 
         player.PlayerController.rb.velocity = new Vector3(player.PlayerController.rb.velocity.x, Mathf.Max(player.PlayerController.rb.velocity.y, maxFallSpeed), 0f);
 

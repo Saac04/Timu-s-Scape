@@ -5,9 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerJumpState : PlayerState
 {
-    private float startHeight;
     private bool hasAppliedJumpForce = false;
-
     
     public PlayerJumpState(Player player, PlayerStateMachine stateMachine) : base(player, stateMachine)
     {
@@ -17,19 +15,16 @@ public class PlayerJumpState : PlayerState
     {
         base.Enter();
         hasAppliedJumpForce = false;
-        startHeight = player.transform.position.y; // Guarda la altura inicial del salto
         ApplyJumpForce();
     }
 
-    public override void Update()
+    public override void FixedUpdate()
     {
-        base.Update();
+        base.FixedUpdate();
         
-        // Comprueba si la altura actual es igual o mayor que la altura inicial más la fuerza mínima de salto
-        if (player.transform.position.y > startHeight )
+        if ( !player.PlayerController.IsOnGround())
         {
-
-            playerStateMachine.ChangeState(player.FallingState); // Cambia al estado de caída
+            playerStateMachine.ChangeState(player.FallingState);
         }
     }
     

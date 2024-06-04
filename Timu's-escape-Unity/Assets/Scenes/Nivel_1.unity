@@ -1034,6 +1034,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7553831272472962412, guid: a099e4ea10a7943488c5753a5c2f96fb, type: 3}
+      propertyPath: playerObject
+      value: 
+      objectReference: {fileID: 942862184}
+    - target: {fileID: 8627870272464286890, guid: a099e4ea10a7943488c5753a5c2f96fb, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1814,6 +1822,14 @@ PrefabInstance:
       propertyPath: jumpCountText
       value: 
       objectReference: {fileID: 1201917383}
+    - target: {fileID: 895690562043040135, guid: 621bba57f92564c4d932ee4c9b119b4c, type: 3}
+      propertyPath: m_Size.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1098113806126271488, guid: 621bba57f92564c4d932ee4c9b119b4c, type: 3}
+      propertyPath: m_Radius
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1339300127475616279, guid: 621bba57f92564c4d932ee4c9b119b4c, type: 3}
       propertyPath: jumpCountText
       value: 

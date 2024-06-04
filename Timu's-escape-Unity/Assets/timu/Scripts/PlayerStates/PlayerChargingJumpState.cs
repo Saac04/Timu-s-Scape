@@ -16,15 +16,16 @@ public class PlayerChargingJumpState : PlayerState
         timeElapsed = 0f;
     }
 
-    public override void Update()
+    public override void FixedUpdate()
     {
-        base.Update();
+        base.FixedUpdate();
 
-        timeElapsed += Time.deltaTime;
+        timeElapsed += Time.fixedDeltaTime;
 
         float timePercentage = Mathf.Clamp01(timeElapsed / player.playerData.maxJumpTimer);
 
         float interpolatedJumpForce = Mathf.Lerp(player.playerData.minJumpForce, player.playerData.maxJumpForce, timePercentage);
+
 
         player.playerData.jumpForce = interpolatedJumpForce;
 
@@ -35,6 +36,7 @@ public class PlayerChargingJumpState : PlayerState
             player.playerData.direcctionHorizontal = player.PlayerController.horizontalInput;
 
             playerStateMachine.ChangeState(player.JumpState);
+
         }
     }
 }

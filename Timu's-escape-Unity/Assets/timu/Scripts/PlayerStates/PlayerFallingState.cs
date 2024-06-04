@@ -12,20 +12,18 @@ public class PlayerFallingState : PlayerState
     public override void Enter()
     {
         base.Enter();
-
         stateChangeTimer = 0f;
     }
 
-    public override void Update()
+    public override void FixedUpdate()
     {
-        base.Update();
+        base.FixedUpdate();
         
-
         if (player.PlayerController.IsOnGround()) {
             
             player.playerData.jumpForce = 0;
 
-            stateChangeTimer += Time.deltaTime;
+            stateChangeTimer += Time.fixedDeltaTime;
 
             player.PlayerController.rb.velocity = Vector3.zero;
 
