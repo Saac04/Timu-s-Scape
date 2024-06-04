@@ -43,21 +43,7 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDeathDialogue( Dialogue dialogue)
     {
-
-        Debug.Log("iniciamos la muerte");
-
-
-        animator.SetBool("idDead", true);
-        isDeathStarted = true;
-        nameText.text = dialogue.name;
-        dialogueText.text = dialogue.deathSentence;
-
-        //EndDeathDialogue();
-
-        Invoke("EndDeathDialogue", 2.5f);
-
-
-
+        //Ejecutar sonido muerte mdma
     }
 
     public void DisplayNextSentence () 
