@@ -13,6 +13,21 @@ public class PlayerMoveState : PlayerState
         base.Enter();
     }
 
+    public override void Update()
+    {
+        base.Update();
+
+        if (player.PlayerController.horizontalInput == 0f)
+        {
+            playerStateMachine.ChangeState(player.IdleState);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space)) 
+        {
+            playerStateMachine.ChangeState(player.ChargeJumpState);
+        }
+    }
+
     public override void FixedUpdate()
     {
         base.FixedUpdate();
@@ -21,19 +36,9 @@ public class PlayerMoveState : PlayerState
 
         player.PlayerController.rb.MovePosition(player.PlayerController.rb.position + movimiento);
 
-        if (player.PlayerController.horizontalInput == 0f)
-        {
-            playerStateMachine.ChangeState(player.IdleState);
-        }
-
         if (!player.PlayerController.IsOnGround()) 
         {
             playerStateMachine.ChangeState(player.ExitPlatformState);
-        }
-
-        if (Input.GetKeyDown(KeyCode.Space)) 
-        {
-            playerStateMachine.ChangeState(player.ChargeJumpState);
         }
     }
 }

@@ -5,9 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerJumpState : PlayerState
 {
-    private float startHeight;
     private bool hasAppliedJumpForce = false;
-
     
     public PlayerJumpState(Player player, PlayerStateMachine stateMachine) : base(player, stateMachine)
     {
@@ -17,7 +15,6 @@ public class PlayerJumpState : PlayerState
     {
         base.Enter();
         hasAppliedJumpForce = false;
-        startHeight = player.transform.position.y;
         ApplyJumpForce();
     }
 
@@ -25,9 +22,8 @@ public class PlayerJumpState : PlayerState
     {
         base.FixedUpdate();
         
-        if (player.transform.position.y > startHeight )
+        if ( !player.PlayerController.IsOnGround())
         {
-
             playerStateMachine.ChangeState(player.FallingState);
         }
     }

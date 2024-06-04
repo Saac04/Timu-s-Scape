@@ -26,6 +26,7 @@ public class PlayerChargingJumpState : PlayerState
 
         float interpolatedJumpForce = Mathf.Lerp(player.playerData.minJumpForce, player.playerData.maxJumpForce, timePercentage);
 
+
         player.playerData.jumpForce = interpolatedJumpForce;
 
         if (player.PlayerController.verticalInput == 0f)

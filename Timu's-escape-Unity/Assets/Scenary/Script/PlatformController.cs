@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class PlatformController : MonoBehaviour
 {
-    public float raycastDistance = 0.3f;
+    public float raycastDistance = 0.2f;
     private bool playerDetected = false;
 
     const float skinwidth = 0f;
-    public int horizontalRayCount = 6;
-    public int verticalRayCount = 6;
+    public int horizontalRayCount = 8;
+    public int verticalRayCount = 8;
 
     float horizontalRaySpacing;
     float verticalRaySpacing;
@@ -93,8 +93,9 @@ public class PlatformController : MonoBehaviour
         {
             Vector3 reflectedVelocity = Vector3.Reflect(playerRb.velocity, direction);
             playerRb.velocity = new Vector3(reflectedVelocity.x, playerRb.velocity.y, reflectedVelocity.z);
+            Debug.LogWarning(playerRb.velocity.ToString());
 
-            PlayerData playerData = playerRb.GetComponent<Player>().playerData; // Obtener el PlayerData actualizado
+            PlayerData playerData = playerRb.GetComponent<Player>().playerData;
             playerData.direcctionHorizontal *= -1;
         }
     }

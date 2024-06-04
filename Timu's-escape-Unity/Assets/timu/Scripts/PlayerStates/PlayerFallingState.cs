@@ -19,7 +19,6 @@ public class PlayerFallingState : PlayerState
     {
         base.FixedUpdate();
         
-
         if (player.PlayerController.IsOnGround()) {
             
             player.playerData.jumpForce = 0;
