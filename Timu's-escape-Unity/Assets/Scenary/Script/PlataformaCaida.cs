@@ -15,9 +15,12 @@ public class PlataformaCaida : MonoBehaviour
     private Collider[] childColliders;
     private GameObject[] childrenObjects;
     private Coroutine reappearCoroutine;
+    public AudioSource audioCaida;
+    private bool isBreaking;
 
     public void Start()
     {
+        isBreaking = false;
         originalPosition = transform.position;
 
         childColliders = GetComponentsInChildren<Collider>(true);
@@ -30,13 +33,16 @@ public class PlataformaCaida : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (!isBreaking && collision.gameObject.CompareTag("Player"))
         {
+            isBreaking = true;
             StartCoroutine(fall());
         }
     }
     private IEnumerator fall()
     {
+        audioCaida.Play();
+
         yield return new WaitForSeconds(fallWait);
 
 
@@ -59,6 +65,7 @@ public class PlataformaCaida : MonoBehaviour
         {
             StopCoroutine(reappearCoroutine);
         }
+        isBreaking = false;
         ShowChildren();
     }
 

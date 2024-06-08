@@ -11,7 +11,8 @@ public class DialogueManager : MonoBehaviour
     private bool isDeathStarted = false;
     private Queue<string> sentences;
     private string deathSentence;
-
+    public AudioSource audioC;
+    public List<AudioClip> audioList;
     public Animator animator;
     // Start is called before the first frame update
     void Start()
@@ -23,6 +24,7 @@ public class DialogueManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && isStarted)
         {
+            
             DisplayNextSentence();
         }
 
@@ -43,14 +45,18 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDeathDialogue( Dialogue dialogue)
     {
-        //Ejecutar sonido muerte mdma
+        audioC.Play();
+
     }
 
     public void DisplayNextSentence () 
     {
+        audioC.Stop();
+        audioC.PlayOneShot(audioList[Random.Range(0, audioList.Count)]);
 
         if (sentences.Count == 0) 
         {
+            audioC.Stop();
             EndDialogue();
             return;
         }

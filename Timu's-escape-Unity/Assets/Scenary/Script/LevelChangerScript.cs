@@ -7,9 +7,10 @@ public class LevelChangerScript : MonoBehaviour
 {
     public Animator animatorController;
     public CameraPartChanger changeCamera;
-
+    public AudioSource audioLevelChanger;
     void Start()
     {
+
         animatorController.Play("AnimationFadeInWhite");
     }
 
@@ -17,6 +18,7 @@ public class LevelChangerScript : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            audioLevelChanger.Play();
             animatorController.Play("AminationFadeOutWhite");
             Invoke("ChangeToNextScene", 1f);
         }

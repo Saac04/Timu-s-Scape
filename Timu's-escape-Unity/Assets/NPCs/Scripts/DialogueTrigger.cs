@@ -41,9 +41,11 @@ public class DialogueTrigger : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             TriggerDialogue();
+            
         } else if (other.CompareTag("Lava"))
         {
             TriggerDeathDialogue();
+            Debug.Log("hola estoy caput gg");
         }
     }
 
