@@ -1,10 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.SceneManagement; // Agregar la directiva correcta
 using UnityEngine.UI;
 using System;
-
 
 public class VictoryScreenScript : MonoBehaviour
 {
@@ -18,6 +17,7 @@ public class VictoryScreenScript : MonoBehaviour
     public Text jumpCountText;
     public Text deathCountText;
     public Text collectibleCountText;
+    public Text teasingText; // Añadir una nueva variable para el texto de "Teasing"
 
     void Awake()
     {
@@ -49,7 +49,8 @@ public class VictoryScreenScript : MonoBehaviour
         PlayerPrefs.SetInt("collectibleCount", 0);
     }
 
-    public void ShowStats(){
+    public void ShowStats()
+    {
         timeCountTS = TimeSpan.FromSeconds((double)timeCountF);
         string timeCountStr = "Tiempo: " + timeCountTS.ToString("mm':'ss':'ff");
         timeCountText.text = timeCountStr;
@@ -59,6 +60,31 @@ public class VictoryScreenScript : MonoBehaviour
         deathCountText.text = "Muertes: " + deathCount.ToString();
 
         collectibleCountText.text = "Coleccionables: " + collectibleCount.ToString() + "/6";
+
+        teasingText.text = GenerateTeasingMessage(collectibleCount);
     }
 
+    private string GenerateTeasingMessage(int collectibles)
+    {
+        if (collectibles == 0)
+        {
+            return "'¿Ni un solo coleccionable? ¿Estás bromeando? Creo que esperaba demasiado'";
+        }
+        else if (collectibles > 0 && collectibles < 3)
+        {
+            return "'Si en una partida de póker, no identificas al imbécil, el imbécil eres tu'";
+        }
+        else if (collectibles >= 3 && collectibles < 6)
+        {
+            return "'En el diccionario español 'listo' tiene 2 acepciones, y tu no eres ninguna de ellas'";
+        }
+        else if (collectibles == 6)
+        {
+            return "'Hostia Ignacio mira que pedazo truño he soltado'";
+        }
+        else
+        {
+            return "Mensaje de burla";
+        }
+    }
 }
