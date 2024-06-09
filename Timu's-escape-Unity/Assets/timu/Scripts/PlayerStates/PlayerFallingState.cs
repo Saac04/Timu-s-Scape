@@ -20,7 +20,7 @@ public class PlayerFallingState : PlayerState
         base.FixedUpdate();
         
         if (player.PlayerController.IsOnGround()) {
-            
+
             player.playerData.jumpForce = 0;
 
             stateChangeTimer += Time.fixedDeltaTime;
@@ -29,6 +29,7 @@ public class PlayerFallingState : PlayerState
 
             if (stateChangeTimer >= stateChangeDelay )
             {
+                player.audioControllerTimu.PlayOneShot(player.timuAudio_CaeSuelo);
                 playerStateMachine.ChangeState(player.IdleState);
             }
         }

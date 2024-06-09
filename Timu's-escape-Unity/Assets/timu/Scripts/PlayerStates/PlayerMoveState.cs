@@ -11,6 +11,7 @@ public class PlayerMoveState : PlayerState
     public override void Enter()
     {
         base.Enter();
+        player.audioControllerTimu.PlayOneShot(player.timuAudio_Mueve);
     }
 
     public override void Update()
@@ -19,15 +20,16 @@ public class PlayerMoveState : PlayerState
 
         if (player.PlayerController.horizontalInput == 0f)
         {
+            player.audioControllerTimu.Stop();
             playerStateMachine.ChangeState(player.IdleState);
         }
 
         if (Input.GetKeyDown(KeyCode.Space)) 
         {
+            player.audioControllerTimu.Stop();
             playerStateMachine.ChangeState(player.ChargeJumpState);
         }
     }
-
     public override void FixedUpdate()
     {
         base.FixedUpdate();
@@ -38,6 +40,7 @@ public class PlayerMoveState : PlayerState
 
         if (!player.PlayerController.IsOnGround()) 
         {
+            player.audioControllerTimu.Stop();
             playerStateMachine.ChangeState(player.ExitPlatformState);
         }
     }

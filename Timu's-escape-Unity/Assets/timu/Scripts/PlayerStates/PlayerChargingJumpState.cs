@@ -14,6 +14,7 @@ public class PlayerChargingJumpState : PlayerState
     {
         base.Enter();
         timeElapsed = 0f;
+        player.audioControllerTimu.PlayOneShot(player.timuAudio_CargaSalto);
     }
 
     public override void FixedUpdate()

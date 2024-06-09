@@ -19,6 +19,9 @@ public class VictoryScreenScript : MonoBehaviour
     public Text deathCountText;
     public Text collectibleCountText;
 
+    public AudioSource audioController;
+    public List<AudioClip> sonidosFinalesList;
+
     void Awake()
     {
         jumpCount = PlayerPrefs.GetInt("jumpCount", 0);
@@ -47,6 +50,8 @@ public class VictoryScreenScript : MonoBehaviour
         PlayerPrefs.SetInt("deathCount", 0);
         PlayerPrefs.SetFloat("timerCount", 0f);
         PlayerPrefs.SetInt("collectibleCount", 0);
+
+        StartCoroutine(pirateAudios());
     }
 
     public void ShowStats(){
@@ -61,4 +66,22 @@ public class VictoryScreenScript : MonoBehaviour
         collectibleCountText.text = "Coleccionables: " + collectibleCount.ToString() + "/6";
     }
 
+    private IEnumerator pirateAudios()
+    {
+        yield return new WaitForSeconds(40f);
+
+        audioController.PlayOneShot(sonidosFinalesList[0]);
+
+        yield return new WaitForSeconds(15f);
+
+        audioController.PlayOneShot(sonidosFinalesList[1]);
+
+        yield return new WaitForSeconds(10f);
+
+        audioController.PlayOneShot(sonidosFinalesList[2]);
+
+        yield return new WaitForSeconds(5f);
+
+        audioController.PlayOneShot(sonidosFinalesList[3]);
+    }
 }
