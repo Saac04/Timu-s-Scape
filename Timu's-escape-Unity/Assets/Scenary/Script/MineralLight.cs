@@ -1,57 +1,67 @@
 using UnityEngine;
-using System.Collections;
 
-
-public class MineralLight : MonoBehaviour
+public class LightController : MonoBehaviour
 {
-    private bool LightOnCheck = false;
-    public float maxIntensity = 10f;
-    public float minIntensity = 1f;
-    public float intensityChangeRate = 0.3f;
-    public float lightOnTime = 5f;
     private Light mineralLight;
+    public float maxRange = 10f;
+    public float minRange = 1f;
+    public float duration = 7f; // Duración en segundos para alcanzar el rango máximo
+    private float elapsedTime = 0f;
+    private bool enContacto;
 
-    void Start()
+    
+
+    private void Start()
     {
         mineralLight = GetComponent<Light>();
-        mineralLight.intensity = minIntensity;
+        mineralLight.range = minRange;
+        enContacto = false;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && !LightOnCheck)
+        if (other.CompareTag("Player") && !enContacto)
         {
-            LightOnCheck = true;
-            StartCoroutine(LightUp());
-            Invoke("TimeToSleep", lightOnTime);
+            enContacto = true;
+            StartCoroutine(IncreaseLightRange());
         }
     }
 
-    IEnumerator LightUp()
+    System.Collections.IEnumerator IncreaseLightRange()
     {
-        float currentIntensity = minIntensity;
-        while (currentIntensity <= maxIntensity)
-        {
-            mineralLight.intensity = currentIntensity;
-            currentIntensity += intensityChangeRate;
-            yield return new WaitForSeconds(0.1f); // Adjust for smoother transition
-        }
-    }
+        float startTime = Time.time;
+        float endTime = startTime + duration;
+        
 
-    private void TimeToSleep()
-    {
-        StartCoroutine(LightDown());
-    }
-
-    IEnumerator LightDown()
-    {
-        float currentIntensity = maxIntensity;
-        while (currentIntensity >= minIntensity)
+        while (Time.time < endTime)
         {
-            mineralLight.intensity = currentIntensity;
-            currentIntensity -= intensityChangeRate;
-            yield return new WaitForSeconds(0.05f); // Adjust for smoother transition
+            float t = (Time.time - startTime) / duration;
+            mineralLight.range = Mathf.Lerp(minRange, maxRange, t);
+            yield return null;
         }
-        LightOnCheck = false;
+
+        mineralLight.range = maxRange; // Asegurar que llegue exactamente al rango máximo
+
+        yield return new WaitForSeconds(1f);
+
+        StartCoroutine(DecreaseLightRange());
+
+    }
+    System.Collections.IEnumerator DecreaseLightRange()
+    {
+        float startTime = Time.time;
+        float endTime = startTime + duration;
+        
+
+        while (Time.time < endTime)
+        {
+            float t = (Time.time - startTime) / duration;
+            mineralLight.range = Mathf.Lerp(maxRange, minRange, t);
+            yield return null;
+        }
+
+        mineralLight.range = minRange; // Asegurar que llegue exactamente al rango máximo
+
+        enContacto = false;
     }
 }
