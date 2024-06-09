@@ -48,7 +48,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6487a06d17726d049914c876334e7a6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  istouched: 0
+  fallWait: 1
+  fallDistance: 2.5
+  fallingspeed: 1
+  destroyWait: 0
+  reappearWait: 5
+  audioCaida: {fileID: 0}
 --- !u!65 &7278606673785344149
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlataformaCaida : MonoBehaviour
 {
     public float fallWait = 1f;
-    public float fallDistance = 5f;
-    public float fallingspeed = 0.4f;
+    public float fallDistance = 2.5f;
+    public float fallingspeed = 1f;
     public float destroyWait = 0f;
     public float reappearWait = 5f;
     private Vector3 originalPosition;

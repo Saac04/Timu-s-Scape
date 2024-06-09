@@ -17,6 +17,8 @@ public class PlatformController : MonoBehaviour
     RaycastOrigins raycastOrigins;
     BoxCollider boxCollider;
 
+    public AudioClip reboteTimuSonido;
+
     void Start()
     {
         boxCollider = GetComponent<BoxCollider>();
@@ -48,6 +50,10 @@ public class PlatformController : MonoBehaviour
 
                     if (!playerDetected && playerData.direcctionHorizontal != 1)
                     {
+                        if (hit.collider.GetComponent<AudioSource>() != null)
+                        {
+                            hit.collider.GetComponent<AudioSource>().PlayOneShot(reboteTimuSonido);
+                        }
                         ApplyRebound(playerRb, Vector3.left);
                         playerDetected = true;
                     }
