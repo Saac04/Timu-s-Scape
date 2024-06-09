@@ -45,7 +45,6 @@ public class DialogueTrigger : MonoBehaviour
         } else if (other.CompareTag("Lava"))
         {
             TriggerDeathDialogue();
-            Debug.Log("hola estoy caput gg");
         }
     }
 
@@ -64,7 +63,9 @@ public class DialogueTrigger : MonoBehaviour
             speaking = true;
             manager.StartDialogue(dialogue);
 
-            animator.SetTrigger("Backflip");
+            if (animator != null){
+                animator.SetTrigger("Backflip");
+            }
         }
         
     }

@@ -48,21 +48,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ced68bbcf84c4a9419837b5f846d2e03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerData:
-    customGravity: -16
-    moveSpeed: 4
-    minJumpForce: 5
-    maxJumpForce: 22
-    maxJumpTimer: 2
-    jumpSpeedHorizontal: 8
-    jumpForce: 0
-    direcctionHorizontal: 0
-    totalJumps: 0
-    checkPointPosition: {x: 0, y: 0, z: 0}
-  playerObject: {fileID: 4951776973455382286, guid: 621bba57f92564c4d932ee4c9b119b4c, type: 3}
   raycastDistance: 0.3
   horizontalRayCount: 6
   verticalRayCount: 6
+  reboteTimuSonido: {fileID: 0}
 --- !u!33 &6778324304425914222
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -132,8 +121,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 0.5094137, z: 1}
+  m_Center: {x: 0, y: 0.24529314, z: 0}
 --- !u!1001 &6449025793339934753
 PrefabInstance:
   m_ObjectHideFlags: 0
