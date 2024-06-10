@@ -179,9 +179,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: f71033d9ab290b443b969fb5051e0c67, type: 3}
   - {fileID: 8300000, guid: 20bec07c33e83834abcf0367fb0796bb, type: 3}
   - {fileID: 8300000, guid: 15fa507cac7f7f240b4bff91c3fc9e4a, type: 3}
-  timuAudio_CargaSalto: {fileID: 8300000, guid: addf08e0e7374fe468abaebe70ebc703, type: 3}
+  timuAudio_CargaSalto: {fileID: 8300000, guid: 438f434b299c74945b4719945ffb9080, type: 3}
   timuAudio_CaeSuelo: {fileID: 8300000, guid: 85df5ecb0f133bd49b90d6a5c00ceae9, type: 3}
-  timuAudio_Mueve: {fileID: 8300000, guid: b386787e0cd0dff4ba420173d659cd4f, type: 3}
+  timuAudio_Mueve: {fileID: 8300000, guid: 95e7e503837523341aa08d86b217fbbd, type: 3}
 --- !u!114 &7722099679295403336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -310,11 +310,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 311ff7ad054a2914eb7867b3ec30c2c1, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 95e7e503837523341aa08d86b217fbbd, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.2
+  m_Volume: 0.7
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

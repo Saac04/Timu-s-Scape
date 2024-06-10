@@ -1211,7 +1211,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3766827907561028166, guid: a980695018453574b875fc78c33e61b1, type: 3}
       propertyPath: m_Volume
-      value: 0.5
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 5649478606187297611, guid: a980695018453574b875fc78c33e61b1, type: 3}
       propertyPath: changeCamera
@@ -2284,10 +2284,6 @@ PrefabInstance:
       propertyPath: Crono
       value: 
       objectReference: {fileID: 2066364302}
-    - target: {fileID: 3427198180557284032, guid: 621bba57f92564c4d932ee4c9b119b4c, type: 3}
-      propertyPath: m_Volume
-      value: 0.7
-      objectReference: {fileID: 0}
     - target: {fileID: 4951776973455382286, guid: 621bba57f92564c4d932ee4c9b119b4c, type: 3}
       propertyPath: m_Name
       value: Character
@@ -2326,7 +2322,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7207647509422686433, guid: 621bba57f92564c4d932ee4c9b119b4c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.5
+      value: 21.02
       objectReference: {fileID: 0}
     - target: {fileID: 7207647509422686433, guid: 621bba57f92564c4d932ee4c9b119b4c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2909,10 +2905,6 @@ PrefabInstance:
       propertyPath: raycastDistance
       value: 0.3
       objectReference: {fileID: 0}
-    - target: {fileID: 4861530940460893738, guid: 2517129021fb09a48ae5f6067eecef67, type: 3}
-      propertyPath: reboteTimuSonido
-      value: 
-      objectReference: {fileID: 8300000, guid: 311ff7ad054a2914eb7867b3ec30c2c1, type: 3}
     - target: {fileID: 7691260495558223552, guid: 2517129021fb09a48ae5f6067eecef67, type: 3}
       propertyPath: m_Name
       value: Platform (1)

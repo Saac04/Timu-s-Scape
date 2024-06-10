@@ -11,7 +11,7 @@ public class PlayerMoveState : PlayerState
     public override void Enter()
     {
         base.Enter();
-        player.audioControllerTimu.PlayOneShot(player.timuAudio_Mueve);
+        player.audioControllerTimu.Play();
     }
 
     public override void Update()
