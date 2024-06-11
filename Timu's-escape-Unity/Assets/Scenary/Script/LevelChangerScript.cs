@@ -7,6 +7,14 @@ public class LevelChangerScript : MonoBehaviour
 {
     public Animator animatorController;
     public CameraPartChanger changeCamera;
+    public ParticleSystem particleSystem;
+
+    // Definir variables para el tamaño, duración y velocidad de las partículas
+    public float particleSize = 4.0f;    
+    public float particleSpeed = 9.0f;
+    public int particleCount = 50;
+
+    public 
 
     void Start()
     {
@@ -17,10 +25,22 @@ public class LevelChangerScript : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            animatorController.Play("AminationFadeOutWhite");
+            animatorController.Play("AnimationFadeOutWhite");
+
+            // Modificar las propiedades del ParticleSystem
+            var mainModule = particleSystem.main;
+            mainModule.startSize = particleSize;
+            mainModule.startSpeed = particleSpeed;
+
+            var emissionModule = particleSystem.emission;
+            emissionModule.rateOverTime = particleCount;
+
+
             Invoke("ChangeToNextScene", 1f);
         }
     }
+
+
 
     void ChangeToNextScene()
     {
