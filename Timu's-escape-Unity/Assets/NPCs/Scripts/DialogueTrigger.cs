@@ -44,7 +44,15 @@ public class DialogueTrigger : MonoBehaviour
             
         } else if (other.CompareTag("Lava"))
         {
+
+            if (animator != null)
+            {
+                animator.SetTrigger("Die");
+            }
+
             TriggerDeathDialogue();
+
+            
         }
     }
 
