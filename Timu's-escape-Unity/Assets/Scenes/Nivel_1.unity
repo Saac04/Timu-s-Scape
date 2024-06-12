@@ -850,6 +850,10 @@ PrefabInstance:
       propertyPath: audioCaida
       value: 
       objectReference: {fileID: 1660490167}
+    - target: {fileID: 5720746634626867741, guid: aa6f1e81309208646b10fdb43be5367c, type: 3}
+      propertyPath: destroyWait
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8446687754570601221, guid: aa6f1e81309208646b10fdb43be5367c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.9398284
@@ -1311,6 +1315,10 @@ PrefabInstance:
       propertyPath: audioCaida
       value: 
       objectReference: {fileID: 2068159701}
+    - target: {fileID: 5720746634626867741, guid: aa6f1e81309208646b10fdb43be5367c, type: 3}
+      propertyPath: destroyWait
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8446687754570601221, guid: aa6f1e81309208646b10fdb43be5367c, type: 3}
       propertyPath: m_LocalScale.x
       value: 4
@@ -1427,6 +1435,14 @@ PrefabInstance:
       propertyPath: destroyWait
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5720746634626867741, guid: d587a93d68a450c4db67c5f068a67166, type: 3}
+      propertyPath: sonidoRompe
+      value: 
+      objectReference: {fileID: 8300000, guid: 8070b9a077cb40a4fa72bd19c7fb9bcd, type: 3}
+    - target: {fileID: 5720746634626867741, guid: d587a93d68a450c4db67c5f068a67166, type: 3}
+      propertyPath: sonidoRehace
+      value: 
+      objectReference: {fileID: 8300000, guid: c246b6760d44faf4faad05a6c3fb92e1, type: 3}
     - target: {fileID: 7835018598202669228, guid: d587a93d68a450c4db67c5f068a67166, type: 3}
       propertyPath: m_Layer
       value: 8
@@ -1744,6 +1760,10 @@ PrefabInstance:
       propertyPath: audioCaida
       value: 
       objectReference: {fileID: 1675914500}
+    - target: {fileID: 5720746634626867741, guid: aa6f1e81309208646b10fdb43be5367c, type: 3}
+      propertyPath: destroyWait
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8446687754570601221, guid: aa6f1e81309208646b10fdb43be5367c, type: 3}
       propertyPath: m_LocalScale.x
       value: 4
@@ -2160,6 +2180,10 @@ PrefabInstance:
       propertyPath: audioCaida
       value: 
       objectReference: {fileID: 1662858505}
+    - target: {fileID: 5720746634626867741, guid: aa6f1e81309208646b10fdb43be5367c, type: 3}
+      propertyPath: destroyWait
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8446687754570601221, guid: aa6f1e81309208646b10fdb43be5367c, type: 3}
       propertyPath: m_LocalScale.x
       value: 4
@@ -4020,6 +4044,10 @@ PrefabInstance:
       propertyPath: audioCaida
       value: 
       objectReference: {fileID: 1141308941}
+    - target: {fileID: 5720746634626867741, guid: aa6f1e81309208646b10fdb43be5367c, type: 3}
+      propertyPath: destroyWait
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8446687754570601221, guid: aa6f1e81309208646b10fdb43be5367c, type: 3}
       propertyPath: m_LocalScale.x
       value: 4
@@ -4258,6 +4286,10 @@ PrefabInstance:
       propertyPath: audioCaida
       value: 
       objectReference: {fileID: 1525095176}
+    - target: {fileID: 5720746634626867741, guid: aa6f1e81309208646b10fdb43be5367c, type: 3}
+      propertyPath: destroyWait
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8446687754570601221, guid: aa6f1e81309208646b10fdb43be5367c, type: 3}
       propertyPath: m_LocalScale.x
       value: 4

@@ -20,6 +20,9 @@ public class PlataformaCaida : MonoBehaviour
 
     public ParticleSystem smokeParticles;
 
+    public AudioClip sonidoRompe;
+    public AudioClip sonidoRehace;
+
     public void Start()
     {
         isBreaking = false;
@@ -54,12 +57,10 @@ public class PlataformaCaida : MonoBehaviour
             yield return null;
         }
 
-        Debug.Log("Particulas");
         smokeParticles.Play();
-        Debug.Log("Espero");
+        audioCaida.PlayOneShot(sonidoRompe);
         yield return new WaitForSeconds(destroyWait);
 
-        Debug.Log("Escondo");
         HideChildren();
         reappearCoroutine = StartCoroutine(ReappearAfterDelay());
     }
@@ -109,6 +110,7 @@ public class PlataformaCaida : MonoBehaviour
             child.SetActive(true);
         }
         smokeParticles.Play();
+        audioCaida.PlayOneShot(sonidoRehace);
     }
 }
 

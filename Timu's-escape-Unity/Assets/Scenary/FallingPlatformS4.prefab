@@ -4887,6 +4887,8 @@ MonoBehaviour:
   reappearWait: 5
   audioCaida: {fileID: 0}
   smokeParticles: {fileID: 8069398357529658717}
+  sonidoRompe: {fileID: 8300000, guid: 8070b9a077cb40a4fa72bd19c7fb9bcd, type: 3}
+  sonidoRehace: {fileID: 8300000, guid: c246b6760d44faf4faad05a6c3fb92e1, type: 3}
 --- !u!65 &7278606673785344149
 BoxCollider:
   m_ObjectHideFlags: 0
