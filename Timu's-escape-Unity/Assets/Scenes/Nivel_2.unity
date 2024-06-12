@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.003995703, g: 0.00021792634, b: 0.000000051515347, a: 1}
+  m_IndirectSpecularColor: {r: 0.0039957035, g: 0.00021792635, b: 0.000000051515347, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6444,6 +6444,83 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e118612ead46fde40a55b775b86cf3e5, type: 3}
+--- !u!1001 &8666941479830669077
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 246971298602377784, guid: d0b58c121e036e4418d0378d41a51723, type: 3}
+      propertyPath: musicClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 9a378d85263513345a241ab89398942f, type: 3}
+    - target: {fileID: 246971298602377784, guid: d0b58c121e036e4418d0378d41a51723, type: 3}
+      propertyPath: fadeDuration
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 246971298602377784, guid: d0b58c121e036e4418d0378d41a51723, type: 3}
+      propertyPath: targetVolume
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 606855370730724932, guid: d0b58c121e036e4418d0378d41a51723, type: 3}
+      propertyPath: m_Pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 606855370730724932, guid: d0b58c121e036e4418d0378d41a51723, type: 3}
+      propertyPath: m_Volume
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5674572347800230110, guid: d0b58c121e036e4418d0378d41a51723, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.44860741
+      objectReference: {fileID: 0}
+    - target: {fileID: 5674572347800230110, guid: d0b58c121e036e4418d0378d41a51723, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 19.479008
+      objectReference: {fileID: 0}
+    - target: {fileID: 5674572347800230110, guid: d0b58c121e036e4418d0378d41a51723, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -31.565075
+      objectReference: {fileID: 0}
+    - target: {fileID: 5674572347800230110, guid: d0b58c121e036e4418d0378d41a51723, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5674572347800230110, guid: d0b58c121e036e4418d0378d41a51723, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5674572347800230110, guid: d0b58c121e036e4418d0378d41a51723, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5674572347800230110, guid: d0b58c121e036e4418d0378d41a51723, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5674572347800230110, guid: d0b58c121e036e4418d0378d41a51723, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5674572347800230110, guid: d0b58c121e036e4418d0378d41a51723, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5674572347800230110, guid: d0b58c121e036e4418d0378d41a51723, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9000930795322133559, guid: d0b58c121e036e4418d0378d41a51723, type: 3}
+      propertyPath: m_Name
+      value: AudioManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d0b58c121e036e4418d0378d41a51723, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -6466,3 +6543,4 @@ SceneRoots:
   - {fileID: 71929974}
   - {fileID: 1942930636}
   - {fileID: 226872574}
+  - {fileID: 8666941479830669077}
