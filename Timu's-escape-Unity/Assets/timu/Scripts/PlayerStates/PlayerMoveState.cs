@@ -15,7 +15,7 @@ public class PlayerMoveState : PlayerState
         if (player.PlayerController.horizontalInput==1){ //derecha
             player.timuAnimator.SetBool("prueba 2", true);
         } else if(player.PlayerController.horizontalInput==-1){ //izq
-            //player.timuAnimator.SetBool("caminar_der", true);
+            //player.timuAnimator.SetBool("caminar_der", true); 
         }
     }
 
