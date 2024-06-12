@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0039957035, g: 0.00021792635, b: 0.000000051515347, a: 1}
+  m_IndirectSpecularColor: {r: 0.0039957035, g: 0.00021792634, b: 0.000000051515347, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1146,12 +1146,44 @@ PrefabInstance:
       propertyPath: jumpCountText
       value: 
       objectReference: {fileID: 1068911729}
+    - target: {fileID: 1553667657158434547, guid: 621bba57f92564c4d932ee4c9b119b4c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1553667657158434547, guid: 621bba57f92564c4d932ee4c9b119b4c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1553667657158434547, guid: 621bba57f92564c4d932ee4c9b119b4c, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1553667657158434547, guid: 621bba57f92564c4d932ee4c9b119b4c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 1553667657158434547, guid: 621bba57f92564c4d932ee4c9b119b4c, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1906119120441396760, guid: 621bba57f92564c4d932ee4c9b119b4c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1906119120441396760, guid: 621bba57f92564c4d932ee4c9b119b4c, type: 3}
       propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2016730246991568486, guid: 621bba57f92564c4d932ee4c9b119b4c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2016730246991568486, guid: 621bba57f92564c4d932ee4c9b119b4c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 2016730246991568486, guid: 621bba57f92564c4d932ee4c9b119b4c, type: 3}
+      propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2334702633897658403, guid: 621bba57f92564c4d932ee4c9b119b4c, type: 3}
@@ -1170,6 +1202,10 @@ PrefabInstance:
       propertyPath: intensity
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 6051068030878534293, guid: 621bba57f92564c4d932ee4c9b119b4c, type: 3}
+      propertyPath: timuAnimator
+      value: 
+      objectReference: {fileID: 1356496085}
     - target: {fileID: 6051068030878534293, guid: 621bba57f92564c4d932ee4c9b119b4c, type: 3}
       propertyPath: playerData.totalJumps
       value: 0
@@ -4613,6 +4649,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 5696859201107870190, guid: 5e5685fb97cf86e4cb116fbf34fb44c2, type: 3}
   m_PrefabInstance: {fileID: 1341543221}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1356496085 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2818566606488670039, guid: 621bba57f92564c4d932ee4c9b119b4c, type: 3}
+  m_PrefabInstance: {fileID: 291880556}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1373322854
 PrefabInstance:

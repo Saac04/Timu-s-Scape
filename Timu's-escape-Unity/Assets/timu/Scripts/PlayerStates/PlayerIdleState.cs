@@ -19,10 +19,20 @@ public class PlayerIdleState : PlayerState
     {
         base.Update();
 
+        
+        if (player.PlayerController.horizontalInput == 1){ //derecha
+            player.timuAnimator.SetTrigger("prueba");
+            playerStateMachine.ChangeState(player.MoveState);
+        }
+        else if (player.PlayerController.horizontalInput == -1){ //izq
+            player.timuAnimator.SetTrigger("prueba");
+            playerStateMachine.ChangeState(player.MoveState);
+        }
+        /*
         if (player.PlayerController.horizontalInput != 0f)
         {
             playerStateMachine.ChangeState(player.MoveState);
-        }
+        }*/
         if (player.PlayerController.verticalInput != 0f)
         {
             playerStateMachine.ChangeState(player.ChargeJumpState);

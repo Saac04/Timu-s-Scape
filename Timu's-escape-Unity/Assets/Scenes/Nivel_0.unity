@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3731131, g: 0.38073736, b: 0.35873178, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311354, g: 0.38073775, b: 0.358732, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2362,6 +2362,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2018307259}
     - target: {fileID: 6051068030878534293, guid: 621bba57f92564c4d932ee4c9b119b4c, type: 3}
+      propertyPath: timuAnimator
+      value: 
+      objectReference: {fileID: 1835363716}
+    - target: {fileID: 6051068030878534293, guid: 621bba57f92564c4d932ee4c9b119b4c, type: 3}
       propertyPath: playerData.totalJumps
       value: 0
       objectReference: {fileID: 0}
@@ -2445,6 +2449,11 @@ PrefabInstance:
 --- !u!1 &1835363715 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4951776973455382286, guid: 621bba57f92564c4d932ee4c9b119b4c, type: 3}
+  m_PrefabInstance: {fileID: 1835363714}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1835363716 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2818566606488670039, guid: 621bba57f92564c4d932ee4c9b119b4c, type: 3}
   m_PrefabInstance: {fileID: 1835363714}
   m_PrefabAsset: {fileID: 0}
 --- !u!108 &1835363718
