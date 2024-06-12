@@ -5,6 +5,8 @@ public class PlayerFallingState : PlayerState
     private float stateChangeTimer = 0f;
     private float stateChangeDelay = 0.5f;
 
+    private bool alreadySounded;
+
     public PlayerFallingState(Player player, PlayerStateMachine stateMachine) : base(player, stateMachine)
     {
     }
@@ -13,6 +15,7 @@ public class PlayerFallingState : PlayerState
     {
         base.Enter();
         stateChangeTimer = 0f;
+        alreadySounded = false;
     }
 
     public override void FixedUpdate()
@@ -21,6 +24,11 @@ public class PlayerFallingState : PlayerState
         
         if (player.PlayerController.IsOnGround()) {
             
+            if (!alreadySounded) {
+                player.audioControllerTimu.PlayOneShot(player.timuAudio_CaeSuelo);
+                alreadySounded = true;
+            }
+
             player.playerData.jumpForce = 0;
 
             stateChangeTimer += Time.fixedDeltaTime;
@@ -29,6 +37,7 @@ public class PlayerFallingState : PlayerState
 
             if (stateChangeTimer >= stateChangeDelay )
             {
+                alreadySounded=false;
                 playerStateMachine.ChangeState(player.IdleState);
             }
         }

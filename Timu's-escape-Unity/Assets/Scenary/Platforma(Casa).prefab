@@ -51,6 +51,7 @@ MonoBehaviour:
   raycastDistance: 0.3
   horizontalRayCount: 6
   verticalRayCount: 6
+  reboteTimuSonido: {fileID: 0}
 --- !u!33 &6954821134924918543
 MeshFilter:
   m_ObjectHideFlags: 0

@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 [RequireComponent(typeof(PlayerController))]
 [RequireComponent(typeof(Rigidbody))]
@@ -29,6 +30,12 @@ public class Player : MonoBehaviour
     // Evento para notificar la muerte
     public delegate void DeathAction();
     public static event DeathAction OnDeath;
+
+    public AudioSource audioControllerTimu;
+    public List<AudioClip> timuAudioList_Salta;
+    public AudioClip timuAudio_CargaSalto;
+    public AudioClip timuAudio_CaeSuelo;
+    public AudioClip timuAudio_Mueve;
 
     private void Awake()
     {

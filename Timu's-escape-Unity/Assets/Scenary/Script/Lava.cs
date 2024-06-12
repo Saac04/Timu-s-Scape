@@ -11,6 +11,7 @@ public class Lava : MonoBehaviour
     private Vector3 originalPosition;
     private float originalSpeed;
     public Player player;
+    public Animator animator;
     void Start()
     {
         originalPosition = transform.position;
@@ -65,5 +66,6 @@ public class Lava : MonoBehaviour
     {
         transform.position = originalPosition;
         ascensionSpeed = originalSpeed;
+        animator.SetTrigger("Idle");
     }
 }

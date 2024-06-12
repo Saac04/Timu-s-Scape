@@ -41,9 +41,18 @@ public class DialogueTrigger : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             TriggerDialogue();
+            
         } else if (other.CompareTag("Lava"))
         {
+
+            if (animator != null)
+            {
+                animator.SetTrigger("Die");
+            }
+
             TriggerDeathDialogue();
+
+            
         }
     }
 
@@ -62,7 +71,9 @@ public class DialogueTrigger : MonoBehaviour
             speaking = true;
             manager.StartDialogue(dialogue);
 
-            animator.SetTrigger("Backflip");
+            if (animator != null){
+                animator.SetTrigger("Backflip");
+            }
         }
         
     }

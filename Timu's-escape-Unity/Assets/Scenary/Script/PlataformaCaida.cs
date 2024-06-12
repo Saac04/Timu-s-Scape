@@ -5,9 +5,9 @@ using UnityEngine;
 public class PlataformaCaida : MonoBehaviour
 {
     public float fallWait = 1f;
-    public float fallDistance = 5f;
-    public float fallingspeed = 0.4f;
-    public float destroyWait = 0f;
+    public float fallDistance = 2.5f;
+    public float fallingspeed = 1f;
+    public float destroyWait = 1f;
     public float reappearWait = 5f;
     private Vector3 originalPosition;
 
@@ -15,9 +15,17 @@ public class PlataformaCaida : MonoBehaviour
     private Collider[] childColliders;
     private GameObject[] childrenObjects;
     private Coroutine reappearCoroutine;
+    public AudioSource audioCaida;
+    private bool isBreaking;
+
+    public ParticleSystem smokeParticles;
+
+    public AudioClip sonidoRompe;
+    public AudioClip sonidoRehace;
 
     public void Start()
     {
+        isBreaking = false;
         originalPosition = transform.position;
 
         childColliders = GetComponentsInChildren<Collider>(true);
@@ -30,13 +38,16 @@ public class PlataformaCaida : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (!isBreaking && collision.gameObject.CompareTag("Player"))
         {
+            isBreaking = true;
             StartCoroutine(fall());
         }
     }
     private IEnumerator fall()
     {
+        audioCaida.Play();
+
         yield return new WaitForSeconds(fallWait);
 
 
@@ -46,6 +57,8 @@ public class PlataformaCaida : MonoBehaviour
             yield return null;
         }
 
+        smokeParticles.Play();
+        audioCaida.PlayOneShot(sonidoRompe);
         yield return new WaitForSeconds(destroyWait);
 
         HideChildren();
@@ -59,6 +72,7 @@ public class PlataformaCaida : MonoBehaviour
         {
             StopCoroutine(reappearCoroutine);
         }
+        isBreaking = false;
         ShowChildren();
     }
 
@@ -95,6 +109,8 @@ public class PlataformaCaida : MonoBehaviour
         {
             child.SetActive(true);
         }
+        smokeParticles.Play();
+        audioCaida.PlayOneShot(sonidoRehace);
     }
 }
 

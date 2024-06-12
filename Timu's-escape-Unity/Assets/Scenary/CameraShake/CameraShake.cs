@@ -9,6 +9,7 @@ public class CameraShake : MonoBehaviour
     public float magnitudFondo = -0.8f;
     public ParticleSystem ParticulasDerrumbe;
     public Canvas FondoCanvas;
+    public AudioSource sonidoShake;
 
     void Start()
     {
@@ -17,6 +18,7 @@ public class CameraShake : MonoBehaviour
 
     void StartShake()
     {
+        sonidoShake.Play();
         StartCoroutine(Shake());
     }
 

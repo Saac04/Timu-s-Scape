@@ -9,6 +9,10 @@ public class WallController : MonoBehaviour
         Rigidbody otherRigidbody = collision.gameObject.GetComponent<Rigidbody>();
         if (otherRigidbody != null)
         {
+            if (collision.gameObject.GetComponent<AudioSource>() != null)
+            {
+                collision.gameObject.GetComponent<AudioSource>().Play();
+            }
 
             Vector3 bounceDirection = -collision.contacts[0].normal;
             otherRigidbody.AddForce(bounceDirection * bounceForce, ForceMode.Impulse);
