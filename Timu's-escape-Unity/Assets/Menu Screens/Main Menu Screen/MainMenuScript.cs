@@ -19,6 +19,11 @@ public class NewBehaviourScript : MonoBehaviour
         Application.Quit();
     }
 
+    public void Creditos()
+    {
+        SceneManager.LoadScene("Credits");
+    }
+
     private void Start() {
         PlayerPrefs.SetInt("jumpCount", 0);
         PlayerPrefs.SetInt("deathCount", 0);
