@@ -7,7 +7,7 @@ public class PlataformaCaida : MonoBehaviour
     public float fallWait = 1f;
     public float fallDistance = 2.5f;
     public float fallingspeed = 1f;
-    public float destroyWait = 0f;
+    public float destroyWait = 1f;
     public float reappearWait = 5f;
     private Vector3 originalPosition;
 
@@ -17,6 +17,11 @@ public class PlataformaCaida : MonoBehaviour
     private Coroutine reappearCoroutine;
     public AudioSource audioCaida;
     private bool isBreaking;
+
+    public ParticleSystem smokeParticles;
+
+    public AudioClip sonidoRompe;
+    public AudioClip sonidoRehace;
 
     public void Start()
     {
@@ -52,6 +57,8 @@ public class PlataformaCaida : MonoBehaviour
             yield return null;
         }
 
+        smokeParticles.Play();
+        audioCaida.PlayOneShot(sonidoRompe);
         yield return new WaitForSeconds(destroyWait);
 
         HideChildren();
@@ -102,6 +109,8 @@ public class PlataformaCaida : MonoBehaviour
         {
             child.SetActive(true);
         }
+        smokeParticles.Play();
+        audioCaida.PlayOneShot(sonidoRehace);
     }
 }
 

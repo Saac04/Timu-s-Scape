@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3ac2eebdaaf10524181120e8bf0dce0e
+guid: 8e674e90c3ad2a644823ae63541136d9
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,18 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Material #25
-    second: {fileID: 2100000, guid: 3c7ea64520326ad4ca2ee8eb102c785d, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material #37
-    second: {fileID: 2100000, guid: ec2a8ee49f360a64b849307832e2f425, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material #38
-    second: {fileID: 2100000, guid: 8e7919fa5ece09745885f7575aa9bfd2, type: 2}
+      name: Piedras
+    second: {fileID: 2100000, guid: e66c9c6b6145ebc4dbaf2c883ad3de38, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -50,7 +40,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.1
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -105,7 +95,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.1
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
