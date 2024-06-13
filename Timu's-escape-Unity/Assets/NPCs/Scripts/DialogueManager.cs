@@ -14,6 +14,7 @@ public class DialogueManager : MonoBehaviour
     public AudioSource audioC;
     public List<AudioClip> audioList;
     public Animator animator;
+    public Animator npcAnimator;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +33,7 @@ public class DialogueManager : MonoBehaviour
     public void StartDialogue( Dialogue dialogue)
     {
         animator.SetBool("isOpen", true);
+        npcAnimator.SetTrigger("Hablar");
         isStarted = true;
         nameText.text = dialogue.name;
         
@@ -60,7 +62,7 @@ public class DialogueManager : MonoBehaviour
             EndDialogue();
             return;
         }
-
+        npcAnimator.SetTrigger("Hablar");
         string sentence = sentences.Dequeue();
         dialogueText.text = sentence;
     }

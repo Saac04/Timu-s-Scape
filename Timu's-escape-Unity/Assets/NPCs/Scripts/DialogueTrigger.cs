@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DialogueTrigger : MonoBehaviour
 {
@@ -9,6 +11,8 @@ public class DialogueTrigger : MonoBehaviour
     public Animator animator;
     public Lava lava;
     private bool speaking = false;
+    private int sceneId;
+
 
 
 
@@ -16,6 +20,12 @@ public class DialogueTrigger : MonoBehaviour
     {
         manager = FindAnyObjectByType<DialogueManager>();
         if (lava == null){ Debug.Log("No hay lava asociada al dialogo");}
+
+        UnityEngine.SceneManagement.Scene activeScene = SceneManager.GetActiveScene();
+
+        // Get the build index (ID) of the active scene
+        sceneId = activeScene.buildIndex;
+
     }
 
 
@@ -40,8 +50,13 @@ public class DialogueTrigger : MonoBehaviour
 
         if (other.CompareTag("Player"))
         {
-            TriggerDialogue();
-            
+            if (sceneId == 1)
+            {
+                Invoke("TriggerDialogue", 1); // Call MyFunction after 3 seconds
+            } else
+            {
+                TriggerDialogue();
+            }
         } else if (other.CompareTag("Lava"))
         {
 
@@ -95,6 +110,7 @@ public class DialogueTrigger : MonoBehaviour
         {   
             speaking = false;
             manager.EndDialogue();
+
         }
     }
 
