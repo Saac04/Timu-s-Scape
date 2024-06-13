@@ -8,6 +8,7 @@ public class LightController : MonoBehaviour
     public float duration = 7f; // Duración en segundos para alcanzar el rango máximo
     private float elapsedTime = 0f;
     private bool enContacto;
+    public AudioSource soundSource;
 
     
 
@@ -23,6 +24,7 @@ public class LightController : MonoBehaviour
         if (other.CompareTag("Player") && !enContacto)
         {
             enContacto = true;
+            soundSource.Play();
             StartCoroutine(IncreaseLightRange());
         }
     }
