@@ -8,10 +8,12 @@ public class PlayerMoveState : PlayerState
     {
     }
 
+    private float contador;
     public override void Enter()
     {
         base.Enter();
         player.audioControllerTimu.Play();
+        contador=0;
     }
 
     public override void Update()
@@ -20,12 +22,14 @@ public class PlayerMoveState : PlayerState
 
         if (player.PlayerController.horizontalInput == 0f)
         {
+            player.timuTransform.localScale = Vector3.one;
             player.audioControllerTimu.Stop();
             playerStateMachine.ChangeState(player.IdleState);
         }
 
         if (Input.GetKeyDown(KeyCode.Space)) 
         {
+            player.timuTransform.localScale = Vector3.one;
             player.audioControllerTimu.Stop();
             playerStateMachine.ChangeState(player.ChargeJumpState);
         }
@@ -38,8 +42,28 @@ public class PlayerMoveState : PlayerState
 
         player.PlayerController.rb.MovePosition(player.PlayerController.rb.position + movimiento);
 
+        contador = contador + (15f / 100);
+        float scaleY = (float)(0.125f * Mathf.Sin(contador) + 0.875f);
+        if (contador > 6.28f)
+        {
+            contador = 0;
+        }
+        Vector3 scalebase = Vector3.one;
+        scalebase.y = scaleY;
+        player.timuTransform.localScale = scalebase;
+
+        if (player.PlayerController.horizontalInput == 1)
+        {
+            player.timuTransform.rotation = Quaternion.Euler(player.timuTransform.eulerAngles.x, 150f, player.timuTransform.eulerAngles.z);
+        }
+        else if (player.PlayerController.horizontalInput == -1)
+        {
+            player.timuTransform.rotation = Quaternion.Euler(player.timuTransform.eulerAngles.x, 210f, player.timuTransform.eulerAngles.z);
+        }
+
         if (!player.PlayerController.IsOnGround()) 
         {
+            player.timuTransform.localScale = Vector3.one;
             player.audioControllerTimu.Stop();
             playerStateMachine.ChangeState(player.ExitPlatformState);
         }

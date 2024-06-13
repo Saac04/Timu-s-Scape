@@ -26,6 +26,7 @@ public class PlayerFallingState : PlayerState
             
             if (!alreadySounded) {
                 player.audioControllerTimu.PlayOneShot(player.timuAudio_CaeSuelo);
+                player.shrinkingAnim();
                 alreadySounded = true;
             }
 

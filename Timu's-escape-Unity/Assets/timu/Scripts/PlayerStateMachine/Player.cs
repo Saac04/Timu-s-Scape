@@ -37,6 +37,14 @@ public class Player : MonoBehaviour
     public AudioClip timuAudio_CaeSuelo;
     public AudioClip timuAudio_Mueve;
 
+    public Transform timuTransform;
+    public ParticleSystem caidaEnLava;
+
+    private bool isShrinking = false;
+    private bool isAntiShrinking = false;
+    private float shrinkingTime;
+    private float timeElapsed=0f;
+
     private void Awake()
     {
         StateMachine = new PlayerStateMachine();
@@ -87,6 +95,36 @@ public class Player : MonoBehaviour
             OnJump?.Invoke();
         }
 
+        if(isShrinking && Time.time < shrinkingTime){
+            timeElapsed += Time.fixedDeltaTime;
+
+            float timePercentage = Mathf.Clamp01(timeElapsed / 0.25f);
+
+            float interpolatedShrinkScale = Mathf.Lerp(1f, 0.9f, timePercentage);
+            Vector3 scalebase = Vector3.one * interpolatedShrinkScale;
+            timuTransform.localScale = scalebase;
+        } else if(isShrinking && Time.time >= shrinkingTime){
+            isShrinking=false;
+            isAntiShrinking=true;
+            shrinkingTime = Time.time + 0.25f;
+        }
+
+        if (isAntiShrinking && Time.time < shrinkingTime)
+        {
+            timeElapsed += Time.fixedDeltaTime;
+
+            float timePercentage = Mathf.Clamp01(timeElapsed / 0.25f);
+
+            float interpolatedShrinkScale = Mathf.Lerp(0.9f, 1f, timePercentage);
+            Vector3 scalebase = Vector3.one * interpolatedShrinkScale;
+            timuTransform.localScale = scalebase;
+        }
+        else if (isAntiShrinking && Time.time >= shrinkingTime)
+        {
+            isShrinking = false;
+            isAntiShrinking = false;
+        }
+
 
     }
 
@@ -103,5 +141,10 @@ public class Player : MonoBehaviour
         isDead = true;
         // Invoca el evento de muerte
         OnDeath?.Invoke();
+    }
+
+    public void shrinkingAnim(){
+        isShrinking = true;
+        shrinkingTime = Time.time + 0.25f;
     }
 }

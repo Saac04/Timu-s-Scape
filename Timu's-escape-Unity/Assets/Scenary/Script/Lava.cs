@@ -12,6 +12,8 @@ public class Lava : MonoBehaviour
     private float originalSpeed;
     public Player player;
     public Animator animator;
+    public AudioClip timuDies;
+    public AudioSource lavaAudioSource;
     void Start()
     {
         originalPosition = transform.position;
@@ -45,6 +47,8 @@ public class Lava : MonoBehaviour
                 }
                 if (foundCheckpoint != null)
                 {
+                    lavaAudioSource.PlayOneShot(timuDies);
+                    player.caidaEnLava.Play();
                     foundCheckpoint.RespawnPlayer(player.playerData.checkPointPosition);
                 }
                 else

@@ -14,6 +14,8 @@ public class PlatformController : MonoBehaviour
     float horizontalRaySpacing;
     float verticalRaySpacing;
 
+    private Transform timuTransform;
+
     RaycastOrigins raycastOrigins;
     BoxCollider boxCollider;
 
@@ -54,6 +56,8 @@ public class PlatformController : MonoBehaviour
                         {
                             hit.collider.GetComponent<AudioSource>().PlayOneShot(reboteTimuSonido);
                         }
+                        hit.collider.GetComponent<Player>().shrinkingAnim();
+
                         ApplyRebound(playerRb, Vector3.left);
                         playerDetected = true;
                     }
@@ -79,6 +83,12 @@ public class PlatformController : MonoBehaviour
 
                     if (!playerDetected && playerData.direcctionHorizontal != -1)
                     {
+                        if (hit.collider.GetComponent<AudioSource>() != null)
+                        {
+                            hit.collider.GetComponent<AudioSource>().PlayOneShot(reboteTimuSonido);
+                        }
+                        hit.collider.GetComponent<Player>().shrinkingAnim();
+
                         ApplyRebound(playerRb, Vector3.right);
                         playerDetected = true;
                     }

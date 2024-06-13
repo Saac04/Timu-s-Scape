@@ -87,6 +87,9 @@ MonoBehaviour:
   ascensionSpeed: 0.7
   changeSpeed: 0.1
   player: {fileID: 0}
+  animator: {fileID: 8763755226268741565}
+  timuDies: {fileID: 8300000, guid: 627915b105895d1458f36fef6bd9855a, type: 3}
+  lavaAudioSource: {fileID: 6631009468897734444}
 --- !u!33 &4110252334605075756
 MeshFilter:
   m_ObjectHideFlags: 0
