@@ -24,6 +24,7 @@ public class PlayerMoveState : PlayerState
         {
             player.timuTransform.localScale = Vector3.one;
             player.audioControllerTimu.Stop();
+            player.timuAnimator.SetBool("caminar_der", false);
             playerStateMachine.ChangeState(player.IdleState);
         }
 
@@ -31,6 +32,8 @@ public class PlayerMoveState : PlayerState
         {
             player.timuTransform.localScale = Vector3.one;
             player.audioControllerTimu.Stop();
+
+            player.timuAnimator.SetBool("caminar_der", false);
             playerStateMachine.ChangeState(player.ChargeJumpState);
         }
     }
@@ -65,6 +68,8 @@ public class PlayerMoveState : PlayerState
         {
             player.timuTransform.localScale = Vector3.one;
             player.audioControllerTimu.Stop();
+
+            player.timuAnimator.SetBool("caminar_der", false);
             playerStateMachine.ChangeState(player.ExitPlatformState);
         }
     }
