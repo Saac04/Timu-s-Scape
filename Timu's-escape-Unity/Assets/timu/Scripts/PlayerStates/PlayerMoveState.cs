@@ -12,6 +12,11 @@ public class PlayerMoveState : PlayerState
     {
         base.Enter();
         player.audioControllerTimu.Play();
+        if (player.PlayerController.horizontalInput==1){ //derecha
+            player.timuAnimator.SetBool("prueba 2", true);
+        } else if(player.PlayerController.horizontalInput==-1){ //izq
+            //player.timuAnimator.SetBool("caminar_der", true); 
+        }
     }
 
     public override void Update()
@@ -21,12 +26,15 @@ public class PlayerMoveState : PlayerState
         if (player.PlayerController.horizontalInput == 0f)
         {
             player.audioControllerTimu.Stop();
+            player.timuAnimator.SetBool("caminar_der", false);
             playerStateMachine.ChangeState(player.IdleState);
         }
 
         if (Input.GetKeyDown(KeyCode.Space)) 
         {
             player.audioControllerTimu.Stop();
+
+            player.timuAnimator.SetBool("caminar_der", false);
             playerStateMachine.ChangeState(player.ChargeJumpState);
         }
     }
@@ -41,6 +49,8 @@ public class PlayerMoveState : PlayerState
         if (!player.PlayerController.IsOnGround()) 
         {
             player.audioControllerTimu.Stop();
+
+            player.timuAnimator.SetBool("caminar_der", false);
             playerStateMachine.ChangeState(player.ExitPlatformState);
         }
     }

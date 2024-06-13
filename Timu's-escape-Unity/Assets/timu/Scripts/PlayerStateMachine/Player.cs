@@ -37,6 +37,8 @@ public class Player : MonoBehaviour
     public AudioClip timuAudio_CaeSuelo;
     public AudioClip timuAudio_Mueve;
 
+    public Animator timuAnimator;
+
     private void Awake()
     {
         StateMachine = new PlayerStateMachine();
