@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3731131, g: 0.38073736, b: 0.35873178, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311327, g: 0.38073742, b: 0.35873175, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1943,6 +1943,14 @@ PrefabInstance:
     - target: {fileID: 4989262445426669994, guid: d196c8899b93d8d468c6c87b68db3ddf, type: 3}
       propertyPath: m_Name
       value: CanvasMenuPausa
+      objectReference: {fileID: 0}
+    - target: {fileID: 7132826561205432510, guid: d196c8899b93d8d468c6c87b68db3ddf, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7739825019291949217, guid: d196c8899b93d8d468c6c87b68db3ddf, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
