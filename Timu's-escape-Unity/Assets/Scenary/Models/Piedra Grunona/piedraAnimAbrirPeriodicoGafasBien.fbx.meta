@@ -3,7 +3,22 @@ guid: 8133eaeafd0403f41bc06ca2bf08df91
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ColorBase
+    second: {fileID: 2100000, guid: f151d7cfe2570a648ad4a3aebef3ad38, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GafasPiedra
+    second: {fileID: 2100000, guid: d75a2aa4b0d3f314d8a0fcef5d5c1b69, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Periodico
+    second: {fileID: 2100000, guid: af3db0c9e47b0154792b55b67410de90, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
