@@ -6,6 +6,16 @@ using UnityEngine.SceneManagement;
 public class LevelChangerScript : MonoBehaviour
 {
     public Animator animatorController;
+    public CameraPartChanger changeCamera;
+    public ParticleSystem particleSystem;
+
+    // Definir variables para el tamaño, duración y velocidad de las partículas
+    public float particleSize = 4.0f;    
+    public float particleSpeed = 9.0f;
+    public int particleCount = 50;
+
+    public 
+
     public AudioSource audioLevelChanger;
     void Start()
     {
@@ -22,6 +32,8 @@ public class LevelChangerScript : MonoBehaviour
             Invoke("ChangeToNextScene", 1f);
         }
     }
+
+
 
     void ChangeToNextScene()
     {
