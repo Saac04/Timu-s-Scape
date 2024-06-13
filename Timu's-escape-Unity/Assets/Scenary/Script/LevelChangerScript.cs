@@ -24,13 +24,25 @@ public class LevelChangerScript : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+
+        if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
         {
-            ChangeScene("Nivel_1");
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            ChangeScene("Nivel_2");
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                ChangeScene("Nivel_1");
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                ChangeScene("Nivel_2");
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                ChangeScene("VictoryScreen");
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha0))
+            {
+                ChangeScene("Nivel_0");
+            }
         }
     }
 
