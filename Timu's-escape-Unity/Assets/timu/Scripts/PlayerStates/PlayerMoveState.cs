@@ -12,7 +12,7 @@ public class PlayerMoveState : PlayerState
     public override void Enter()
     {
         base.Enter();
-        player.audioControllerTimu.Play();
+        /*player.audioControllerTimu.Play();*/
         contador=0;
     }
 

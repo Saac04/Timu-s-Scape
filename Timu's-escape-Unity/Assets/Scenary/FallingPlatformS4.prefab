@@ -4880,7 +4880,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6487a06d17726d049914c876334e7a6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fallWait: 1
+  fallWait: 2
   fallDistance: 2.5
   fallingspeed: 1
   destroyWait: 1.5
