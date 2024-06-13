@@ -640,6 +640,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanvasMenuPausa
       objectReference: {fileID: 0}
+    - target: {fileID: 8037446778231841642, guid: d196c8899b93d8d468c6c87b68db3ddf, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 1198387514}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1416,12 +1420,28 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: a64b7b7ffc41c534fad0038e833af77a, type: 3}
     - target: {fileID: 246971298602377784, guid: d0b58c121e036e4418d0378d41a51723, type: 3}
+      propertyPath: audioMixer
+      value: 
+      objectReference: {fileID: 24100000, guid: fc8e797cbfed77648af7835660bda40e, type: 2}
+    - target: {fileID: 246971298602377784, guid: d0b58c121e036e4418d0378d41a51723, type: 3}
+      propertyPath: pauseMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: f8bfb1b04c1af7940b3283b3181b5d83, type: 3}
+    - target: {fileID: 246971298602377784, guid: d0b58c121e036e4418d0378d41a51723, type: 3}
       propertyPath: fadeDuration
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 246971298602377784, guid: d0b58c121e036e4418d0378d41a51723, type: 3}
       propertyPath: targetVolume
       value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 246971298602377784, guid: d0b58c121e036e4418d0378d41a51723, type: 3}
+      propertyPath: pauseMusicSource
+      value: 
+      objectReference: {fileID: 866385804}
+    - target: {fileID: 606855370730724932, guid: d0b58c121e036e4418d0378d41a51723, type: 3}
+      propertyPath: Loop
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 606855370730724932, guid: d0b58c121e036e4418d0378d41a51723, type: 3}
       propertyPath: m_Volume
@@ -1471,6 +1491,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7663991051830093099, guid: d0b58c121e036e4418d0378d41a51723, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7663991051830093099, guid: d0b58c121e036e4418d0378d41a51723, type: 3}
+      propertyPath: m_Volume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7663991051830093099, guid: d0b58c121e036e4418d0378d41a51723, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -6196438411100116333, guid: fc8e797cbfed77648af7835660bda40e, type: 2}
     - target: {fileID: 9000930795322133559, guid: d0b58c121e036e4418d0378d41a51723, type: 3}
       propertyPath: m_Name
       value: AudioManager
@@ -2242,6 +2274,11 @@ Transform:
   - {fileID: 1293715185}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &866385804 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7663991051830093099, guid: d0b58c121e036e4418d0378d41a51723, type: 3}
+  m_PrefabInstance: {fileID: 506143227}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &871148328
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3140,6 +3177,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1145035663}
   m_CullTransparentMesh: 1
+--- !u!114 &1198387514 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 246971298602377784, guid: d0b58c121e036e4418d0378d41a51723, type: 3}
+  m_PrefabInstance: {fileID: 506143227}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e88180553527cd14e9173fbc703edfa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1201917383 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5416646401223695356, guid: d196c8899b93d8d468c6c87b68db3ddf, type: 3}

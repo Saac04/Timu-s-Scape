@@ -13,6 +13,7 @@ public class MenuPausa : MonoBehaviour
     //[SerializeField] private GameObject timer;
 
     private bool juegoPausado= false;
+    public AudioManager audioManager;
 
     private void Update()
     {
@@ -36,6 +37,8 @@ public class MenuPausa : MonoBehaviour
         //botonPausa.SetActive(false);
         menuPausa.SetActive(true);
         //timer.SetActive(true);
+
+        audioManager.PlayPauseMusic();
     }
 
     public void Reanudar()
@@ -45,6 +48,8 @@ public class MenuPausa : MonoBehaviour
         //botonPausa.SetActive(true);
         menuPausa.SetActive(false);
         //timer.SetActive(false);
+
+        audioManager.ResumeMusic();
     }
 
 

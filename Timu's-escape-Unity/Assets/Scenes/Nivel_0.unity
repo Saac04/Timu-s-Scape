@@ -685,8 +685,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 0915c77a01eca4e4091272ea481bc907, type: 3}
     - target: {fileID: 246971298602377784, guid: d0b58c121e036e4418d0378d41a51723, type: 3}
+      propertyPath: audioMixer
+      value: 
+      objectReference: {fileID: 24100000, guid: fc8e797cbfed77648af7835660bda40e, type: 2}
+    - target: {fileID: 246971298602377784, guid: d0b58c121e036e4418d0378d41a51723, type: 3}
       propertyPath: targetVolume
       value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 606855370730724932, guid: d0b58c121e036e4418d0378d41a51723, type: 3}
+      propertyPath: Loop
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 606855370730724932, guid: d0b58c121e036e4418d0378d41a51723, type: 3}
       propertyPath: m_Volume
@@ -731,6 +739,10 @@ PrefabInstance:
     - target: {fileID: 5674572347800230110, guid: d0b58c121e036e4418d0378d41a51723, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7663991051830093099, guid: d0b58c121e036e4418d0378d41a51723, type: 3}
+      propertyPath: Loop
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9000930795322133559, guid: d0b58c121e036e4418d0378d41a51723, type: 3}
       propertyPath: m_Name
