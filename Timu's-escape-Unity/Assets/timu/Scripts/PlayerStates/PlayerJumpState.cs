@@ -17,7 +17,6 @@ public class PlayerJumpState : PlayerState
         base.Enter();
         hasAppliedJumpForce = false;
         ApplyJumpForce();
-        player.timuAnimator.SetTrigger("cargar salto_der");
 
     }
 

@@ -33,12 +33,15 @@ public class DialogueManager : MonoBehaviour
     public void StartDialogue( Dialogue dialogue)
     {
         animator.SetBool("isOpen", true);
-        npcAnimator.SetTrigger("Hablar");
+        if (npcAnimator != null)
+        {
+            npcAnimator.SetTrigger("Hablar");
+        }
+        
         isStarted = true;
         nameText.text = dialogue.name;
         
         sentences.Clear();
-
 
         foreach (string sentence in dialogue.sentences) { sentences.Enqueue(sentence); }
 
@@ -62,7 +65,10 @@ public class DialogueManager : MonoBehaviour
             EndDialogue();
             return;
         }
-        npcAnimator.SetTrigger("Hablar");
+        if (npcAnimator != null)
+        {
+            npcAnimator.SetTrigger("Hablar");
+        }
         string sentence = sentences.Dequeue();
         dialogueText.text = sentence;
     }
@@ -72,13 +78,4 @@ public class DialogueManager : MonoBehaviour
         animator.SetBool("isOpen", false);
         isStarted = false;
     }
-    public void EndDeathDialogue()
-    {
-        Debug.Log("terminamos la muerte");
-
-        animator.SetBool("idDead", false);
-        isDeathStarted = false;
-    }
-
-
 }

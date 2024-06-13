@@ -14,8 +14,6 @@ public class LevelChangerScript : MonoBehaviour
     public float particleSpeed = 9.0f;
     public int particleCount = 50;
 
-    public 
-
     public AudioSource audioLevelChanger;
     void Start()
     {

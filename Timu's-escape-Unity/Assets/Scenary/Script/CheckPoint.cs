@@ -12,7 +12,7 @@ public class CheckPoint : MonoBehaviour
     public Animator animator;
     public PlatafromaCaidaManager plataformaCaidaManager;
 
-    public float respawnDelay = 1.2f; // Duración de la espera en segundos
+    public float respawnDelay; // Duración de la espera en segundos
 
     private bool isRespawning = false;
     private float respawnTime;
