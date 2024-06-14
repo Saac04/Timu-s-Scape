@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
 
 [RequireComponent(typeof(PlayerController))]
@@ -141,10 +142,21 @@ public class Player : MonoBehaviour
         isDead = true;
         // Invoca el evento de muerte
         OnDeath?.Invoke();
+
+        StartCoroutine(espera());
     }
 
     public void shrinkingAnim(){
         isShrinking = true;
         shrinkingTime = Time.time + 0.25f;
+    }
+
+    private IEnumerator espera()
+    {
+        yield return new WaitForSeconds(1f);
+
+        isDead = false;
+
+        yield return null;
     }
 }

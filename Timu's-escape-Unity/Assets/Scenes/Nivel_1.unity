@@ -528,13 +528,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 942862184}
     - target: {fileID: 8643038858446123208, guid: e118612ead46fde40a55b775b86cf3e5, type: 3}
+      propertyPath: positionDown
+      value: 
+      objectReference: {fileID: 1433400664}
+    - target: {fileID: 8643038858446123208, guid: e118612ead46fde40a55b775b86cf3e5, type: 3}
       propertyPath: respawnDelay
       value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 8643038858446123208, guid: e118612ead46fde40a55b775b86cf3e5, type: 3}
+      propertyPath: backgroundImage
+      value: 
+      objectReference: {fileID: 1673098700}
+    - target: {fileID: 8643038858446123208, guid: e118612ead46fde40a55b775b86cf3e5, type: 3}
       propertyPath: plataformaCaida
       value: 
       objectReference: {fileID: 399743588}
+    - target: {fileID: 8643038858446123208, guid: e118612ead46fde40a55b775b86cf3e5, type: 3}
+      propertyPath: backgroundMaterialDown
+      value: 
+      objectReference: {fileID: 2100000, guid: 85f24f304d649394eaa2fa2d6f364895, type: 2}
     - target: {fileID: 8643038858446123208, guid: e118612ead46fde40a55b775b86cf3e5, type: 3}
       propertyPath: plataformaCaidaManager
       value: 
@@ -2491,7 +2503,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7207647509422686433, guid: 621bba57f92564c4d932ee4c9b119b4c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.978591
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7207647509422686433, guid: 621bba57f92564c4d932ee4c9b119b4c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -13859,6 +13871,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4779598908268149770, guid: 341dd93bbf968334a82a94757892a649, type: 3}
   m_PrefabInstance: {fileID: 1812997337}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1433400664 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2398605378935797247, guid: dd07cc6dc41d81644a773040f0b1dbfd, type: 3}
+  m_PrefabInstance: {fileID: 1308709499}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1441211061 stripped
 Transform:

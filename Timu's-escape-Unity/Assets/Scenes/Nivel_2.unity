@@ -1932,6 +1932,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &548032097 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2398605378935797247, guid: dd07cc6dc41d81644a773040f0b1dbfd, type: 3}
+  m_PrefabInstance: {fileID: 1774694284}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &550009066
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4769,13 +4774,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 291880558}
     - target: {fileID: 8643038858446123208, guid: e118612ead46fde40a55b775b86cf3e5, type: 3}
+      propertyPath: positionDown
+      value: 
+      objectReference: {fileID: 548032097}
+    - target: {fileID: 8643038858446123208, guid: e118612ead46fde40a55b775b86cf3e5, type: 3}
       propertyPath: respawnDelay
       value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 8643038858446123208, guid: e118612ead46fde40a55b775b86cf3e5, type: 3}
+      propertyPath: backgroundImage
+      value: 
+      objectReference: {fileID: 869563557}
+    - target: {fileID: 8643038858446123208, guid: e118612ead46fde40a55b775b86cf3e5, type: 3}
       propertyPath: plataformaCaida
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 8643038858446123208, guid: e118612ead46fde40a55b775b86cf3e5, type: 3}
+      propertyPath: backgroundMaterialDown
+      value: 
+      objectReference: {fileID: 2100000, guid: 1350a4250ef098c46833d8b09b1e1b13, type: 2}
     - target: {fileID: 8643038858446123208, guid: e118612ead46fde40a55b775b86cf3e5, type: 3}
       propertyPath: plataformaCaidaManager
       value: 

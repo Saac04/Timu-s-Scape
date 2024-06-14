@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CheckPoint : MonoBehaviour
 {
@@ -13,11 +14,14 @@ public class CheckPoint : MonoBehaviour
     public PlatafromaCaidaManager plataformaCaidaManager;
 
     public float respawnDelay; // Duración de la espera en segundos
+    private Camera CameraObj;
 
     private bool isRespawning = false;
     private float respawnTime;
     private Vector3 respawnPosition;
-
+    public Transform positionDown;
+    public Material backgroundMaterialDown;
+    public Image backgroundImage;
     public void RespawnPlayer(Vector3 respawnPosition)
     {
         if (player.playerData != null)
@@ -49,6 +53,9 @@ public class CheckPoint : MonoBehaviour
             playerObject.transform.position = respawnPosition;
             player.PlayerController.rb.velocity = Vector3.zero;
             lava.resetLava();
+            CameraObj = Camera.main;
+            backgroundImage.material = backgroundMaterialDown;
+            CameraObj.transform.position = positionDown.position;
             if (plataformaCaidaManager != null)
             {
                 plataformaCaidaManager.resetPlataformaCaida();
